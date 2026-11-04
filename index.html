@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Poste restante · le tour du monde du courrier en attente</title>
+  <meta name="description" content="Comment adresser une lettre en poste restante, pays par pays : intitulé, durée de conservation, coûts.">
+  <script>
+    /* thème et langue appliqués avant l'affichage, pour éviter un flash */
+    (function () {
+      var t = null, l = null;
+      try { t = localStorage.getItem('pr-theme'); l = localStorage.getItem('pr-lang'); } catch (e) {}
+      if (t !== 'dark' && t !== 'light') t = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.lang = l === 'en' ? 'en' : 'fr';
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Caveat:wght@500;700&family=Inter:wght@400;500;600&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="1.6"/>
+    </filter>
+  </defs>
+</svg>
+
+<div class="airmail-bar" aria-hidden="true"></div>
+
+<nav class="topbar" aria-label="Options">
+  <div class="seg" id="lang" role="group" data-i18n-aria="aria_lang" aria-label="Langue">
+    <button type="button" data-l="fr" aria-pressed="true">FR</button>
+    <button type="button" data-l="en" aria-pressed="false">EN</button>
+  </div>
+  <button type="button" id="theme" class="icon-btn" data-i18n-aria="aria_theme" aria-label="Mode jour / nuit">
+    <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+  </button>
+  <a class="icon-btn" id="github" href="https://github.com/dianedelallee/poste-restante" target="_blank" rel="noopener" data-i18n-aria="aria_github" aria-label="Voir le code sur GitHub">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+  </a>
+</nav>
+
+<header class="hero">
+  <div class="hero-card">
+    <span class="par-avion" aria-hidden="true">Par avion</span>
+    <div class="hero-marks" aria-hidden="true">
+      <div class="stamp"><span class="flag">✉</span><span class="denom">P.R.</span></div>
+      <div id="hero-pm" class="pm-wrap"></div>
+    </div>
+    <p class="kicker" data-i18n="hero_kicker">Carnet de correspondante</p>
+    <h1>Poste restante</h1>
+    <p class="lede" data-i18n="hero_lede">Écrire à quelqu'un qui n'a pas d'adresse fixe. Ou qui en a une, mais préfère retirer sa lettre au guichet, comme au bon vieux temps.</p>
+    <p class="hero-addr" aria-hidden="true" data-i18n-html="hero_addr">À l'attention de toi,<br>quelque part dans le monde</p>
+    <a class="btn" href="#carte" data-i18n="hero_btn">Voir la carte ↓</a>
+    <div class="hero-deco" id="hero-deco" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main>
+  <section class="principle" id="principe">
+    <p class="kicker">N° 1</p>
+    <h2 data-i18n="p_title">Le principe, en trois temps</h2>
+    <ol class="steps">
+      <li><div class="stamp sm"><span class="denom">1</span></div><h3 data-i18n="p1_h">On écrit</h3><p data-i18n-html="p1_p">L'expéditeur adresse la lettre à un <strong>bureau de poste</strong> plutôt qu'à un domicile, avec la mention locale (<em>poste restante</em>, <em>general delivery</em>, <em>lista de correos</em>…).</p></li>
+      <li><div class="stamp sm"><span class="denom">2</span></div><h3 data-i18n="p2_h">La poste garde</h3><p data-i18n-html="p2_p">La lettre attend au guichet pendant une <strong>durée limitée</strong> : de 7 jours à plusieurs mois selon les pays, et parfois contre des frais. Passé ce délai, elle repart à l'expéditeur.</p></li>
+      <li><div class="stamp sm"><span class="denom">3</span></div><h3 data-i18n="p3_h">On retire</h3><p data-i18n-html="p3_p">Le destinataire se présente avec une <strong>pièce d'identité</strong>. Le nom sur l'enveloppe doit correspondre exactement à celui du document.</p></li>
+    </ol>
+  </section>
+
+  <section class="map-section" id="carte">
+    <p class="kicker">N° 2</p>
+    <h2 data-i18n="m_title">Le bureau de tri</h2>
+    <p class="hint" data-i18n="m_hint">Cherche un pays, pioche au hasard, ou clique sur la carte.</p>
+
+    <div class="toolbar">
+      <div class="search">
+        <label for="q" class="search-label" data-i18n="s_label">Destinataire</label>
+        <div class="search-box">
+          <input id="q" type="text" role="combobox" aria-expanded="false" aria-controls="results" aria-autocomplete="list" autocomplete="off" data-i18n-ph="s_ph" placeholder="Japon, Suisse, Chili…">
+          <ul id="results" class="results" role="listbox" hidden></ul>
+        </div>
+      </div>
+      <button id="random" class="btn-ghost" type="button" data-i18n="s_random">Un pays au hasard</button>
+    </div>
+
+    <div class="legend" id="legend" role="group" data-i18n-aria="aria_legend" aria-label="Filtrer par fiabilité de l'information"></div>
+
+    <div class="map-layout">
+      <div class="map-wrap">
+        <svg id="map" role="img" data-i18n-aria="aria_map" aria-label="Carte du monde interactive"></svg>
+        <div class="zoom-ctrl">
+          <button id="zin" data-i18n-aria="aria_zin" aria-label="Zoomer">+</button>
+          <button id="zout" data-i18n-aria="aria_zout" aria-label="Dézoomer">−</button>
+          <button id="zreset" data-i18n-aria="aria_zreset" aria-label="Réinitialiser">⟲</button>
+        </div>
+        <div id="tooltip" class="tooltip" hidden></div>
+        <p id="map-error" class="map-error" hidden data-i18n="m_error">La carte n'a pas pu se charger (connexion ?). Utilise la recherche ci-dessus.</p>
+      </div>
+
+      <aside id="panel" class="panel" aria-live="polite">
+        <div class="panel-empty">
+          <div class="stamp"><span class="flag">✉</span><span class="denom">?</span></div>
+          <p data-i18n="panel_empty">Choisis un pays pour voir comment adresser ta lettre.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="tips" id="conseils">
+    <p class="kicker">N° 3</p>
+    <h2 data-i18n="t_title">Quelques réflexes</h2>
+    <ul class="tip-grid">
+      <li><h3 data-i18n="t1_h">Nom exact</h3><p data-i18n-html="t1_p">Écris-le comme sur ton passeport. Majuscule pour le nom de famille, on évite les surnoms.</p></li>
+      <li><h3 data-i18n="t2_h">Bureau précis</h3><p data-i18n-html="t2_p">Quand tu peux, nomme le bureau de poste et son code postal : la ville seule ne suffit pas toujours.</p></li>
+      <li><h3 data-i18n="t3_h">Anticipe le délai</h3><p data-i18n-html="t3_p">Compte le temps d'acheminement <em>plus</em> la durée de garde. Mieux vaut arriver avant la lettre.</p></li>
+      <li><h3 data-i18n="t4_h">Pas de colis</h3><p data-i18n-html="t4_p">La poste restante vise surtout les lettres. Pour les colis, les règles (et les frais) changent souvent.</p></li>
+      <li><h3 data-i18n="t5_h">Appelle avant</h3><p data-i18n-html="t5_p">Tous les bureaux ne proposent pas le service. Un petit coup de fil évite un aller-retour inutile.</p></li>
+      <li><h3 data-i18n="t6_h">Les mots locaux</h3><p data-i18n-html="t6_p">Ajoute la mention locale : un facteur lira plus vite « <em>Lista de Correos</em> » qu'une traduction.</p></li>
+    </ul>
+  </section>
+
+  <section class="contribute" id="contribuer">
+    <div class="contrib-deco" id="contrib-deco" aria-hidden="true"></div>
+    <p class="kicker">N° 4</p>
+    <h2 data-i18n="c_title">Une info manque ou est fausse ?</h2>
+    <p>
+      <span data-i18n="c_p1">Les règles changent, les postes aussi. Chaque fiche porte un tampon :</span>
+      <span class="ink ok" data-i18n="st_ok">Plutôt fiable</span>
+      <span class="ink check" data-i18n="st_check">À confirmer</span>
+      <span class="ink none" data-i18n="st_none">Aucune info trouvée</span>.
+      <span data-i18n="c_p2">Mieux vaut appeler la poste du pays avant d'envoyer quoi que ce soit d'important.</span>
+    </p>
+  </section>
+</main>
+
+<footer>
+  <div class="airmail-bar" aria-hidden="true"></div>
+  <p data-i18n="footer">Fait avec amour du papier et de l'encre · Les infos sont indicatives, vérifie toujours auprès de la poste locale.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script src="stamps.js"></script>
+<script src="data.js"></script>
+<script src="data.en.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
