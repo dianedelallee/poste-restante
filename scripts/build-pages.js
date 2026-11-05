@@ -4,6 +4,7 @@
      - en/countries/<slug>/index.html   la même page, en anglais
      - pages.js                         liens entre pays et pages, pour la carte
      - sitemap.xml                      plan du site avec les alternatives de langue
+     - llms.txt                         résumé du site pour les assistants IA
      - index.html                       index des pays (entre les repères COUNTRY-INDEX)
    Usage : node scripts/build-pages.js
    La sortie est déterministe : les mêmes données donnent exactement les mêmes fichiers. */
@@ -390,6 +391,42 @@ for (const id of IDS.filter(isIndexable)) {
   for (const lang of ["fr", "en"]) urls.push(`  <url>\n    <loc>${SITE}${urlOf(id, lang)}</loc>\n${alt(id)}\n  </url>`);
 }
 write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls.join("\n")}\n</urlset>\n`);
+
+/* llms.txt : résumé du site pour les assistants IA (proposition de format : llmstxt.org ; aucun moteur n'a confirmé s'en servir) */
+const llmsLine = (id) => {
+  const en = loc(id, "en"), fr = loc(id, "fr");
+  const idTxt = en.idRequired === true ? "ID required" : en.idRequired === false ? "ID not required" : "ID unconfirmed";
+  const dur = /^(un|not )confirmed/i.test(en.duration.value) ? "holding period unconfirmed" : `held ${lc(en.duration.value)}`;
+  return `- [${en.name}](${SITE}${urlOf(id, "en")}): ${dur}; cost: ${lc(en.cost.label)}; ${idTxt}. French: [${fr.name}](${SITE}${urlOf(id, "fr")})`;
+};
+const reliable = IDS.filter((id) => statusOf(FR[id]) === "ok").length;
+const documented = IDS.filter(isIndexable);
+const llms = `# Poste restante
+
+> An independent, bilingual (French and English) guide to poste restante, also called general delivery: how to address a letter to a post office instead of a home, how long the mail is held, what it costs and whether an ID is required, country by country. ${IDS.length} countries are covered; each entry says how reliable its information is.
+
+The information comes from postal operators' official pages where they could be read. Each entry is marked "Fairly reliable" (holding period, cost and address wording confirmed by an official page; ${reliable} entries), "To be confirmed" (a key piece of information is missing or comes from a secondary source) or "No information found" (this does not prove the service does not exist). Always check with the local post office before sending anything important. The site is not an official postal service.
+
+## Main pages
+
+- [Home, interactive map and country index](${SITE}/): search a country or click the map to see an example envelope, holding period, cost and tips. Available in French and English.
+- [World Artists' Fake Stamp Day (JMFTA) 2026](${SITE}/faux-timbre.html): what the mail art day is, the rules to take part and the 2026 edition (Thursday 19 November 2026, with Angers, France as the destination). Available in French and English.
+- [Source code and data](https://github.com/dianedelallee/poste-restante): the country data, in French and English, and how to contribute.
+
+## Country pages
+
+Pages with confirmed or partly confirmed information, by region. Each page has a French and an English version.
+
+${REGIONS.map((r) => {
+  const ids = documented.filter((id) => PAGES[id].region === r.id).sort((a, b) => PAGES[a].en.localeCompare(PAGES[b].en, "en"));
+  return ids.length ? `### ${r.en}\n\n${ids.map(llmsLine).join("\n")}\n` : "";
+}).filter(Boolean).join("\n")}
+## Optional
+
+- [Sitemap](${SITE}/sitemap.xml)
+- [How to contribute](https://github.com/dianedelallee/poste-restante/blob/main/CONTRIBUTING.md)
+`;
+write("llms.txt", llms);
 
 /* index.html : liste des pays, entre les repères */
 const indexPath = path.join(ROOT, "index.html");

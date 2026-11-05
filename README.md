@@ -51,6 +51,8 @@ pays/          generated country pages, in French
 en/countries/  generated country pages, in English
 pages.js       generated links between countries and their pages
 sitemap.xml    generated sitemap
+llms.txt       generated summary of the site for AI assistants
+<key>.txt      IndexNow key file (public by design, see scripts/indexnow.js)
 ```
 
 It is plain HTML, CSS and JavaScript, with no build step to deploy. The only generated files are the per-country pages, so that every country has its own address that search engines can read. After changing the data, run `node scripts/build-pages.js` (Node 18+, no dependency) and commit the result. The map uses [d3](https://d3js.org/) and [topojson](https://github.com/topojson/topojson) from cdnjs, and the [world-atlas](https://github.com/topojson/world-atlas) data from jsDelivr. Fonts come from Google Fonts.

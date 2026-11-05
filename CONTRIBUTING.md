@@ -92,6 +92,10 @@ and commit the result: the `pays/` and `en/` folders, `pages.js`, `sitemap.xml` 
 - **New country:** the script asks you to give it a region. Add its code to the `REGION_OF` table at the top of `scripts/build-pages.js`.
 - **Entries without information** (`noInfo: true`) get a page too, but it is set to `noindex` and left out of the sitemap, because a page with no real content does not help anyone. As soon as an entry has real information, remove `noInfo` and run the script: the page becomes indexable.
 
+## Tell search engines about changes (optional)
+
+Once your changes are deployed, `node scripts/indexnow.js` tells search engines that support [IndexNow](https://www.indexnow.org/) (Bing, Yandex, Seznam, Naver…) which pages exist or changed. It does a dry run by default; add `--send` to really send, with no argument for every page of the sitemap or with specific URLs. Google does not support IndexNow: use Search Console for it.
+
 ## Rules for the information
 
 These rules keep the site trustworthy.
