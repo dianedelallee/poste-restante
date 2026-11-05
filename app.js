@@ -54,7 +54,8 @@
       def_summary: "Aucune page officielle décrivant ce service n'a été trouvée.",
       locale: "fr-FR",
       meter_paid: "PORT PAYÉ", par_avion: "PAR AVION", prio_a: "PRIORITAIRE", prio_b: "PRIORITY",
-      ph_legend: "En grisé : à remplacer par tes informations. Le reste s'écrit tel quel."
+      ph_legend: "En grisé : à remplacer par tes informations. Le reste s'écrit tel quel.",
+      nav_jmfta: "✉ Journée du faux timbre · 19 nov.", support: "♥ Soutenir le projet"
     },
     en: {
       title: "Poste restante · a world tour of held letters",
@@ -104,7 +105,8 @@
       def_summary: "No official page describing this service was found.",
       locale: "en-GB",
       meter_paid: "POSTAGE PAID", par_avion: "AIR MAIL", prio_a: "PRIORITY", prio_b: "PRIORITAIRE",
-      ph_legend: "Greyed out: replace with your own details. Write the rest exactly as shown."
+      ph_legend: "Greyed out: replace with your own details. Write the rest exactly as shown.",
+      nav_jmfta: "✉ Fake stamp day · 19 Nov", support: "♥ Support the project"
     }
   };
   let lang = root.lang === "en" ? "en" : "fr";
