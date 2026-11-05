@@ -33,7 +33,7 @@ Each country is stored under its **ISO 3166-1 numeric code**, as a three-digit s
   name: "Suisse", flag: "🇨🇭",
   localName: "Poste restante · Postlagernd · Fermo posta",
   authority: "La Poste Suisse",
-  address: ["Camille DUPONT", "Poste restante", "Rue et numéro de la filiale", "NPA Localité", "SUISSE"],
+  address: ["[Camille DUPONT]", "Poste restante", "[Rue et numéro de la filiale]", "[NPA Localité]", "SUISSE"],
   duration: { value: "1 mois", days: 30 },
   cost: { label: "Gratuit", detail: "Service gratuit selon La Poste Suisse." },
   idRequired: true,           // true, false, or null when not confirmed
@@ -43,7 +43,8 @@ Each country is stored under its **ISO 3166-1 numeric code**, as a three-digit s
 }
 ```
 
-- `address` is an example, written line by line. Keep the example name (`Camille DUPONT`) and the local wording (`POSTE RESTANTE`, `Postlagernd`…) as they are, and use generic lines for the rest. **Never invent a post office name**, unless it is written that way in an official example.
+- `address` is an example, written line by line. **Put everything the sender has to replace between `[square brackets]`**: the recipient's name, the post office name, the postcode and city. The site displays those parts greyed out, with a legend. Leave unbracketed what has to be written exactly as shown: the local wording (`POSTE RESTANTE`, `Postlagernd`, `GENERAL DELIVERY`…), fixed codes such as the `-9999` of a US general delivery ZIP, and the country line.
+- **Never write a real-looking address** (a real city, postcode or post office name) unless an official source gives it as the required format. A concrete example such as `GPO Mumbai` makes readers think any city works the same way. Use placeholders such as `[Name of the post office]` instead.
 - `duration.days` is a number used only for sorting and display logic; use `0` when the duration is not confirmed, and write `"Non confirmé"` in `duration.value`.
 - Use `idRequired: null` when you could not confirm whether an ID is required.
 
@@ -69,7 +70,7 @@ Add the same key with the translatable fields only: `name`, `summary` (if any), 
 ```js
 "756": {
   name: "Switzerland",
-  address: ["Camille DUPONT", "Poste restante", "Street and number of the branch", "Postcode City", "SWITZERLAND"],
+  address: ["[Camille DUPONT]", "Poste restante", "[Street and number of the branch]", "[Postcode City]", "SWITZERLAND"],
   duration: { value: "1 month" },
   cost: { label: "Free", detail: "Free service according to Swiss Post." },
   tips: ["…", "…"]

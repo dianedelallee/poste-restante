@@ -1,6 +1,6 @@
 window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
   "250": { name: "France",
-    address: ["Mme Camille DUPONT", "POSTE RESTANTE", "Full address of the chosen post office", "POSTCODE CITY", "FRANCE"],
+    address: ["[Mme Camille DUPONT]", "POSTE RESTANTE", "[Full address of the chosen post office]", "[POSTCODE CITY]", "FRANCE"],
     duration: { value: "15 days at the post office" },
     cost: { label: "Paid (recipient)", detail: "Contract to sign up for: €37 (15 days to 1 month) or €53 (1 to 3 months), 2026 prices. Then at pickup: €1.69 per letter, €0.83 per press item, €6.11 per Colissimo parcel." },
     tips: [
@@ -9,7 +9,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
       "Contract valid for 3 months at most, renewable. Mail is held for 15 days at the post office, so you need to stop by regularly."
     ] },
   "756": { name: "Switzerland",
-    address: ["Camille DUPONT", "Poste restante", "Street and number of the branch", "Postcode City", "SWITZERLAND"],
+    address: ["[Camille DUPONT]", "Poste restante", "[Street and number of the branch]", "[Postcode City]", "SWITZERLAND"],
     duration: { value: "1 month" },
     cost: { label: "Free", detail: "Free service according to Swiss Post." },
     tips: [
@@ -18,7 +18,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
       "A search summary mentioned 15 days for international mail: not confirmed by the official pages."
     ] },
   "276": { name: "Germany",
-    address: ["Camille DUPONT", "Postlagernd", "Branch address", "PLZ Ort", "GERMANY"],
+    address: ["[Camille DUPONT]", "Postlagernd", "[Branch address]", "[PLZ Ort]", "GERMANY"],
     duration: { value: "7 working days" },
     cost: { label: "Standard postage", detail: "No specific fees. Not to be confused with the \"Lagerservice\" (€15.90 to €17.90), which is a different service." },
     tips: [
@@ -27,7 +27,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
       "Not all branches offer the service: use the \"Postlagernd\" filter in the Postfinder."
     ] },
   "040": { name: "Austria",
-    address: ["Camille DUPONT (or Kennwort)", "POSTLAGERND", "Street of the branch", "PLZ Ort", "AUSTRIA"],
+    address: ["[Camille DUPONT (or Kennwort)]", "POSTLAGERND", "[Street of the branch]", "[PLZ Ort]", "AUSTRIA"],
     duration: { value: "at least 14 days" },
     cost: { label: "Paid", detail: "€1.00 net per item, collected on delivery (excl. VAT; whether VAT is included is not specified)." },
     tips: [
@@ -36,7 +36,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
       "Exact maximum holding period not confirmed."
     ] },
   "380": { name: "Italy",
-    address: ["Camille DUPONT (ID document number)", "FERMOPOSTA", "Exact name of the Ufficio Postale", "Via…, CAP Town", "ITALY"],
+    address: ["[Camille DUPONT (ID document number)]", "FERMOPOSTA", "[Exact name of the Ufficio Postale]", "[Via…, CAP Town]", "ITALY"],
     duration: { value: "30 days" },
     cost: { label: "Paid (sender)", detail: "€3.00 per item, paid by the sender on top of postage." },
     tips: [
@@ -45,7 +45,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
       "Pickup is possible in a time slot booked online or through the app."
     ] },
   "724": { name: "Spain",
-    address: ["Camille DUPONT", "LISTA DE CORREOS", "28001 MADRID", "SPAIN"],
+    address: ["[Camille DUPONT]", "LISTA DE CORREOS", "[POSTAL CODE] [CITY]", "SPAIN"],
     duration: { value: "Unconfirmed" },
     cost: { label: "Unconfirmed", detail: "No current official Correos page describing the Lista de Correos was found: duration and cost are unknown." },
     tips: [
@@ -54,7 +54,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
       "Documents accepted when collecting an item in general: DNI, passport, driving licence, residence card."
     ] },
   "620": { name: "Portugal",
-    address: ["NOME APELIDO", "POSTA RESTANTE DA LOJA CTT DO BONFIM", "AV MARIANO CARVALHO S/N", "2900-999 SETÚBAL", "PORTUGAL"],
+    address: ["[NOME APELIDO]", "POSTA RESTANTE DA LOJA CTT [NAME OF THE LOJA]", "[ADDRESS OF THE LOJA]", "[POSTCODE] [CITY]", "PORTUGAL"],
     duration: { value: "End of the following month (letters) · 15 days (parcels)" },
     cost: { label: "Paid (recipient)", detail: "The recipient pays at pickup, per item, plus VAT: €1.46 up to 100 g, €2.11 up to 2 kg, €4.48 up to 30 kg." },
     tips: [
@@ -63,7 +63,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
       "A 2026 CTT price list mentions 30 days maximum storage: the discrepancy with the help page is not settled."
     ] },
   "826": { name: "United Kingdom",
-    address: ["Ms Camille DUPONT", "POSTE RESTANTE", "Name of the Post Office", "Full address of the Post Office", "POSTCODE", "UNITED KINGDOM"],
+    address: ["[Ms Camille DUPONT]", "POSTE RESTANTE", "[Name of the Post Office]", "[Full address of the Post Office]", "[POSTCODE]", "UNITED KINGDOM"],
     duration: { value: "18 days (21 if posted from abroad)" },
     cost: { label: "Free", detail: "Free at participating Post Offices." },
     tips: [
@@ -73,7 +73,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
       "The service can be withdrawn in case of abuse, sometimes without notice."
     ] },
   "056": { name: "Belgium",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "Name of the post office", "Postcode and town", "BELGIUM"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Name of the post office]", "[Postcode and town]", "BELGIUM"],
     duration: { value: "1 month (15 days for registered mail)" },
     cost: { label: "Paid", detail: "Surcharge equivalent to 2 Prior stamps, paid by the sender or by the recipient at pickup. Amount in euros to be checked." },
     tips: [
@@ -82,7 +82,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
       "Parcels are not mentioned on the official page, whose content seems old."
     ] },
   "616": { name: "Poland",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "00-001 WARSZAWA", "POLAND"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[POSTAL CODE] [NAME OF THE OFFICE]", "POLAND"],
     duration: { value: "14 days" },
     cost: { label: "Free", detail: "Included in the price of the chosen service, no extra charge." },
     tips: [
@@ -91,7 +91,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
       "The 14-day period is not confirmed by a current official page: to be checked."
     ] },
   "643": { name: "Russia",
-    address: ["DUPONT Camille", "До востребования", "101000 Москва", "RUSSIA"],
+    address: ["[DUPONT Camille]", "До востребования", "[6-DIGIT POSTAL INDEX] [CITY]", "RUSSIA"],
     duration: { value: "30 days (letters) · 15 days (express parcels)" },
     cost: { label: "Free", detail: "Receiving mail carries no announced fees. Extending the holding period is paid (price not verified)." },
     tips: [
@@ -101,7 +101,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
       "An SMS code can replace ID."
     ] },
   "840": { name: "United States",
-    address: ["Camille DUPONT", "GENERAL DELIVERY", "SAN FRANCISCO CA 94199-9999", "USA"],
+    address: ["[Camille DUPONT]", "GENERAL DELIVERY", "[CITY] [STATE] [ZIP]-9999", "USA"],
     duration: { value: "30 days" },
     cost: { label: "No fee announced", detail: "The official regulations (DMM) mention no fee." },
     tips: [
@@ -110,7 +110,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
       "The postmaster may refuse the service without adequate ID or limit the volume."
     ] },
   "124": { name: "Canada",
-    address: ["Camille DUPONT", "GD STN A", "MONTRÉAL QC H3B 3A1", "CANADA"],
+    address: ["[Camille DUPONT]", "GD [STN A]", "[CITY] [PROVINCE] [POSTAL CODE]", "CANADA"],
     duration: { value: "up to 4 months" },
     cost: { label: "Free", detail: "Free according to Canada Post. Possible fees for parcels: not confirmed." },
     tips: [
@@ -120,7 +120,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
       "Write in capital letters, without punctuation, with a space in the postal code."
     ] },
   "036": { name: "Australia",
-    address: ["Camille DUPONT", "c/o POSTE RESTANTE", "Name of the post office, STATE POSTCODE", "AUSTRALIA"],
+    address: ["[Camille DUPONT]", "c/o POSTE RESTANTE", "[Name of the post office, STATE POSTCODE]", "AUSTRALIA"],
     duration: { value: "30 days" },
     cost: { label: "Unconfirmed", detail: "No official price found for this service. \"Mail hold\" (A$30.70 for the first week) is a different product." },
     tips: [
@@ -129,7 +129,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
       "The address format comes from secondary sources, not officially confirmed."
     ] },
   "392": { name: "Japan",
-    address: ["〒 Postcode of the post office", "Address of the post office", "（Name of the post office）郵便局留", "Camille DUPONT 様", "JAPAN"],
+    address: ["〒[POST OFFICE POSTCODE]", "[POST OFFICE ADDRESS]", "[POST OFFICE NAME]郵便局留", "[Camille DUPONT] 様", "JAPAN"],
     duration: { value: "10 days" },
     cost: { label: "Free", detail: "No registration and no pickup fee." },
     tips: [
@@ -142,18 +142,18 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
 window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
   "356": {
     name: "India",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "GPO Mumbai", "MUMBAI 400001", "INDIA"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Name of the post office]", "[CITY] [6-DIGIT PIN CODE]", "INDIA"],
     duration: { value: "Unconfirmed" },
     cost: { label: "Unconfirmed", detail: "No poste restante fee found." },
     tips: [
       "Secondary sources mention up to 1 month, but no current official page confirms it.",
       "A full name is essential: items addressed to a made-up name or without a surname are not handed over (Post Office Guide).",
-      "The GPO (General Post Office) is the safest choice. ID requirement: unconfirmed."
+      "“GPO” means General Post Office, the main office of some large cities, but not every city has one (many have a “Head Post Office”). Ask the post office which branch handles poste restante (general knowledge, not officially confirmed). ID requirement: unconfirmed."
     ]
   },
   "484": {
     name: "Mexico",
-    address: ["Camille DUPONT", "LISTA DE CORREOS", "06000 MÉXICO, CDMX", "MEXICO"],
+    address: ["[Camille DUPONT]", "LISTA DE CORREOS", "[POSTAL CODE] [CITY], [STATE]", "MEXICO"],
     duration: { value: "10 working days (international) · 15 (domestic)" },
     cost: { label: "Paid extension", detail: "Receiving: unconfirmed. A 10-working-day extension at the recipient's request, charged per day of storage (amount not found)." },
     tips: [
@@ -165,7 +165,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
   },
   "076": {
     name: "Brazil",
-    address: ["Camille DUPONT", "POSTA RESTANTE", "Agência Central dos Correios", "20010-974 RIO DE JANEIRO RJ", "BRAZIL"],
+    address: ["[Camille DUPONT]", "POSTA RESTANTE", "[Name of the Correios branch]", "[CEP] [CITY] [STATE]", "BRAZIL"],
     duration: { value: "20 days (letters) · 7 to 30 days (parcels)" },
     cost: { label: "Paid", detail: "Additional service chosen by the sender: R$ 5.60 on an old page. Current fee to be checked." },
     tips: [
@@ -243,7 +243,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
   },
   "352": {
     name: "Iceland",
-    address: ["Camille DUPONT", "Poste restante", "Name of the chosen pósthús (post office)", "Postal code (3 digits) and locality", "ICELAND"],
+    address: ["[Camille DUPONT]", "Poste restante", "[Name of the chosen pósthús (post office)]", "[Postal code (3 digits) and locality]", "ICELAND"],
     duration: { value: "60 days (letters) · 30 days (registered mail)" },
     cost: { label: "Unconfirmed", detail: "Pósturinn's terms refer to the price list without stating a figure for this specific case. A fee of 1,200 kr./month exists for forwarding or temporarily holding domestic mail: not necessarily the same service." },
     tips: [
@@ -255,7 +255,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
   },
   "554": {
     name: "New Zealand",
-    address: ["Camille DUPONT (Post Restante)", "Name of the chosen NZ Post Shop", "Number and street of the office", "Locality and postal code (4 digits)", "NEW ZEALAND"],
+    address: ["[Camille DUPONT (Post Restante)]", "[Name of the chosen NZ Post Shop]", "[Number and street of the office]", "[Locality and postal code (4 digits)]", "NEW ZEALAND"],
     duration: { value: "2 months maximum" },
     cost: { label: "Free for 7 days, then paid", detail: "Charged per week after the first 7 days (GST included): NZD 11.00 for 7 to 14 days, 16.50 for 14 to 21, 22.00 for 21 to 28, then rising to NZD 49.50 for 56 to 63 days." },
     tips: [
@@ -286,7 +286,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
 window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
   "372": {
     name: "Ireland", localName: "Address Point (Poste Restante service)",
-    address: ["Camille DUPONT", "Exact Address Point address, provided at registration", "Chosen Post Office", "Locality / Eircode", "IRELAND"],
+    address: ["[Camille DUPONT]", "Exact Address Point address, provided at registration", "[Chosen Post Office]", "[Locality / Eircode]", "IRELAND"],
     duration: { value: "20 days maximum" },
     cost: { label: "Free", detail: "Free service according to the Address Point page. The An Post price list of February 2026 says \"Poste Restante: up to 3 months, free\": it may not be the same service." },
     tips: [
@@ -306,7 +306,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
   },
   "203": {
     name: "Czech Republic",
-    address: ["Camille DUPONT", "poste restante", "Postal code of the chosen office (e.g. 397 04)", "POST OFFICE NAME", "CZECH REPUBLIC"],
+    address: ["[Camille DUPONT]", "poste restante", "[Postal code of the chosen office (e.g. 397 04)]", "[POST OFFICE NAME]", "CZECH REPUBLIC"],
     duration: { value: "Unconfirmed" },
     cost: { label: "Unconfirmed", detail: "An official letter from 2018 says the service is charged according to the tariff, with no amount given. No current amount found." },
     tips: [
@@ -318,7 +318,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
   },
   "348": {
     name: "Hungary",
-    address: ["Camille DUPONT", "Poste restante", "Exact name of the post office", "Postal code of the office", "HUNGARY"],
+    address: ["[Camille DUPONT]", "Poste restante", "[Exact name of the post office]", "[Postal code of the office]", "HUNGARY"],
     duration: { value: "10 working days (domestic) · 15 (from abroad)" },
     cost: { label: "Unconfirmed", detail: "The general terms (in force as of 1.11.2026) mention no specific fee. Prices are published separately and were not read." },
     tips: [
@@ -330,7 +330,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
   },
   "191": {
     name: "Croatia",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "Postal code and name of the designated office", "CROATIA"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Postal code and name of the designated office]", "CROATIA"],
     duration: { value: "30 calendar days" },
     cost: { label: "Paid (amount unconfirmed)", detail: "On collection, the recipient pays the postage set by the tariff. Storage fees (ležarina) apply from arrival for some items. Current amounts in euros unconfirmed." },
     tips: [
@@ -351,7 +351,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
   },
   "788": {
     name: "Tunisia",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "Chosen post office", "POSTAL CODE CITY", "TUNISIA"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Chosen post office]", "[POSTAL CODE CITY]", "TUNISIA"],
     duration: { value: "Unconfirmed" },
     cost: { label: "Paid (amount to be verified)", detail: "The poste.tn price page lists a \"poste restante fee\" of 0.500 DT (domestic) and 1.000 DT (international). Another version of the page shows 1.000 and 2.000 DT. Dates and payer not specified." },
     tips: [
@@ -361,7 +361,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
   },
   "792": {
     name: "Turkey",
-    address: ["Camille DUPONT", "Postrestant", "Name of the PTT office / neighbourhood", "POSTAL CODE DISTRICT / PROVINCE", "TURKEY"],
+    address: ["[Camille DUPONT]", "Postrestant", "[Name of the PTT office / neighbourhood]", "[POSTAL CODE DISTRICT / PROVINCE]", "TURKEY"],
     duration: { value: "Unconfirmed" },
     cost: { label: "Unconfirmed", detail: "No fee found. The regulations mention storage fees (ardiye) beyond the deadline." },
     tips: [
@@ -381,7 +381,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
   },
   "528": {
     name: "Netherlands",
-    address: ["LAST NAME First name", "Poste restante", "Name and address of the chosen post office", "POSTAL CODE LOCALITY", "NETHERLANDS"],
+    address: ["[LAST NAME First name]", "Poste restante", "[Name and address of the chosen post office]", "[POSTAL CODE LOCALITY]", "NETHERLANDS"],
     duration: { value: "1 month (14 to 90 days from abroad)" },
     cost: { label: "Unconfirmed", detail: "No fee for receiving or extending found. The price of a PO box (Postbus) is a different product." },
     tips: [
@@ -392,7 +392,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
   },
   "752": {
     name: "Sweden",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "Postal code and locality of the pickup point", "SWEDEN"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Postal code and locality of the pickup point]", "SWEDEN"],
     duration: { value: "30 days (old page)" },
     cost: { label: "Unconfirmed", detail: "No fee found for poste restante or for an extension." },
     tips: [
@@ -412,7 +412,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
   },
   "578": {
     name: "Norway",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "Name of the post office or \"Post i butikk\"", "Postal code and locality of the point", "NORWAY"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Name of the post office or \"Post i butikk\"]", "[Postal code and locality of the point]", "NORWAY"],
     duration: { value: "3 weeks" },
     cost: { label: "Unconfirmed", detail: "No Posten page mentions a fee for poste restante." },
     tips: [
@@ -423,7 +423,7 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
   },
   "246": {
     name: "Finland",
-    address: ["Camille DUPONT (official first and last name)", "POSTE RESTANTE", "POSTAL CODE CITY", "FINLAND"],
+    address: ["[Camille DUPONT (official first and last name)]", "POSTE RESTANTE", "[POSTAL CODE CITY]", "FINLAND"],
     duration: { value: "14 days" },
     cost: { label: "Free", detail: "Free according to Posti. A fee of €3.10 was considered in 2019 and then postponed under pressure from the regulator." },
     tips: [
@@ -454,7 +454,7 @@ Object.assign(window.COUNTRIES_EN, {
       "To settle it: contact La Poste de Côte d'Ivoire or the central office before sending mail."
     ] },
   "204": { name: "Benin",
-    address: ["Ms Camille DUPONT", "POSTE RESTANTE", "Chosen La Poste du Bénin commercial agency", "Locality", "BENIN"],
+    address: ["[Ms Camille DUPONT]", "POSTE RESTANTE", "[Chosen La Poste du Bénin commercial agency]", "[Locality]", "BENIN"],
     duration: { value: "Not specified" },
     cost: { label: "Paid", detail: "The official page states a delivery fee of 500 FCFA. It does not say who pays it or when." },
     tips: [
@@ -464,7 +464,7 @@ Object.assign(window.COUNTRIES_EN, {
       "Dominant use: the PO box (typical address \"10 BP 648 COTONOU\" according to the UPU addressing sheet, 11/2025). The UPU sheet does not describe poste restante."
     ] },
   "288": { name: "Ghana",
-    address: ["Mr Camille DUPONT", "Name of the post office", "Locality + postcode (e.g. Accra-Central GA-183)", "Region (e.g. GREATER ACCRA)", "GHANA"],
+    address: ["[Mr Camille DUPONT]", "[Name of the post office]", "[Locality + postcode (e.g. Accra-Central GA-183)]", "[Region (e.g. GREATER ACCRA)]", "GHANA"],
     duration: { value: "Unconfirmed" },
     cost: { label: "Unconfirmed", detail: "No source consulted gives a fee or holding period for poste restante in Ghana." },
     tips: [
@@ -474,7 +474,7 @@ Object.assign(window.COUNTRIES_EN, {
       "The service sold to the public is mainly the PO box (\"P.O. Box GP 1234\" format in the UPU sheet). Ghana Post also uses a digital address (e.g. GA-183-8164)."
     ] },
   "566": { name: "Nigeria",
-    address: ["Mr Camille DUPONT", "c/o Postmaster", "Name of the Post Office", "Locality + 6-digit postcode", "STATE (e.g. OYO STATE)", "NIGERIA"],
+    address: ["[Mr Camille DUPONT]", "c/o Postmaster", "[Name of the Post Office]", "[Locality + 6-digit postcode]", "[STATE (e.g. OYO STATE)]", "NIGERIA"],
     duration: { value: "Unconfirmed" },
     cost: { label: "Unconfirmed", detail: "No source consulted gives a fee or holding period for poste restante in Nigeria." },
     tips: [
@@ -508,7 +508,7 @@ Object.assign(window.COUNTRIES_EN, {
   },
   "480": {
     name: "Mauritius",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "Chosen post office", "LOCALITY POSTCODE", "MAURITIUS"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Chosen post office]", "[LOCALITY POSTCODE]", "MAURITIUS"],
     duration: { value: "2 months (international)" },
     cost: { label: "Not confirmed", detail: "No price is given on the official page consulted." },
     tips: [
@@ -519,7 +519,7 @@ Object.assign(window.COUNTRIES_EN, {
   },
   "854": {
     name: "Burkina Faso",
-    address: ["Camille DUPONT", "Poste restante", "POSTCODE LOCALITY", "BURKINA FASO"],
+    address: ["[Camille DUPONT]", "Poste restante", "[POSTCODE LOCALITY]", "BURKINA FASO"],
     duration: { value: "Not confirmed" },
     cost: { label: "Not confirmed", detail: "No poste restante price was found. For comparison, the PO box is paid: 17,000 CFA francs incl. tax to subscribe, then 11,800 CFA francs incl. tax per year for an individual (official page)." },
     tips: [
@@ -542,7 +542,7 @@ Object.assign(window.COUNTRIES_EN, {
 // North Africa: Algeria, Egypt, Morocco, Tunisia.
 Object.assign(window.COUNTRIES_EN, {
   "012": { name: "Algeria",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "Chosen post office", "POSTAL CODE TOWN", "ALGERIA"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Chosen post office]", "[POSTAL CODE TOWN]", "ALGERIA"],
     duration: { value: "1 month (ministry FAQ) · 15 days (Algérie Poste page, summary)" },
     cost: { label: "Paid (amount to be verified)", detail: "Ministry of Post FAQ (archived January 2025): fixed surcharge of DZD 55 per item and DZD 30 per newspaper or periodical, unless a subscription card is shown (DZD 2,000 per year). Who pays and when: not specified; prices possibly out of date." },
     tips: [
@@ -560,7 +560,7 @@ Object.assign(window.COUNTRIES_EN, {
       "Unverified lead: the PO box, the only pick-up-at-the-office option documented by the UPU."
     ] },
   "504": { name: "Morocco",
-    address: ["MS CAMILLE DUPONT", "POSTE RESTANTE", "Chosen AGENCY", "POSTAL CODE TOWN", "MOROCCO"],
+    address: ["[MS CAMILLE DUPONT]", "POSTE RESTANTE", "[Chosen AGENCY]", "[POSTAL CODE TOWN]", "MOROCCO"],
     duration: { value: "15 days (summary of the poste.ma page)" },
     cost: { label: "Unconfirmed", detail: "No amount read. The summary of the poste.ma page describes the price as \"reasonable and accessible\", without a figure." },
     tips: [
@@ -570,7 +570,7 @@ Object.assign(window.COUNTRIES_EN, {
       "Parcels: not mentioned. No archived page could be read."
     ] },
   "788": { name: "Tunisia",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "Chosen post office", "POSTAL CODE TOWN", "TUNISIA"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Chosen post office]", "[POSTAL CODE TOWN]", "TUNISIA"],
     duration: { value: "Unconfirmed" },
     cost: { label: "Paid (payer to be verified)", detail: "poste.tn price page (archived captures of January 2025 and May 2026, identical): \"Taxe de la Poste Restante\" of 1.000 DT (domestic) and 2.000 DT (international). Payer and basis of calculation: not specified. An older version showed 0.500 and 1.000 DT." },
     tips: [
@@ -582,7 +582,7 @@ Object.assign(window.COUNTRIES_EN, {
 });
 Object.assign(window.COUNTRIES_EN, {
   "710": { name: "South Africa",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "NAME OF THE POST OFFICE", "Postcode (4 digits)", "SOUTH AFRICA"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[NAME OF THE POST OFFICE]", "[Postcode (4 digits)]", "SOUTH AFRICA"],
     duration: { value: "2 months at most (temporary service)" },
     cost: { label: "Free", detail: "The SAPO 2026/2027 tariff states that poste restante (temporary, two months at most) remains free of charge, and that a poste restante number can still be obtained free of charge." },
     tips: [
@@ -600,7 +600,7 @@ Object.assign(window.COUNTRIES_EN, {
       "International parcels are not described either: do not rely on this service without written confirmation."
     ] },
   "834": { name: "Tanzania",
-    address: ["Ms Camille DUPONT", "Poste Restante", "Postcode (5 digits) NAME OF THE OFFICE", "Region", "TANZANIA"],
+    address: ["[Ms Camille DUPONT]", "Poste Restante", "[Postcode (5 digits) NAME OF THE OFFICE]", "[Region]", "TANZANIA"],
     duration: { value: "Unconfirmed" },
     cost: { label: "Unconfirmed", detail: "No official TPC page describing poste restante, its duration or its cost was found." },
     tips: [
@@ -617,7 +617,7 @@ Object.assign(window.COUNTRIES_EN, {
       "Ethiopia's UPU addressing sheet (07/2002) only gives home delivery and P.O. Box examples. Unverified lead: ask an Ethiopost office whether mail can be held at the counter."
     ] },
   "516": { name: "Namibia",
-    address: ["Ms Camille DUPONT", "Poste Restante", "NAME OF THE POST OFFICE", "Postcode (5 digits)", "NAMIBIA"],
+    address: ["[Ms Camille DUPONT]", "Poste Restante", "[NAME OF THE POST OFFICE]", "[Postcode (5 digits)]", "NAMIBIA"],
     duration: { value: "Unconfirmed" },
     cost: { label: "Unconfirmed", detail: "The 2025/2026 postal tariff published in the Government Gazette (No. 8740, 15 September 2025) contains no \"poste restante\" line. That does not prove the service is free." },
     tips: [
@@ -630,7 +630,7 @@ Object.assign(window.COUNTRIES_EN, {
 Object.assign(window.COUNTRIES_EN, {
   "788": {
     name: "Tunisia",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "Chosen post office", "POSTAL CODE TOWN", "TUNISIA"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Chosen post office]", "[POSTAL CODE TOWN]", "TUNISIA"],
     duration: { value: "Unconfirmed" },
     cost: { label: "Paid (payer to be verified)", detail: "poste.tn price page (archived capture of 19 January 2026, re-read directly in the archive): \"Taxe de la Poste Restante\" of 1.000 DT (domestic) and 2.000 DT (international), listed among the letters' \"additional services\" tariffs, next to registration and acknowledgement of receipt. Payer (sender or addressee) and basis of calculation: not specified. An older version showed 0.500 and 1.000 DT." },
     tips: [
@@ -653,7 +653,7 @@ Object.assign(window.COUNTRIES_EN, {
       "Unverified lead: ask CORRE directly whether one of its access points can hold mail at the counter before having anything sent."
     ] },
   "894": { name: "Zambia",
-    address: ["Ms Camille DUPONT", "Post Restante", "NAME OF THE POST OFFICE Postcode (5 digits)", "ZAMBIA"],
+    address: ["[Ms Camille DUPONT]", "[Post Restante]", "[NAME OF THE POST OFFICE Postcode (5 digits)]", "ZAMBIA"],
     duration: { value: "Unconfirmed" },
     cost: { label: "Unconfirmed", detail: "No official Zampost page describing poste restante, its duration or its cost was found." },
     tips: [

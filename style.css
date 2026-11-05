@@ -254,6 +254,8 @@ footer .airmail-bar { margin-bottom: 1.4rem; border-radius: 2px; }
 .env-marks .waves { top: 8px; right: 98px; width: 70px; height: 26px; opacity: .5; }
 .envelope .addr { font-family: Caveat, cursive; font-size: 1.5rem; line-height: 1.25; margin: 2.6rem 0 0; padding-right: 6px; font-weight: 500; position: relative; }
 .envelope .addr .mention { color: #c0392b; font-weight: 700; }
+.envelope .addr .ph { color: #8a7a62; font-style: italic; font-weight: 500; border-bottom: 1.5px dashed #b9a98a; }
+.env-legend { font-size: .82rem; color: var(--ink-soft); margin: .1rem 0 .6rem; }
 .copy { background: none; border: 2px dashed var(--line); color: var(--ink-soft); border-radius: 4px; padding: .3rem .7rem; cursor: pointer; font-family: "Special Elite", monospace; font-size: .8rem; }
 .copy:hover { color: var(--ink); border-color: var(--ink); }
 

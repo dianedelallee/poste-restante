@@ -53,7 +53,8 @@
       ret1: "Retour à l'expéditeur", ret2: "Aucune info trouvée",
       def_summary: "Aucune page officielle décrivant ce service n'a été trouvée.",
       locale: "fr-FR",
-      meter_paid: "PORT PAYÉ", par_avion: "PAR AVION", prio_a: "PRIORITAIRE", prio_b: "PRIORITY"
+      meter_paid: "PORT PAYÉ", par_avion: "PAR AVION", prio_a: "PRIORITAIRE", prio_b: "PRIORITY",
+      ph_legend: "En grisé : à remplacer par tes informations. Le reste s'écrit tel quel."
     },
     en: {
       title: "Poste restante · a world tour of held letters",
@@ -102,7 +103,8 @@
       ret1: "Return to sender", ret2: "No information found",
       def_summary: "No official page describing this service was found.",
       locale: "en-GB",
-      meter_paid: "POSTAGE PAID", par_avion: "AIR MAIL", prio_a: "PRIORITY", prio_b: "PRIORITAIRE"
+      meter_paid: "POSTAGE PAID", par_avion: "AIR MAIL", prio_a: "PRIORITY", prio_b: "PRIORITAIRE",
+      ph_legend: "Greyed out: replace with your own details. Write the rest exactly as shown."
     }
   };
   let lang = root.lang === "en" ? "en" : "fr";
@@ -205,7 +207,9 @@
       return;
     }
 
-    const lines = c.address.map((l) => (MENTION.test(l) ? `<span class="mention">${esc(l)}</span>` : esc(l))).join("<br>");
+    /* les parties entre [crochets] sont à remplacer : elles s'affichent en grisé */
+    const ph = (s) => esc(s).replace(/\[([^\]]+)\]/g, '<span class="ph">$1</span>');
+    const lines = c.address.map((l) => (MENTION.test(l.replace(/\[[^\]]*\]/g, "")) ? `<span class="mention">${ph(l)}</span>` : ph(l))).join("<br>");
     const idTxt = c.idRequired === true ? t("id_yes") : c.idRequired === false ? t("id_no") : t("id_unk");
 
     panel.innerHTML = `
@@ -217,6 +221,7 @@
         ${envMarks(id, c)}
         <p class="addr">${lines}</p>
       </div>
+      <p class="env-legend">${esc(t("ph_legend"))}</p>
       <button class="copy" type="button">${esc(t("copy"))}</button>
 
       <div class="facts" style="margin-top:1rem">

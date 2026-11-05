@@ -3,7 +3,7 @@
 window.COUNTRIES = {
   "250": {
     name: "France", flag: "🇫🇷", localName: "Poste restante", authority: "La Poste",
-    address: ["Mme Camille DUPONT", "POSTE RESTANTE", "Adresse complète du bureau de poste choisi", "CODE POSTAL VILLE", "FRANCE"],
+    address: ["[Mme Camille DUPONT]", "POSTE RESTANTE", "[Adresse complète du bureau de poste choisi]", "[CODE POSTAL VILLE]", "FRANCE"],
     duration: { value: "15 jours au bureau", days: 15 },
     cost: { label: "Payant (destinataire)", detail: "Contrat à souscrire : 37 € (15 jours à 1 mois) ou 53 € (1 à 3 mois), tarifs 2026. Puis au retrait : 1,69 € par courrier, 0,83 € par presse, 6,11 € par Colissimo." },
     idRequired: true,
@@ -16,7 +16,7 @@ window.COUNTRIES = {
   },
   "756": {
     name: "Suisse", flag: "🇨🇭", localName: "Poste restante · Postlagernd · Fermo posta", authority: "La Poste Suisse",
-    address: ["Camille DUPONT", "Poste restante", "Rue et numéro de la filiale", "NPA Localité", "SUISSE"],
+    address: ["[Camille DUPONT]", "Poste restante", "[Rue et numéro de la filiale]", "[NPA Localité]", "SUISSE"],
     duration: { value: "1 mois", days: 30 },
     cost: { label: "Gratuit", detail: "Service gratuit selon La Poste Suisse." },
     idRequired: true,
@@ -29,7 +29,7 @@ window.COUNTRIES = {
   },
   "276": {
     name: "Allemagne", flag: "🇩🇪", localName: "Postlagernd", authority: "Deutsche Post",
-    address: ["Camille DUPONT", "Postlagernd", "Adresse de la filiale", "PLZ Ort", "ALLEMAGNE"],
+    address: ["[Camille DUPONT]", "Postlagernd", "[Adresse de la filiale]", "[PLZ Ort]", "ALLEMAGNE"],
     duration: { value: "7 jours ouvrés", days: 7 },
     cost: { label: "Affranchissement normal", detail: "Pas de frais spécifiques. Ne pas confondre avec le « Lagerservice » (15,90 à 17,90 €), qui est un autre service." },
     idRequired: null,
@@ -42,7 +42,7 @@ window.COUNTRIES = {
   },
   "040": {
     name: "Autriche", flag: "🇦🇹", localName: "Postlagernd", authority: "Österreichische Post",
-    address: ["Camille DUPONT (ou Kennwort)", "POSTLAGERND", "Rue de la filiale", "PLZ Ort", "AUTRICHE"],
+    address: ["[Camille DUPONT (ou Kennwort)]", "POSTLAGERND", "[Rue de la filiale]", "[PLZ Ort]", "AUTRICHE"],
     duration: { value: "au moins 14 jours", days: 14 },
     cost: { label: "Payant", detail: "1,00 € net par envoi, perçu à la remise (HT, TTC non précisé)." },
     idRequired: null,
@@ -55,7 +55,7 @@ window.COUNTRIES = {
   },
   "380": {
     name: "Italie", flag: "🇮🇹", localName: "Fermo posta", authority: "Poste Italiane",
-    address: ["Camille DUPONT (n° de pièce d'identité)", "FERMOPOSTA", "Nom exact de l'Ufficio Postale", "Via…, CAP Localité", "ITALIE"],
+    address: ["[Camille DUPONT (n° de pièce d'identité)]", "FERMOPOSTA", "[Nom exact de l'Ufficio Postale]", "[Via…, CAP Localité]", "ITALIE"],
     duration: { value: "30 jours", days: 30 },
     cost: { label: "Payant (expéditeur)", detail: "3,00 € par envoi, payés par l'expéditeur en plus de l'affranchissement." },
     idRequired: true,
@@ -68,7 +68,7 @@ window.COUNTRIES = {
   },
   "724": {
     name: "Espagne", flag: "🇪🇸", localName: "Lista de Correos", authority: "Correos",
-    address: ["Camille DUPONT", "LISTA DE CORREOS", "28001 MADRID", "ESPAGNE"],
+    address: ["[Camille DUPONT]", "LISTA DE CORREOS", "[CODE POSTAL] [VILLE]", "ESPAGNE"],
     duration: { value: "Non confirmé", days: 0 },
     cost: { label: "Non confirmé", detail: "Aucune page officielle actuelle de Correos décrivant la Lista de Correos n'a été trouvée : durée et coût sont inconnus." },
     idRequired: true,
@@ -81,7 +81,7 @@ window.COUNTRIES = {
   },
   "620": {
     name: "Portugal", flag: "🇵🇹", localName: "Posta restante", authority: "CTT",
-    address: ["NOME APELIDO", "POSTA RESTANTE DA LOJA CTT DO BONFIM", "AV MARIANO CARVALHO S/N", "2900-999 SETÚBAL", "PORTUGAL"],
+    address: ["[NOME APELIDO]", "POSTA RESTANTE DA LOJA CTT [NOM DE LA LOJA]", "[ADRESSE DE LA LOJA]", "[CODE POSTAL] [VILLE]", "PORTUGAL"],
     duration: { value: "Fin du mois suivant (lettres) · 15 jours (colis)", days: 30 },
     cost: { label: "Payant (destinataire)", detail: "Le destinataire paie au retrait, par objet, TVA en plus : 1,46 € jusqu'à 100 g, 2,11 € jusqu'à 2 kg, 4,48 € jusqu'à 30 kg." },
     idRequired: true,
@@ -94,7 +94,7 @@ window.COUNTRIES = {
   },
   "826": {
     name: "Royaume-Uni", flag: "🇬🇧", localName: "Poste Restante", authority: "Royal Mail / Post Office",
-    address: ["Ms Camille DUPONT", "POSTE RESTANTE", "Nom du Post Office", "Adresse complète du Post Office", "CODE POSTAL", "ROYAUME-UNI"],
+    address: ["[Ms Camille DUPONT]", "POSTE RESTANTE", "[Nom du Post Office]", "[Adresse complète du Post Office]", "[CODE POSTAL]", "ROYAUME-UNI"],
     duration: { value: "18 jours (21 si posté de l'étranger)", days: 18 },
     cost: { label: "Gratuit", detail: "Gratuit dans les Post Offices participants." },
     idRequired: true,
@@ -108,7 +108,7 @@ window.COUNTRIES = {
   },
   "056": {
     name: "Belgique", flag: "🇧🇪", localName: "Poste restante", authority: "bpost",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "Nom du bureau de poste", "Code postal et localité", "BELGIQUE"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Nom du bureau de poste]", "[Code postal et localité]", "BELGIQUE"],
     duration: { value: "1 mois (15 jours en recommandé)", days: 30 },
     cost: { label: "Payant", detail: "Majoration équivalente à 2 timbres Prior, payée par l'expéditeur ou par le destinataire au retrait. Montant en euros à vérifier." },
     idRequired: true,
@@ -121,7 +121,7 @@ window.COUNTRIES = {
   },
   "616": {
     name: "Pologne", flag: "🇵🇱", localName: "Poste restante", authority: "Poczta Polska",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "00-001 WARSZAWA", "POLOGNE"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[CODE POSTAL] [NOM DU BUREAU]", "POLOGNE"],
     duration: { value: "14 jours", days: 14 },
     cost: { label: "Gratuit", detail: "Inclus dans le prix du service choisi, sans supplément." },
     idRequired: true,
@@ -134,7 +134,7 @@ window.COUNTRIES = {
   },
   "643": {
     name: "Russie", flag: "🇷🇺", localName: "До востребования (do vostrebovaniya)", authority: "Почта России",
-    address: ["DUPONT Camille", "До востребования", "101000 Москва", "RUSSIE"],
+    address: ["[DUPONT Camille]", "До востребования", "[INDICE POSTAL À 6 CHIFFRES] [VILLE]", "RUSSIE"],
     duration: { value: "30 jours (lettres) · 15 jours (colis express)", days: 30 },
     cost: { label: "Gratuit", detail: "Réception sans frais annoncés. La prolongation de garde est payante (tarif non vérifié)." },
     idRequired: true,
@@ -148,7 +148,7 @@ window.COUNTRIES = {
   },
   "840": {
     name: "États-Unis", flag: "🇺🇸", localName: "General Delivery", authority: "USPS",
-    address: ["Camille DUPONT", "GENERAL DELIVERY", "SAN FRANCISCO CA 94199-9999", "USA"],
+    address: ["[Camille DUPONT]", "GENERAL DELIVERY", "[VILLE] [ÉTAT] [ZIP]-9999", "USA"],
     duration: { value: "30 jours", days: 30 },
     cost: { label: "Aucun frais annoncé", detail: "Le règlement officiel (DMM) ne mentionne aucun frais." },
     idRequired: true,
@@ -161,7 +161,7 @@ window.COUNTRIES = {
   },
   "124": {
     name: "Canada", flag: "🇨🇦", localName: "General Delivery / Poste restante", authority: "Postes Canada",
-    address: ["Camille DUPONT", "GD STN A", "MONTRÉAL QC H3B 3A1", "CANADA"],
+    address: ["[Camille DUPONT]", "GD [STN A]", "[VILLE] [PROVINCE] [CODE POSTAL]", "CANADA"],
     duration: { value: "jusqu'à 4 mois", days: 120 },
     cost: { label: "Gratuit", detail: "Gratuit selon Postes Canada. Frais éventuels pour les colis : non confirmé." },
     idRequired: true,
@@ -175,7 +175,7 @@ window.COUNTRIES = {
   },
   "036": {
     name: "Australie", flag: "🇦🇺", localName: "Poste Restante", authority: "Australia Post",
-    address: ["Camille DUPONT", "c/o POSTE RESTANTE", "Nom du bureau de poste, ÉTAT CODE POSTAL", "AUSTRALIE"],
+    address: ["[Camille DUPONT]", "c/o POSTE RESTANTE", "[Nom du bureau de poste, ÉTAT CODE POSTAL]", "AUSTRALIE"],
     duration: { value: "30 jours", days: 30 },
     cost: { label: "Non confirmé", detail: "Aucun tarif officiel trouvé pour ce service. Le « Mail hold » (30,70 $ la première semaine) est un autre produit." },
     idRequired: true,
@@ -188,7 +188,7 @@ window.COUNTRIES = {
   },
   "392": {
     name: "Japon", flag: "🇯🇵", localName: "郵便局留め (yūbinkyoku-dome)", authority: "Japan Post",
-    address: ["〒 Code postal du bureau", "Adresse du bureau", "（Nom du bureau）郵便局留", "Camille DUPONT 様", "JAPON"],
+    address: ["〒[CODE POSTAL DU BUREAU]", "[ADRESSE DU BUREAU]", "[NOM DU BUREAU]郵便局留", "[Camille DUPONT] 様", "JAPON"],
     duration: { value: "10 jours", days: 10 },
     cost: { label: "Gratuit", detail: "Sans inscription ni frais de retrait." },
     idRequired: true,
@@ -202,20 +202,20 @@ window.COUNTRIES = {
   },
   "356": {
     name: "Inde", flag: "🇮🇳", localName: "Poste Restante", authority: "India Post",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "GPO Mumbai", "MUMBAI 400001", "INDE"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Nom du bureau de poste]", "[VILLE] [CODE PIN À 6 CHIFFRES]", "INDE"],
     duration: { value: "Non confirmé", days: 0 },
     cost: { label: "Non confirmé", detail: "Aucun tarif de poste restante trouvé." },
     idRequired: null,
     tips: [
       "Des sources secondaires indiquent jusqu'à 1 mois, mais aucune page officielle actuelle ne le confirme.",
       "Un nom complet est indispensable : les envois à un nom fictif ou sans nom de famille ne sont pas remis (Post Office Guide).",
-      "Le GPO (General Post Office) est le choix le plus sûr. Pièce d'identité : non confirmée."
+      "« GPO » signifie General Post Office, le bureau principal de certaines grandes villes, mais toutes n'en ont pas (beaucoup ont un « Head Post Office »). Demande à la poste quel bureau tient la poste restante (connaissance générale, non confirmée officiellement). Pièce d'identité : non confirmée."
     ],
     reliability: "check", source: "https://www.indiapost.gov.in/api/documents/file/po-guide-part-i-20250816-b519a4"
   },
   "484": {
     name: "Mexique", flag: "🇲🇽", localName: "Lista de Correos", authority: "Correos de México",
-    address: ["Camille DUPONT", "LISTA DE CORREOS", "06000 MÉXICO, CDMX", "MEXIQUE"],
+    address: ["[Camille DUPONT]", "LISTA DE CORREOS", "[CODE POSTAL] [VILLE], [ÉTAT]", "MEXIQUE"],
     duration: { value: "10 jours ouvrés (international) · 15 (national)", days: 14 },
     cost: { label: "Prolongation payante", detail: "Réception : non confirmé. Prolongation de 10 jours ouvrés à la demande du destinataire, facturée par jour de stockage (montant non trouvé)." },
     idRequired: true,
@@ -229,7 +229,7 @@ window.COUNTRIES = {
   },
   "076": {
     name: "Brésil", flag: "🇧🇷", localName: "Posta restante", authority: "Correios",
-    address: ["Camille DUPONT", "POSTA RESTANTE", "Agência Central dos Correios", "20010-974 RIO DE JANEIRO RJ", "BRÉSIL"],
+    address: ["[Camille DUPONT]", "POSTA RESTANTE", "[Nom de l'agence des Correios]", "[CEP] [VILLE] [ÉTAT]", "BRÉSIL"],
     duration: { value: "20 jours (lettres) · 7 à 30 jours (colis)", days: 20 },
     cost: { label: "Payant", detail: "Service additionnel choisi par l'expéditeur : R$ 5,60 sur une page ancienne. Tarif actuel à vérifier." },
     idRequired: true,
@@ -319,7 +319,7 @@ window.COUNTRIES = {
   },
   "352": {
     name: "Islande", flag: "🇮🇸", localName: "Biðpóstur (poste restante)", authority: "Pósturinn",
-    address: ["Camille DUPONT", "Poste restante", "Nom du pósthús (bureau) choisi", "Code postal (3 chiffres) et localité", "ISLANDE"],
+    address: ["[Camille DUPONT]", "Poste restante", "[Nom du pósthús (bureau) choisi]", "[Code postal (3 chiffres) et localité]", "ISLANDE"],
     duration: { value: "60 jours (lettres) · 30 jours (recommandés)", days: 60 },
     cost: { label: "Non confirmé", detail: "Les conditions de Pósturinn renvoient à la grille tarifaire sans chiffrer ce cas précis. Un tarif de 1 200 kr./mois existe pour la réexpédition ou garde temporaire d'un courrier domestique : pas forcément le même service." },
     idRequired: null,
@@ -333,7 +333,7 @@ window.COUNTRIES = {
   },
   "554": {
     name: "Nouvelle-Zélande", flag: "🇳🇿", localName: "Poste Restante", authority: "NZ Post",
-    address: ["Camille DUPONT (Post Restante)", "Nom du NZ Post Shop choisi", "Numéro et rue du bureau", "Localité et code postal (4 chiffres)", "NOUVELLE-ZÉLANDE"],
+    address: ["[Camille DUPONT (Post Restante)]", "[Nom du NZ Post Shop choisi]", "[Numéro et rue du bureau]", "[Localité et code postal (4 chiffres)]", "NOUVELLE-ZÉLANDE"],
     duration: { value: "2 mois maximum", days: 60 },
     cost: { label: "Gratuit 7 jours, puis payant", detail: "Facturation par semaine après les 7 premiers jours (TVA incluse) : 11,00 NZD de 7 à 14 jours, 16,50 de 14 à 21, 22,00 de 21 à 28, puis en hausse jusqu'à 49,50 NZD de 56 à 63 jours." },
     idRequired: null,
@@ -366,7 +366,7 @@ window.COUNTRIES = {
   },
   "372": {
     name: "Irlande", flag: "🇮🇪", localName: "Address Point (service Poste Restante)", authority: "An Post",
-    address: ["Camille DUPONT", "Adresse Address Point exacte, fournie à l'inscription", "Post Office choisi", "Localité / Eircode", "IRLANDE"],
+    address: ["[Camille DUPONT]", "Adresse Address Point exacte, fournie à l'inscription", "[Post Office choisi]", "[Localité / Eircode]", "IRLANDE"],
     duration: { value: "20 jours maximum", days: 20 },
     cost: { label: "Gratuit", detail: "Service gratuit selon la page Address Point. Le barème An Post de février 2026 indique « Poste Restante : jusqu'à 3 mois, gratuit » : ce n'est peut-être pas le même service." },
     idRequired: true,
@@ -389,7 +389,7 @@ window.COUNTRIES = {
   },
   "203": {
     name: "République tchèque", flag: "🇨🇿", localName: "Poste restante", authority: "Česká pošta",
-    address: ["Camille DUPONT", "poste restante", "Code postal du bureau choisi (ex. 397 04)", "NOM DU BUREAU DE POSTE", "RÉPUBLIQUE TCHÈQUE"],
+    address: ["[Camille DUPONT]", "poste restante", "[Code postal du bureau choisi (ex. 397 04)]", "[NOM DU BUREAU DE POSTE]", "RÉPUBLIQUE TCHÈQUE"],
     duration: { value: "Non confirmé", days: 0 },
     cost: { label: "Non confirmé", detail: "Un courrier officiel de 2018 dit que le service est facturé selon le tarif, sans montant. Aucun montant actuel trouvé." },
     idRequired: null,
@@ -403,7 +403,7 @@ window.COUNTRIES = {
   },
   "348": {
     name: "Hongrie", flag: "🇭🇺", localName: "Postán maradó (Poste restante)", authority: "Magyar Posta",
-    address: ["Camille DUPONT", "Poste restante", "Nom exact du bureau de poste", "Code postal du bureau", "HONGRIE"],
+    address: ["[Camille DUPONT]", "Poste restante", "[Nom exact du bureau de poste]", "[Code postal du bureau]", "HONGRIE"],
     duration: { value: "10 jours ouvrés (national) · 15 (depuis l'étranger)", days: 15 },
     cost: { label: "Non confirmé", detail: "Les conditions générales (en vigueur au 1.11.2026) ne mentionnent aucun tarif spécifique. Les tarifs sont publiés à part et n'ont pas été lus." },
     idRequired: null,
@@ -417,7 +417,7 @@ window.COUNTRIES = {
   },
   "191": {
     name: "Croatie", flag: "🇭🇷", localName: "Poste restante", authority: "Hrvatska pošta (HP)",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "Code postal et nom du bureau désigné", "CROATIE"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Code postal et nom du bureau désigné]", "CROATIE"],
     duration: { value: "30 jours calendaires", days: 30 },
     cost: { label: "Payant (montant non confirmé)", detail: "Au retrait, le destinataire paie l'affranchissement fixé par le tarif. Des frais de garde (ležarina) s'appliquent dès l'arrivée pour certains envois. Montants actuels en euros non confirmés." },
     idRequired: true,
@@ -441,7 +441,7 @@ window.COUNTRIES = {
   },
   "788": {
     name: "Tunisie", flag: "🇹🇳", localName: "Poste restante", authority: "La Poste Tunisienne",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "Bureau de poste choisi", "CODE POSTAL VILLE", "TUNISIE"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Bureau de poste choisi]", "[CODE POSTAL VILLE]", "TUNISIE"],
     duration: { value: "Non confirmé", days: 0 },
     cost: { label: "Payant (montant à vérifier)", detail: "La page des tarifs de poste.tn indique une « taxe de la poste restante » de 0,500 DT (régime interne) et 1,000 DT (international). Une autre version de la page affiche 1,000 et 2,000 DT. Dates et payeur non précisés." },
     idRequired: null,
@@ -453,7 +453,7 @@ window.COUNTRIES = {
   },
   "792": {
     name: "Turquie", flag: "🇹🇷", localName: "Postrestant", authority: "PTT",
-    address: ["Camille DUPONT", "Postrestant", "Nom du bureau PTT / quartier", "CODE POSTAL ILÇE / İL", "TURQUIE"],
+    address: ["[Camille DUPONT]", "Postrestant", "[Nom du bureau PTT / quartier]", "[CODE POSTAL ILÇE / İL]", "TURQUIE"],
     duration: { value: "Non confirmé", days: 0 },
     cost: { label: "Non confirmé", detail: "Aucun tarif trouvé. La réglementation évoque des frais de garde (ardiye) au-delà du délai." },
     idRequired: true,
@@ -476,7 +476,7 @@ window.COUNTRIES = {
   },
   "528": {
     name: "Pays-Bas", flag: "🇳🇱", localName: "Poste restante", authority: "PostNL",
-    address: ["NOM DE FAMILLE Prénom", "Poste restante", "Nom et adresse du bureau de poste choisi", "CODE POSTAL LOCALITÉ", "PAYS-BAS"],
+    address: ["[NOM DE FAMILLE Prénom]", "Poste restante", "[Nom et adresse du bureau de poste choisi]", "[CODE POSTAL LOCALITÉ]", "PAYS-BAS"],
     duration: { value: "1 mois (14 à 90 jours depuis l'étranger)", days: 30 },
     cost: { label: "Non confirmé", detail: "Aucun tarif de réception ou de prolongation trouvé. Le tarif d'une boîte postale (Postbus) est un autre produit." },
     idRequired: null,
@@ -489,7 +489,7 @@ window.COUNTRIES = {
   },
   "752": {
     name: "Suède", flag: "🇸🇪", localName: "Poste Restante", authority: "PostNord",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "Code postal et localité du point de retrait", "SUÈDE"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Code postal et localité du point de retrait]", "SUÈDE"],
     duration: { value: "30 jours (page ancienne)", days: 30 },
     cost: { label: "Non confirmé", detail: "Aucun tarif trouvé pour la poste restante ni pour une prolongation." },
     idRequired: true,
@@ -512,7 +512,7 @@ window.COUNTRIES = {
   },
   "578": {
     name: "Norvège", flag: "🇳🇴", localName: "Poste Restante", authority: "Posten Norge",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "Nom du bureau de poste ou du « Post i butikk »", "Code postal et localité du point", "NORVÈGE"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Nom du bureau de poste ou du « Post i butikk »]", "[Code postal et localité du point]", "NORVÈGE"],
     duration: { value: "3 semaines", days: 21 },
     cost: { label: "Non confirmé", detail: "Aucune page de Posten ne mentionne de tarif pour la poste restante." },
     idRequired: null,
@@ -525,7 +525,7 @@ window.COUNTRIES = {
   },
   "246": {
     name: "Finlande", flag: "🇫🇮", localName: "Poste restante", authority: "Posti",
-    address: ["Camille DUPONT (prénom et nom officiels)", "POSTE RESTANTE", "CODE POSTAL VILLE", "FINLANDE"],
+    address: ["[Camille DUPONT (prénom et nom officiels)]", "POSTE RESTANTE", "[CODE POSTAL VILLE]", "FINLANDE"],
     duration: { value: "14 jours", days: 14 },
     cost: { label: "Gratuit", detail: "Gratuit selon Posti. Un tarif de 3,10 € avait été envisagé en 2019 puis reporté sous la pression du régulateur." },
     idRequired: null,
@@ -567,7 +567,7 @@ Object.assign(window.COUNTRIES, {
   },
   "204": {
     name: "Bénin", flag: "🇧🇯", localName: "Poste restante", authority: "La Poste du Bénin",
-    address: ["Mme Camille DUPONT", "POSTE RESTANTE", "Agence commerciale de La Poste du Bénin choisie", "Localité", "BÉNIN"],
+    address: ["[Mme Camille DUPONT]", "POSTE RESTANTE", "[Agence commerciale de La Poste du Bénin choisie]", "[Localité]", "BÉNIN"],
     duration: { value: "Non précisée", days: 0 },
     cost: { label: "Payant", detail: "La page officielle indique une taxe de livraison de 500 FCFA. Elle ne précise pas qui la paie ni à quel moment." },
     idRequired: null,
@@ -581,7 +581,7 @@ Object.assign(window.COUNTRIES, {
   },
   "288": {
     name: "Ghana", flag: "🇬🇭", localName: "Poste Restante", authority: "Ghana Post",
-    address: ["Mr Camille DUPONT", "Nom du bureau de poste", "Localité + code postal (ex. Accra-Central GA-183)", "Région (ex. GREATER ACCRA)", "GHANA"],
+    address: ["[Mr Camille DUPONT]", "[Nom du bureau de poste]", "[Localité + code postal (ex. Accra-Central GA-183)]", "[Région (ex. GREATER ACCRA)]", "GHANA"],
     duration: { value: "Non confirmé", days: 0 },
     cost: { label: "Non confirmé", detail: "Aucune source consultée ne donne un tarif ou une durée pour la poste restante au Ghana." },
     idRequired: null,
@@ -595,7 +595,7 @@ Object.assign(window.COUNTRIES, {
   },
   "566": {
     name: "Nigeria", flag: "🇳🇬", localName: "Poste restante (c/o Postmaster)", authority: "NIPOST (Nigerian Postal Service)",
-    address: ["Mr Camille DUPONT", "c/o Postmaster", "Nom du bureau de poste (Post Office)", "Localité + code postal à 6 chiffres", "ÉTAT (ex. OYO STATE)", "NIGERIA"],
+    address: ["[Mr Camille DUPONT]", "c/o Postmaster", "[Nom du bureau de poste (Post Office)]", "[Localité + code postal à 6 chiffres]", "[ÉTAT (ex. OYO STATE)]", "NIGERIA"],
     duration: { value: "Non confirmé", days: 0 },
     cost: { label: "Non confirmé", detail: "Aucune source consultée ne donne un tarif ou une durée pour la poste restante au Nigeria." },
     idRequired: null,
@@ -635,7 +635,7 @@ Object.assign(window.COUNTRIES, {
   },
   "480": {
     name: "Maurice", flag: "🇲🇺", localName: "Poste restante", authority: "The Mauritius Post Ltd",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "Bureau de poste choisi", "LOCALITÉ CODE POSTAL", "MAURITIUS"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Bureau de poste choisi]", "[LOCALITÉ CODE POSTAL]", "MAURITIUS"],
     duration: { value: "2 mois (international)", days: 60 },
     cost: { label: "Non confirmé", detail: "Aucun tarif n'est indiqué sur la page officielle consultée." },
     idRequired: null,
@@ -648,7 +648,7 @@ Object.assign(window.COUNTRIES, {
   },
   "854": {
     name: "Burkina Faso", flag: "🇧🇫", localName: "Poste restante", authority: "La Poste Burkina Faso (ex-SONAPOST)",
-    address: ["Camille DUPONT", "Poste restante", "CODE POSTAL LOCALITÉ", "BURKINA FASO"],
+    address: ["[Camille DUPONT]", "Poste restante", "[CODE POSTAL LOCALITÉ]", "BURKINA FASO"],
     duration: { value: "Non confirmé", days: 0 },
     cost: { label: "Non confirmé", detail: "Aucun tarif de poste restante n'a été trouvé. Pour comparaison, la boîte postale est payante : 17 000 F CFA TTC d'abonnement puis 11 800 F CFA TTC par an pour un particulier (page officielle)." },
     idRequired: null,
@@ -675,7 +675,7 @@ Object.assign(window.COUNTRIES, {
 Object.assign(window.COUNTRIES, {
   "012": {
     name: "Algérie", flag: "🇩🇿", localName: "Poste restante", authority: "Algérie Poste",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "Bureau de poste choisi", "CODE POSTAL LOCALITÉ", "ALGÉRIE"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Bureau de poste choisi]", "[CODE POSTAL LOCALITÉ]", "ALGÉRIE"],
     duration: { value: "1 mois (FAQ du ministère) · 15 jours (page Algérie Poste, résumé)", days: 15 },
     cost: { label: "Payant (montant à vérifier)", detail: "FAQ du ministère de la Poste (archivée janvier 2025) : surtaxe fixe de 55 DZD par objet et de 30 DZD par journal ou périodique, sauf sur présentation d'une carte d'abonnement (2 000 DZD par an). Qui paie et à quelle date : non précisé ; tarifs possiblement dépassés." },
     idRequired: null,
@@ -700,7 +700,7 @@ Object.assign(window.COUNTRIES, {
   },
   "504": {
     name: "Maroc", flag: "🇲🇦", localName: "Poste restante", authority: "Barid Al-Maghrib (Poste Maroc)",
-    address: ["MME CAMILLE DUPONT", "POSTE RESTANTE", "AGENCE choisie", "CODE POSTAL LOCALITÉ", "MAROC"],
+    address: ["[MME CAMILLE DUPONT]", "POSTE RESTANTE", "[AGENCE choisie]", "[CODE POSTAL LOCALITÉ]", "MAROC"],
     duration: { value: "15 jours (résumé de la page poste.ma)", days: 15 },
     cost: { label: "Non confirmé", detail: "Aucun montant lu. Le résumé de la page poste.ma décrit le prix comme « raisonnable et accessible », sans chiffre." },
     idRequired: null,
@@ -714,7 +714,7 @@ Object.assign(window.COUNTRIES, {
   },
   "788": {
     name: "Tunisie", flag: "🇹🇳", localName: "Poste restante", authority: "La Poste Tunisienne",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "Bureau de poste choisi", "CODE POSTAL LOCALITÉ", "TUNISIE"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Bureau de poste choisi]", "[CODE POSTAL LOCALITÉ]", "TUNISIE"],
     duration: { value: "Non confirmé", days: 0 },
     cost: { label: "Payant (payeur à vérifier)", detail: "Page des tarifs de poste.tn (captures archivées de janvier 2025 et mai 2026, identiques) : « Taxe de la Poste Restante » de 1,000 DT (régime interne) et 2,000 DT (régime international). Payeur et mode de calcul : non précisés. Une version plus ancienne affichait 0,500 et 1,000 DT." },
     idRequired: null,
@@ -730,7 +730,7 @@ Object.assign(window.COUNTRIES, {
 Object.assign(window.COUNTRIES, {
   "710": {
     name: "Afrique du Sud", flag: "🇿🇦", localName: "Poste restante", authority: "South African Post Office (SAPO)",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "NOM DU BUREAU DE POSTE", "Code postal (4 chiffres)", "AFRIQUE DU SUD"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[NOM DU BUREAU DE POSTE]", "[Code postal (4 chiffres)]", "AFRIQUE DU SUD"],
     duration: { value: "2 mois au maximum (service temporaire)", days: 60 },
     cost: { label: "Gratuit", detail: "Le tarif 2026/2027 de la SAPO indique que la poste restante (temporaire, deux mois au plus) reste gratuite, et qu'un numéro de poste restante peut toujours être obtenu gratuitement." },
     idRequired: null,
@@ -756,7 +756,7 @@ Object.assign(window.COUNTRIES, {
   },
   "834": {
     name: "Tanzanie", flag: "🇹🇿", localName: "Poste Restante", authority: "Tanzania Posts Corporation (TPC)",
-    address: ["Ms Camille DUPONT", "Poste Restante", "Code postal (5 chiffres) NOM DU BUREAU", "Région", "TANZANIE"],
+    address: ["[Ms Camille DUPONT]", "Poste Restante", "[Code postal (5 chiffres) NOM DU BUREAU]", "[Région]", "TANZANIE"],
     duration: { value: "Non confirmé", days: 0 },
     cost: { label: "Non confirmé", detail: "Aucune page officielle de la TPC décrivant la poste restante, sa durée ou son coût n'a été trouvée." },
     idRequired: null,
@@ -781,7 +781,7 @@ Object.assign(window.COUNTRIES, {
   },
   "516": {
     name: "Namibie", flag: "🇳🇦", localName: "Poste Restante", authority: "Namibia Post Limited (NamPost)",
-    address: ["Ms Camille DUPONT", "Poste Restante", "NOM DU BUREAU DE POSTE", "Code postal (5 chiffres)", "NAMIBIE"],
+    address: ["[Ms Camille DUPONT]", "Poste Restante", "[NOM DU BUREAU DE POSTE]", "[Code postal (5 chiffres)]", "NAMIBIE"],
     duration: { value: "Non confirmé", days: 0 },
     cost: { label: "Non confirmé", detail: "Le tarif postal 2025/2026 publié au Government Gazette (n° 8740, 15 septembre 2025) ne contient aucune ligne « poste restante ». Cela ne prouve pas que le service soit gratuit." },
     idRequired: null,
@@ -797,7 +797,7 @@ Object.assign(window.COUNTRIES, {
 Object.assign(window.COUNTRIES, {
   "788": {
     name: "Tunisie", flag: "🇹🇳", localName: "Poste restante", authority: "La Poste Tunisienne",
-    address: ["Camille DUPONT", "POSTE RESTANTE", "Bureau de poste choisi", "CODE POSTAL LOCALITÉ", "TUNISIE"],
+    address: ["[Camille DUPONT]", "POSTE RESTANTE", "[Bureau de poste choisi]", "[CODE POSTAL LOCALITÉ]", "TUNISIE"],
     duration: { value: "Non confirmé", days: 0 },
     cost: { label: "Payant (payeur à vérifier)", detail: "Page des tarifs de poste.tn (capture archivée du 19 janvier 2026, relue directement dans l'archive) : « Taxe de la Poste Restante » de 1,000 DT (régime interne) et 2,000 DT (régime international), listée parmi les « Tarifs des services supplémentaires » des lettres, avec la recommandation et l'accusé de réception. Payeur (expéditeur ou destinataire) et mode de calcul : non précisés. Une version plus ancienne affichait 0,500 et 1,000 DT." },
     idRequired: null,
@@ -827,7 +827,7 @@ Object.assign(window.COUNTRIES, {
   },
   "894": {
     name: "Zambie", flag: "🇿🇲", localName: "Post Restante", authority: "Zambia Postal Services Corporation (Zampost)",
-    address: ["Ms Camille DUPONT", "Post Restante", "NOM DU BUREAU DE POSTE Code postal (5 chiffres)", "ZAMBIE"],
+    address: ["[Ms Camille DUPONT]", "[Post Restante]", "[NOM DU BUREAU DE POSTE Code postal (5 chiffres)]", "ZAMBIE"],
     duration: { value: "Non confirmé", days: 0 },
     cost: { label: "Non confirmé", detail: "Aucune page officielle de Zampost décrivant la poste restante, sa durée ou son coût n'a été trouvée." },
     idRequired: null,
