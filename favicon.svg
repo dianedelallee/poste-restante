@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>Poste restante</title>
+  <defs>
+    <!-- bordure « par avion » : rayures obliques rouge, crème, bleu, crème -->
+    <pattern id="airmail" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="16" height="16" fill="#fbf4e2"/>
+      <rect x="0" y="0" width="6.5" height="16" fill="#c0392b"/>
+      <rect x="8" y="0" width="6.5" height="16" fill="#1f4e8c"/>
+    </pattern>
+  </defs>
+  <!-- enveloppe : bordure rayée, puis papier crème -->
+  <rect x="1.5" y="9.5" width="61" height="45" rx="4" fill="url(#airmail)"/>
+  <rect x="9.5" y="17.5" width="45" height="29" rx="1.5" fill="#fbf4e2"/>
+  <!-- rabat -->
+  <path d="M9.5 18.5 L32 35.5 L54.5 18.5" fill="none" stroke="#2a2118" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
