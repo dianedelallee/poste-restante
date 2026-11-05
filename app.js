@@ -235,6 +235,7 @@
   function renderCountryIndex() {
     const box = $("country-index");
     if (!box || !REGIONS.length) return;
+    const open = new Set([...box.querySelectorAll("details[open]")].map((d) => d.dataset.region)); // garde les régions ouvertes lors d'un changement de langue
     box.innerHTML = REGIONS.map((r) => {
       const list = entries.filter((e) => PAGES[e.id] && PAGES[e.id].region === r.id).sort((a, b) => loc(a.id).name.localeCompare(loc(b.id).name, lang));
       if (!list.length) return "";
@@ -242,7 +243,7 @@
         const c = loc(e.id), st = statusOf(c);
         return `<li><a href="${pageUrl(e.id)}" data-id="${e.id}"><span class="dot ${st}" title="${esc(t("st_" + st))}"></span><span aria-hidden="true">${c.flag}</span> ${esc(c.name)}</a></li>`;
       }).join("");
-      return `<div class="region"><h3>${esc(r[lang])}</h3><ul class="country-links">${items}</ul></div>`;
+      return `<details class="region" data-region="${r.id}"${open.has(r.id) ? " open" : ""}><summary>${esc(r[lang])} <span class="count">${list.length}</span></summary><ul class="country-links">${items}</ul></details>`;
     }).join("");
   }
 

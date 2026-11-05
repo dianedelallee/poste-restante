@@ -384,7 +384,7 @@ const block = REGIONS.map((r) => {
     const c = FR[id], st = statusOf(c);
     return `        <li><a href="${urlOf(id, "fr")}" data-id="${id}"><span class="dot ${st}" title="${esc(STR.fr.st[st])}"></span><span aria-hidden="true">${c.flag}</span> ${esc(c.name)}</a></li>`;
   }).join("\n");
-  return `      <div class="region">\n        <h3>${esc(r.fr)}</h3>\n        <ul class="country-links">\n${items}\n        </ul>\n      </div>`;
+  return `      <details class="region" data-region="${r.id}">\n        <summary>${esc(r.fr)} <span class="count">${ids.length}</span></summary>\n        <ul class="country-links">\n${items}\n        </ul>\n      </details>`;
 }).join("\n");
 home = home.slice(0, home.indexOf(START) + START.length) + "\n" + block + "\n      " + home.slice(home.indexOf(END));
 fs.writeFileSync(indexPath, home);
