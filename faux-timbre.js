@@ -4,7 +4,7 @@
   /* Adresse postale du destinataire 2026, à compléter UNIQUEMENT avec l'adresse publiée dans l'annonce de
      l'organisateur. Tant que ce tableau est vide, la page renvoie vers l'annonce, sans rien inventer.
      Exemple : ["Galerie …", "Rue et numéro", "Code postal VILLE", "FRANCE"] */
-  const ADDRESS = ["Artpothicaire", "2 place Sainte-Croix", "49000 ANGERS", "FRANCE"];
+  const ADDRESS = ["Galerie Artpothicaire", "2 place Sainte-Croix", "49000 ANGERS", "FRANCE"];
 
   const LINKS = {
     insta: "https://www.instagram.com/p/DfHKf4SjUwY/",
