@@ -76,7 +76,13 @@ section, header, footer { padding: 3rem 16px; max-width: 1180px; margin: 0 auto;
 .nav-link:hover { border-bottom-color: var(--ink); }
 .support { color: var(--red); text-decoration: none; font-family: "Special Elite", monospace; letter-spacing: .04em; border-bottom: 2px dashed var(--red); }
 .support:hover { border-bottom-style: solid; }
-.page-hero h1 { font-size: clamp(2rem, 6.4vw, 4.1rem); line-height: 1.05; }
+.hero.page-hero h1 { font-size: clamp(1.9rem, 5vw, 3.4rem); line-height: 1.08; text-wrap: balance; }
+/* le titre est long : on réserve la place du timbre et du tampon à droite */
+.hero.page-hero .hero-card { padding-left: 190px; padding-right: 190px; }
+@media (max-width: 980px) {
+  .hero.page-hero .hero-card { padding: 6.4rem 1.4rem 2.4rem; }
+  .hero.page-hero .hero-marks { transform: scale(.7); transform-origin: top right; }
+}
 .countdown-line { margin: .2rem 0 1.1rem; }
 .countdown-line .ink { font-size: .95rem; padding: .25rem .8rem; }
 .prose > p, .prose > ul { max-width: 46rem; }
@@ -189,7 +195,7 @@ footer .airmail-bar { margin-bottom: 1.4rem; border-radius: 2px; }
 .steps { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: 1.2rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .steps li {
   background: var(--card); border: 1px solid var(--line); border-top: 6px solid transparent; border-image: var(--airmail) 6 0 0 0;
-  padding: 1.5rem 1.4rem; position: relative; box-shadow: 0 3px 0 rgba(0, 0, 0, .06);
+  padding: 3.3rem 1.4rem 1.5rem; position: relative; box-shadow: 0 3px 0 rgba(0, 0, 0, .06);
 }
 .steps .stamp { position: absolute; top: -22px; right: 16px; transform: rotate(4deg); }
 .steps li:nth-child(2) .stamp { transform: rotate(-3deg); }
@@ -322,7 +328,7 @@ footer .airmail-bar { margin-bottom: 1.4rem; border-radius: 2px; }
 .tip-grid h3 { font-size: 1.1rem; margin-bottom: .2rem; padding-left: .3rem; }
 .tip-grid p { margin: 0; color: var(--ink-soft); padding-left: .3rem; }
 
-.contribute { background: var(--card); border: 1px solid var(--line); border-top: 6px solid transparent; border-image: var(--airmail) 6 0 0 0; margin-top: 1rem; padding: 2rem 1.6rem; }
+.contribute { background: var(--card); border: 1px solid var(--line); border-top: 6px solid transparent; border-image: var(--airmail) 6 0 0 0; margin: 1rem auto 0; width: calc(100% - 32px); max-width: 1148px; padding: 2rem 1.6rem; }
 .contribute .ink { margin: 0 .25rem; }
 code { background: var(--paper-2); padding: .1rem .4rem; border-radius: 3px; }
 footer { text-align: center; color: var(--ink-soft); font-size: .9rem; }
