@@ -138,7 +138,7 @@
   const sortedEntries = () => entries.slice().sort((a, b) => loc(a.id).name.localeCompare(loc(b.id).name, lang));
 
   let selectedId = null, filter = null, paths = null, svg = null, zoom = null, feats = {};
-  const W = 960, H = 600;
+  const W = 960, H = 500;
 
   /* ---------- décor postal ---------- */
   function wavesSVG() {
@@ -246,7 +246,7 @@
   function focusOnMap(id) {
     const f = feats[id];
     if (!f || !svg) return;
-    const [[x0, y0], [x1, y1]] = d3.geoPath(d3.geoNaturalEarth1().fitExtent([[8, 8], [W - 8, H - 8]], { type: "Sphere" })).bounds(f);
+    const [[x0, y0], [x1, y1]] = path.bounds(f);
     const dx = x1 - x0, dy = y1 - y0, cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
     const k = Math.max(1, Math.min(8, 0.6 / Math.max(dx / W, dy / H)));
     svg.transition().duration(650).call(zoom.transform, d3.zoomIdentity.translate(W / 2, H / 2).scale(k).translate(-cx, -cy));
@@ -388,7 +388,9 @@
   $("zreset").onclick = () => svg.transition().duration(350).call(zoom.transform, d3.zoomIdentity);
 
   d3.json(WORLD_URL).then((world) => {
-    const features = topojson.feature(world, world.objects.countries).features;
+    /* sans l'Antarctique (010) : aucune fiche dessus, et il mange la moitié de la hauteur de la carte */
+    const features = topojson.feature(world, world.objects.countries).features.filter((f) => idOf(f) !== "010");
+    projection.fitExtent([[8, 8], [W - 8, H - 8]], { type: "FeatureCollection", features });
     features.forEach((f) => { feats[idOf(f)] = f; });
     paths = g.selectAll("path").data(features).join("path")
       .attr("class", (d) => { const c = DATA[idOf(d)]; return "country" + (c ? " on s-" + statusOf(c) : ""); })
