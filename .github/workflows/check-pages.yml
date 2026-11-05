@@ -1,0 +1,26 @@
+name: Check generated pages
+
+# Les pages pays sont générées par scripts/build-pages.js à partir de data.js et data.en.js.
+# Ce contrôle échoue si quelqu'un a modifié les données sans régénérer les pages.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Regenerate the pages
+        run: node scripts/build-pages.js
+      - name: Fail if the generated files are out of date
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "The generated files are out of date. Run 'node scripts/build-pages.js' and commit the result."
+            git status --short
+            exit 1
+          fi

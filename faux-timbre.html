@@ -55,6 +55,8 @@
     (function () {
       var t = null, l = null;
       try { t = localStorage.getItem('pr-theme'); l = localStorage.getItem('pr-lang'); } catch (e) {}
+      var q = /[?&]lang=(en|fr)\b/.exec(location.search);
+      if (q) { l = q[1]; try { localStorage.setItem('pr-lang', l); } catch (e) {} }
       if (t !== 'dark' && t !== 'light') t = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', t);
       document.documentElement.lang = l === 'en' ? 'en' : 'fr';

@@ -79,6 +79,19 @@ Add the same key with the translatable fields only: `name`, `summary` (if any), 
 
 The English entry must have **the same number of `tips` and `address` lines** as the French one.
 
+## Regenerate the country pages
+
+Every country has its own page, in French (`/pays/<name>/`) and in English (`/en/countries/<name>/`). They are **generated** from `data.js` and `data.en.js` so that search engines can read them. After any change to the data, run:
+
+```bash
+node scripts/build-pages.js
+```
+
+and commit the result: the `pays/` and `en/` folders, `pages.js`, `sitemap.xml` and the country index in `index.html`. A GitHub Action checks that the generated files are up to date.
+
+- **New country:** the script asks you to give it a region. Add its code to the `REGION_OF` table at the top of `scripts/build-pages.js`.
+- **Entries without information** (`noInfo: true`) get a page too, but it is set to `noindex` and left out of the sitemap, because a page with no real content does not help anyone. As soon as an entry has real information, remove `noInfo` and run the script: the page becomes indexable.
+
 ## Rules for the information
 
 These rules keep the site trustworthy.
@@ -120,6 +133,7 @@ Then open the site locally and check the entry in both languages, in light and d
 - [ ] Every piece of information is backed by a source, or is marked as unconfirmed.
 - [ ] `source` points to the most specific official page used.
 - [ ] The check above passes.
+- [ ] The country pages are regenerated (`node scripts/build-pages.js`) and the result is committed.
 - [ ] The pull request describes what changed and where the information comes from.
 
 Keep pull requests small and focused: one country, or one kind of change, per pull request.

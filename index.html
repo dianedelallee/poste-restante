@@ -42,6 +42,8 @@
     (function () {
       var t = null, l = null;
       try { t = localStorage.getItem('pr-theme'); l = localStorage.getItem('pr-lang'); } catch (e) {}
+      var q = /[?&]lang=(en|fr)\b/.exec(location.search);
+      if (q) { l = q[1]; try { localStorage.setItem('pr-lang', l); } catch (e) {} }
       if (t !== 'dark' && t !== 'light') t = (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', t);
       document.documentElement.lang = l === 'en' ? 'en' : 'fr';
@@ -148,6 +150,106 @@
     </div>
   </section>
 
+  <section class="country-index" id="pays">
+    <p class="kicker" data-i18n="idx_kicker">Index</p>
+    <h2 data-i18n="idx_title">Tous les pays documentés</h2>
+    <p class="hint" data-i18n="idx_intro">Une page dédiée par pays : exemple d'adresse, durée de conservation, coût et conseils.</p>
+    <div id="country-index">
+<!-- COUNTRY-INDEX:START -->
+      <div class="region">
+        <h3>Europe</h3>
+        <ul class="country-links">
+        <li><a href="/pays/allemagne/" data-id="276"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇩🇪</span> Allemagne</a></li>
+        <li><a href="/pays/autriche/" data-id="040"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇦🇹</span> Autriche</a></li>
+        <li><a href="/pays/belgique/" data-id="056"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇧🇪</span> Belgique</a></li>
+        <li><a href="/pays/croatie/" data-id="191"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇭🇷</span> Croatie</a></li>
+        <li><a href="/pays/danemark/" data-id="208"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇩🇰</span> Danemark</a></li>
+        <li><a href="/pays/espagne/" data-id="724"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇪🇸</span> Espagne</a></li>
+        <li><a href="/pays/finlande/" data-id="246"><span class="dot ok" title="Plutôt fiable"></span><span aria-hidden="true">🇫🇮</span> Finlande</a></li>
+        <li><a href="/pays/france/" data-id="250"><span class="dot ok" title="Plutôt fiable"></span><span aria-hidden="true">🇫🇷</span> France</a></li>
+        <li><a href="/pays/grece/" data-id="300"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇬🇷</span> Grèce</a></li>
+        <li><a href="/pays/hongrie/" data-id="348"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇭🇺</span> Hongrie</a></li>
+        <li><a href="/pays/irlande/" data-id="372"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇮🇪</span> Irlande</a></li>
+        <li><a href="/pays/islande/" data-id="352"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇮🇸</span> Islande</a></li>
+        <li><a href="/pays/italie/" data-id="380"><span class="dot ok" title="Plutôt fiable"></span><span aria-hidden="true">🇮🇹</span> Italie</a></li>
+        <li><a href="/pays/norvege/" data-id="578"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇳🇴</span> Norvège</a></li>
+        <li><a href="/pays/pays-bas/" data-id="528"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇳🇱</span> Pays-Bas</a></li>
+        <li><a href="/pays/pologne/" data-id="616"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇵🇱</span> Pologne</a></li>
+        <li><a href="/pays/portugal/" data-id="620"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇵🇹</span> Portugal</a></li>
+        <li><a href="/pays/republique-tcheque/" data-id="203"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇨🇿</span> République tchèque</a></li>
+        <li><a href="/pays/royaume-uni/" data-id="826"><span class="dot ok" title="Plutôt fiable"></span><span aria-hidden="true">🇬🇧</span> Royaume-Uni</a></li>
+        <li><a href="/pays/russie/" data-id="643"><span class="dot ok" title="Plutôt fiable"></span><span aria-hidden="true">🇷🇺</span> Russie</a></li>
+        <li><a href="/pays/suede/" data-id="752"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇸🇪</span> Suède</a></li>
+        <li><a href="/pays/suisse/" data-id="756"><span class="dot ok" title="Plutôt fiable"></span><span aria-hidden="true">🇨🇭</span> Suisse</a></li>
+        </ul>
+      </div>
+      <div class="region">
+        <h3>Afrique</h3>
+        <ul class="country-links">
+        <li><a href="/pays/afrique-du-sud/" data-id="710"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇿🇦</span> Afrique du Sud</a></li>
+        <li><a href="/pays/algerie/" data-id="012"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇩🇿</span> Algérie</a></li>
+        <li><a href="/pays/benin/" data-id="204"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇧🇯</span> Bénin</a></li>
+        <li><a href="/pays/burkina-faso/" data-id="854"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇧🇫</span> Burkina Faso</a></li>
+        <li><a href="/pays/cameroun/" data-id="120"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇨🇲</span> Cameroun</a></li>
+        <li><a href="/pays/cote-d-ivoire/" data-id="384"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇨🇮</span> Côte d&#39;Ivoire</a></li>
+        <li><a href="/pays/egypte/" data-id="818"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇪🇬</span> Égypte</a></li>
+        <li><a href="/pays/ethiopie/" data-id="231"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇪🇹</span> Éthiopie</a></li>
+        <li><a href="/pays/ghana/" data-id="288"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇬🇭</span> Ghana</a></li>
+        <li><a href="/pays/kenya/" data-id="404"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇰🇪</span> Kenya</a></li>
+        <li><a href="/pays/madagascar/" data-id="450"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇲🇬</span> Madagascar</a></li>
+        <li><a href="/pays/mali/" data-id="466"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇲🇱</span> Mali</a></li>
+        <li><a href="/pays/maroc/" data-id="504"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇲🇦</span> Maroc</a></li>
+        <li><a href="/pays/maurice/" data-id="480"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇲🇺</span> Maurice</a></li>
+        <li><a href="/pays/mozambique/" data-id="508"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇲🇿</span> Mozambique</a></li>
+        <li><a href="/pays/namibie/" data-id="516"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇳🇦</span> Namibie</a></li>
+        <li><a href="/pays/nigeria/" data-id="566"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇳🇬</span> Nigeria</a></li>
+        <li><a href="/pays/ouganda/" data-id="800"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇺🇬</span> Ouganda</a></li>
+        <li><a href="/pays/rwanda/" data-id="646"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇷🇼</span> Rwanda</a></li>
+        <li><a href="/pays/senegal/" data-id="686"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇸🇳</span> Sénégal</a></li>
+        <li><a href="/pays/tanzanie/" data-id="834"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇹🇿</span> Tanzanie</a></li>
+        <li><a href="/pays/tunisie/" data-id="788"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇹🇳</span> Tunisie</a></li>
+        <li><a href="/pays/zambie/" data-id="894"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇿🇲</span> Zambie</a></li>
+        </ul>
+      </div>
+      <div class="region">
+        <h3>Asie et Moyen-Orient</h3>
+        <ul class="country-links">
+        <li><a href="/pays/chine/" data-id="156"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇨🇳</span> Chine</a></li>
+        <li><a href="/pays/coree-du-sud/" data-id="410"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇰🇷</span> Corée du Sud</a></li>
+        <li><a href="/pays/inde/" data-id="356"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇮🇳</span> Inde</a></li>
+        <li><a href="/pays/indonesie/" data-id="360"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇮🇩</span> Indonésie</a></li>
+        <li><a href="/pays/israel/" data-id="376"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇮🇱</span> Israël</a></li>
+        <li><a href="/pays/japon/" data-id="392"><span class="dot ok" title="Plutôt fiable"></span><span aria-hidden="true">🇯🇵</span> Japon</a></li>
+        <li><a href="/pays/nepal/" data-id="524"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇳🇵</span> Népal</a></li>
+        <li><a href="/pays/thailande/" data-id="764"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇹🇭</span> Thaïlande</a></li>
+        <li><a href="/pays/turquie/" data-id="792"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇹🇷</span> Turquie</a></li>
+        <li><a href="/pays/vietnam/" data-id="704"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇻🇳</span> Vietnam</a></li>
+        </ul>
+      </div>
+      <div class="region">
+        <h3>Amériques</h3>
+        <ul class="country-links">
+        <li><a href="/pays/argentine/" data-id="032"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇦🇷</span> Argentine</a></li>
+        <li><a href="/pays/bresil/" data-id="076"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇧🇷</span> Brésil</a></li>
+        <li><a href="/pays/canada/" data-id="124"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇨🇦</span> Canada</a></li>
+        <li><a href="/pays/chili/" data-id="152"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇨🇱</span> Chili</a></li>
+        <li><a href="/pays/colombie/" data-id="170"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇨🇴</span> Colombie</a></li>
+        <li><a href="/pays/etats-unis/" data-id="840"><span class="dot ok" title="Plutôt fiable"></span><span aria-hidden="true">🇺🇸</span> États-Unis</a></li>
+        <li><a href="/pays/mexique/" data-id="484"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇲🇽</span> Mexique</a></li>
+        <li><a href="/pays/perou/" data-id="604"><span class="dot none" title="Aucune info trouvée"></span><span aria-hidden="true">🇵🇪</span> Pérou</a></li>
+        </ul>
+      </div>
+      <div class="region">
+        <h3>Océanie</h3>
+        <ul class="country-links">
+        <li><a href="/pays/australie/" data-id="036"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇦🇺</span> Australie</a></li>
+        <li><a href="/pays/nouvelle-zelande/" data-id="554"><span class="dot check" title="À confirmer"></span><span aria-hidden="true">🇳🇿</span> Nouvelle-Zélande</a></li>
+        </ul>
+      </div>
+      <!-- COUNTRY-INDEX:END -->
+    </div>
+  </section>
+
   <section class="tips" id="conseils">
     <p class="kicker">N° 3</p>
     <h2 data-i18n="t_title">Quelques réflexes</h2>
@@ -200,6 +302,7 @@
 <script src="stamps.js" defer></script>
 <script src="data.js" defer></script>
 <script src="data.en.js" defer></script>
+<script src="pages.js" defer></script>
 <script src="app.js" defer></script>
 </body>
 </html>

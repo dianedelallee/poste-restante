@@ -297,7 +297,7 @@ footer .airmail-bar { margin-bottom: 1.4rem; border-radius: 2px; }
 .env-marks .waves { top: 8px; right: 98px; width: 70px; height: 26px; opacity: .5; }
 .envelope .addr { font-family: Caveat, cursive; font-size: 1.5rem; line-height: 1.25; margin: 2.6rem 0 0; padding-right: 6px; font-weight: 500; position: relative; }
 .envelope .addr .mention { color: #c0392b; font-weight: 700; }
-.envelope .addr .ph { color: #8a7a62; font-style: italic; font-weight: 500; border-bottom: 1.5px dashed #b9a98a; }
+.envelope .addr .ph { color: #8a7a62; font-style: italic; font-weight: 500; border-bottom: 1.5px dashed #b9a98a; padding-right: .14em; }
 .env-legend { font-size: .82rem; color: var(--ink-soft); margin: .1rem 0 .6rem; }
 .copy { background: none; border: 2px dashed var(--line); color: var(--ink-soft); border-radius: 4px; padding: .3rem .7rem; cursor: pointer; font-family: "Special Elite", monospace; font-size: .8rem; }
 .copy:hover { color: var(--ink); border-color: var(--ink); }
@@ -321,6 +321,34 @@ footer .airmail-bar { margin-bottom: 1.4rem; border-radius: 2px; }
 .panel .src a { color: var(--blue); }
 .k-title { font-family: "Special Elite", monospace; text-transform: uppercase; letter-spacing: .1em; margin: 0 0 .3rem; font-size: .8rem; color: var(--ink-soft); }
 
+/* ---------- pages pays générées (scripts/build-pages.js) ---------- */
+.seg a { display: inline-block; font-family: "Special Elite", monospace; letter-spacing: .08em; background: transparent; color: var(--ink); padding: .3rem .65rem; font-size: .9rem; text-decoration: none; }
+.seg a + a { border-left: 2px solid var(--ink); }
+.seg a[aria-current="page"] { background: var(--ink); color: var(--paper); }
+.seg a:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.country-hero { max-width: 1180px; margin: 0 auto; padding: 1.6rem 16px .6rem; }
+.crumbs { font-family: "Special Elite", monospace; font-size: .85rem; color: var(--ink-soft); margin-bottom: .6rem; }
+.crumbs a { color: var(--ink-soft); }
+.country-hero h1 { display: flex; align-items: center; flex-wrap: wrap; gap: .4rem .8rem; font-size: clamp(2rem, 5.2vw, 3.4rem); line-height: 1.08; margin-bottom: .3rem; }
+.country-hero .flag { font-size: .9em; }
+.country-hero .sub { color: var(--ink-soft); margin: 0 0 .6rem; }
+.brief { max-width: 52rem; margin: .6rem 0 0; color: var(--ink-soft); font-size: 1.02rem; }
+.brief strong { color: var(--ink); }
+.country-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; align-items: start; max-width: 1180px; margin: 0 auto; padding: 1rem 16px 1.6rem; }
+h2.k-title { font-weight: 400; }
+.caveat { font-size: .88rem; color: var(--ink-soft); border-left: 4px solid var(--check); padding-left: .7rem; margin: 0 0 1rem; }
+.page-link { margin: 0 0 .5rem; font-size: .92rem; }
+.page-link a, .pager a { color: var(--blue); }
+.pager { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; max-width: 1180px; margin: 0 auto; padding: 0 16px 2.4rem; font-family: "Special Elite", monospace; }
+.pager a { text-decoration: none; border-bottom: 2px dashed var(--line); padding: .2rem 0; }
+.pager a:hover { border-bottom-color: var(--blue); }
+.country-index .region h3 { margin: 1.3rem 0 .5rem; font-family: "Special Elite", monospace; font-weight: 400; font-size: .95rem; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-soft); }
+.country-links { list-style: none; padding: 0; margin: 0; columns: 3 13rem; column-gap: 2rem; }
+.country-links li { break-inside: avoid; margin-bottom: .35rem; }
+.country-links a { display: inline-flex; align-items: center; gap: .45rem; color: var(--ink); text-decoration: none; }
+.country-links a:hover { text-decoration: underline dashed; text-underline-offset: 3px; }
+@media (max-width: 820px) { .country-grid { grid-template-columns: 1fr; } }
+
 /* ---------- FAQ ---------- */
 .faq-list { display: grid; gap: .6rem; margin-top: 1.4rem; max-width: 52rem; }
 .faq-list details { background: var(--card); border: 1px dashed var(--line); border-radius: 6px; padding: .2rem 1rem; }
@@ -340,6 +368,7 @@ footer .airmail-bar { margin-bottom: 1.4rem; border-radius: 2px; }
 .contribute .ink { margin: 0 .25rem; }
 code { background: var(--paper-2); padding: .1rem .4rem; border-radius: 3px; }
 footer { text-align: center; color: var(--ink-soft); font-size: .9rem; }
+footer a:not(.support) { color: var(--blue); }
 
 @media (max-width: 820px) {
   .map-layout { grid-template-columns: 1fr; }

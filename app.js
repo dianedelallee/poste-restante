@@ -69,7 +69,10 @@
       q5: "Faut-il une pièce d'identité pour retirer sa lettre ?",
       a5: "En général, oui : le nom sur l'enveloppe doit correspondre exactement à celui de la pièce d'identité présentée au guichet. Les pièces acceptées varient selon les pays.",
       q6: "Peut-on envoyer un colis en poste restante ?",
-      a6: "Le service vise surtout les lettres. Les colis ne sont acceptés que dans certains pays, avec des règles et des frais différents : renseigne-toi auprès de la poste avant d'envoyer."
+      a6: "Le service vise surtout les lettres. Les colis ne sont acceptés que dans certains pays, avec des règles et des frais différents : renseigne-toi auprès de la poste avant d'envoyer.",
+      idx_kicker: "Index", idx_title: "Tous les pays documentés",
+      idx_intro: "Une page dédiée par pays : exemple d'adresse, durée de conservation, coût et conseils.",
+      open_page: "Ouvrir la page dédiée à ce pays →"
     },
     en: {
       title: "Poste restante: how to address a letter, country by country",
@@ -134,7 +137,10 @@
       q5: "Do you need an ID to collect your letter?",
       a5: "Generally, yes: the name on the envelope must match exactly the ID shown at the counter. Accepted documents vary by country.",
       q6: "Can you send a parcel to poste restante?",
-      a6: "The service mainly covers letters. Parcels are accepted only in some countries, with different rules and fees: check with the post office before sending."
+      a6: "The service mainly covers letters. Parcels are accepted only in some countries, with different rules and fees: check with the post office before sending.",
+      idx_kicker: "Index", idx_title: "All documented countries",
+      idx_intro: "A dedicated page per country: example address, holding period, cost and tips.",
+      open_page: "Open this country's page →"
     }
   };
   let lang = root.lang === "en" ? "en" : "fr";
@@ -219,6 +225,27 @@
   /* ---------- panneau ---------- */
   const MENTION = /poste restante|postlagernd|fermo ?posta|general delivery|lista de correos|posta restante|до востребования|c\/o|postrestant|address point|\bGD\b/i;
 
+  /* pages dédiées par pays (générées par scripts/build-pages.js) */
+  const PAGES = window.COUNTRY_PAGES || {};
+  const REGIONS = window.COUNTRY_REGIONS || [];
+  const pageUrl = (id) => (PAGES[id] ? (lang === "en" ? `/en/countries/${PAGES[id].en}/` : `/pays/${PAGES[id].fr}/`) : null);
+  const pageLink = (id) => { const u = pageUrl(id); return u ? `<p class="page-link"><a href="${u}">${esc(t("open_page"))}</a></p>` : ""; };
+
+  /* index des pays : liens simples, classés par région (aussi présent en dur dans le HTML pour les moteurs de recherche) */
+  function renderCountryIndex() {
+    const box = $("country-index");
+    if (!box || !REGIONS.length) return;
+    box.innerHTML = REGIONS.map((r) => {
+      const list = entries.filter((e) => PAGES[e.id] && PAGES[e.id].region === r.id).sort((a, b) => loc(a.id).name.localeCompare(loc(b.id).name, lang));
+      if (!list.length) return "";
+      const items = list.map((e) => {
+        const c = loc(e.id), st = statusOf(c);
+        return `<li><a href="${pageUrl(e.id)}" data-id="${e.id}"><span class="dot ${st}" title="${esc(t("st_" + st))}"></span><span aria-hidden="true">${c.flag}</span> ${esc(c.name)}</a></li>`;
+      }).join("");
+      return `<div class="region"><h3>${esc(r[lang])}</h3><ul class="country-links">${items}</ul></div>`;
+    }).join("");
+  }
+
   function renderPanel(id) {
     if (!DATA[id]) return;
     const c = loc(id);
@@ -233,6 +260,7 @@
         <div class="return-box"><span class="return-stamp">${esc(t("ret1"))}<br>${esc(t("ret2"))}</span></div>
         <p>${esc(c.summary || t("def_summary"))}</p>
         ${tips ? `<p class="k-title">${esc(t("leads"))}</p><ul>${tips}</ul>` : ""}
+        ${pageLink(id)}
         <p class="src">${esc(t("country_post"))} : <a href="${esc(c.source)}" target="_blank" rel="noopener">${esc(c.authority)} ↗</a></p>`;
       return;
     }
@@ -261,6 +289,7 @@
       </div>
       <p class="cost-detail">${esc(c.cost.detail)}</p>
       ${tips ? `<ul>${tips}</ul>` : ""}
+      ${pageLink(id)}
       <p class="src">${esc(t("source"))} : <a href="${esc(c.source)}" target="_blank" rel="noopener">${esc(c.authority)} ↗</a></p>`;
 
     panel.querySelector(".copy").addEventListener("click", (e) => {
@@ -370,6 +399,7 @@
     renderLegend();
     renderHeroPm();
     renderDeco();
+    renderCountryIndex();
     if (selectedId) { renderPanel(selectedId); input.value = loc(selectedId).name; }
     if (!results.hidden) renderResults();
     if (paths) paths.attr("aria-label", (d) => (DATA[idOf(d)] ? loc(idOf(d)).name : null));

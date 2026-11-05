@@ -45,9 +45,14 @@ app.js         map, search, panels, language and theme switches
 stamps.js      SVG generators for the decorative stamps
 data.js        country data (French, the source of truth)
 data.en.js     English overrides for the country data
+scripts/       build-pages.js generates the country pages (see below)
+pays/          generated country pages, in French
+en/countries/  generated country pages, in English
+pages.js       generated links between countries and their pages
+sitemap.xml    generated sitemap
 ```
 
-It is plain HTML, CSS and JavaScript, with no build step. The map uses [d3](https://d3js.org/) and [topojson](https://github.com/topojson/topojson) from cdnjs, and the [world-atlas](https://github.com/topojson/world-atlas) data from jsDelivr. Fonts come from Google Fonts.
+It is plain HTML, CSS and JavaScript, with no build step to deploy. The only generated files are the per-country pages, so that every country has its own address that search engines can read. After changing the data, run `node scripts/build-pages.js` (Node 18+, no dependency) and commit the result. The map uses [d3](https://d3js.org/) and [topojson](https://github.com/topojson/topojson) from cdnjs, and the [world-atlas](https://github.com/topojson/world-atlas) data from jsDelivr. Fonts come from Google Fonts.
 
 ## Run it locally
 
