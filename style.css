@@ -321,6 +321,14 @@ footer .airmail-bar { margin-bottom: 1.4rem; border-radius: 2px; }
 .panel .src a { color: var(--blue); }
 .k-title { font-family: "Special Elite", monospace; text-transform: uppercase; letter-spacing: .1em; margin: 0 0 .3rem; font-size: .8rem; color: var(--ink-soft); }
 
+/* ---------- FAQ ---------- */
+.faq-list { display: grid; gap: .6rem; margin-top: 1.4rem; max-width: 52rem; }
+.faq-list details { background: var(--card); border: 1px dashed var(--line); border-radius: 6px; padding: .2rem 1rem; }
+.faq-list summary { cursor: pointer; padding: .7rem 0; font-family: Fraunces, serif; font-weight: 600; font-size: 1.05rem; list-style-position: outside; }
+.faq-list details[open] summary { color: var(--red); }
+.faq-list summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.faq-list p { margin: 0 0 .9rem; color: var(--ink-soft); }
+
 /* ---------- conseils ---------- */
 .tip-grid { list-style: none; padding: 0; margin: 1.6rem 0 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
 .tip-grid li { background: var(--card); border: 1px dashed var(--line); padding: 1rem 1.1rem; border-radius: 6px; position: relative; }

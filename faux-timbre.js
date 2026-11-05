@@ -13,8 +13,9 @@
 
   const I18N = {
     fr: {
-      title: "Journée mondiale du faux timbre d'artiste · Poste restante",
-      desc: "Qu'est-ce que la Journée mondiale du faux timbre d'artiste ? Le principe, les règles pour participer et les infos de l'édition 2026 : jeudi 19 novembre, cap sur Angers.",
+      title: "Journée mondiale du faux timbre d'artiste 2026 (JMFTA)",
+      desc: "Qu'est-ce que la JMFTA, la Journée mondiale du faux timbre d'artiste ? Principe, règles et adresse à Angers pour l'édition 2026, le jeudi 19 novembre.",
+      footer_home: "Poste restante : comment adresser une lettre, pays par pays",
       nav_back: "← Poste restante",
       aria_lang: "Langue", aria_theme: "Mode jour / nuit", aria_github: "Voir le code sur GitHub",
       h_kicker: "Art postal · mail art",
@@ -82,8 +83,9 @@
       pm_top: "17E JMFTA", pm_bottom: "ANGERS", pm_mon: "NOV 26", locale: "fr-FR"
     },
     en: {
-      title: "World Artists' Fake Stamp Day · Poste restante",
-      desc: "What is the World Artists' Fake Stamp Day? The idea, how to take part and the 2026 edition: Thursday 19 November, heading for Angers.",
+      title: "World Artists' Fake Stamp Day 2026 (JMFTA)",
+      desc: "What is the World Artists' Fake Stamp Day (JMFTA)? The idea, the rules and the Angers address for the 2026 edition, on Thursday 19 November.",
+      footer_home: "Poste restante: how to address a letter, country by country",
       nav_back: "← Poste restante",
       aria_lang: "Language", aria_theme: "Light / dark mode", aria_github: "View the code on GitHub",
       h_kicker: "Postal art · mail art",

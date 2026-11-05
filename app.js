@@ -7,8 +7,8 @@
   /* ---------- textes de l'interface ---------- */
   const I18N = {
     fr: {
-      title: "Poste restante · le tour du monde du courrier en attente",
-      desc: "Comment adresser une lettre en poste restante, pays par pays : intitulé, durée de conservation, coûts.",
+      title: "Poste restante : comment adresser une lettre, pays par pays",
+      desc: "Carte interactive de la poste restante dans plus de 60 pays : comment écrire l'adresse, durée de conservation du courrier, frais et pièce d'identité exigée.",
       hero_kicker: "Carnet de correspondante",
       hero_lede: "Écrire à quelqu'un qui n'a pas d'adresse fixe. Ou qui en a une, mais préfère retirer sa lettre au guichet, comme au bon vieux temps.",
       hero_addr: "À l'attention de toi,<br>quelque part dans le monde",
@@ -55,11 +55,25 @@
       locale: "fr-FR",
       meter_paid: "PORT PAYÉ", par_avion: "PAR AVION", prio_a: "PRIORITAIRE", prio_b: "PRIORITY",
       ph_legend: "En grisé : à remplacer par tes informations. Le reste s'écrit tel quel.",
-      nav_jmfta: "✉ Journée du faux timbre · 19 nov.", support: "♥ Soutenir le projet"
+      nav_jmfta: "✉ Journée du faux timbre · 19 nov.", support: "♥ Soutenir le projet",
+      footer_jmfta: "Journée mondiale du faux timbre d'artiste",
+      faq_kicker: "Questions fréquentes", faq_title: "Tout savoir sur la poste restante",
+      q1: "Qu'est-ce que la poste restante ?",
+      a1: "C'est un service postal qui permet de se faire envoyer une lettre à un <strong>bureau de poste</strong> plutôt qu'à un domicile. Le destinataire vient la retirer au guichet avec une pièce d'identité. Selon les pays, on parle de « poste restante », « general delivery », « lista de correos », « Postlagernd » ou « fermo posta ».",
+      q2: "Comment écrire l'adresse d'une lettre en poste restante ?",
+      a2: "On écrit le nom du destinataire (comme sur sa pièce d'identité), la mention locale (« poste restante », « general delivery »…), le nom ou l'adresse du bureau de poste, le code postal et la ville, puis le pays. Le format exact varie d'un pays à l'autre : clique sur un pays de la carte pour voir un exemple d'enveloppe.",
+      q3: "Combien de temps la lettre est-elle gardée ?",
+      a3: "Cela dépend du pays, de quelques jours à plusieurs mois. D'après les sources officielles que nous avons trouvées : 10 jours au Japon, 30 jours aux États-Unis et en Italie, jusqu'à 4 mois au Canada. Passé ce délai, la lettre est renvoyée à l'expéditeur.",
+      q4: "La poste restante est-elle payante ?",
+      a4: "Souvent gratuite, mais pas toujours : certaines postes facturent la garde ou le retrait. En France, par exemple, le destinataire souscrit un service payant ; en Autriche, 1 € par envoi est perçu à la remise. Vérifie la fiche du pays.",
+      q5: "Faut-il une pièce d'identité pour retirer sa lettre ?",
+      a5: "En général, oui : le nom sur l'enveloppe doit correspondre exactement à celui de la pièce d'identité présentée au guichet. Les pièces acceptées varient selon les pays.",
+      q6: "Peut-on envoyer un colis en poste restante ?",
+      a6: "Le service vise surtout les lettres. Les colis ne sont acceptés que dans certains pays, avec des règles et des frais différents : renseigne-toi auprès de la poste avant d'envoyer."
     },
     en: {
-      title: "Poste restante · a world tour of held letters",
-      desc: "How to address a letter to poste restante, country by country: wording, holding period, fees.",
+      title: "Poste restante: how to address a letter, country by country",
+      desc: "Interactive map of poste restante in over 60 countries: how to write the address, how long mail is held, fees and ID requirements.",
       hero_kicker: "A pen pal's notebook",
       hero_lede: "Writing to someone with no fixed address. Or to someone who has one but would rather pick up their letter at the counter, like in the good old days.",
       hero_addr: "For you,<br>somewhere in the world",
@@ -106,7 +120,21 @@
       locale: "en-GB",
       meter_paid: "POSTAGE PAID", par_avion: "AIR MAIL", prio_a: "PRIORITY", prio_b: "PRIORITAIRE",
       ph_legend: "Greyed out: replace with your own details. Write the rest exactly as shown.",
-      nav_jmfta: "✉ Fake stamp day · 19 Nov", support: "♥ Support the project"
+      nav_jmfta: "✉ Fake stamp day · 19 Nov", support: "♥ Support the project",
+      footer_jmfta: "World Artists' Fake Stamp Day",
+      faq_kicker: "Frequently asked questions", faq_title: "Everything about poste restante",
+      q1: "What is poste restante?",
+      a1: "It is a postal service that lets you have a letter sent to a <strong>post office</strong> instead of a home address. The recipient collects it at the counter with an ID document. Depending on the country, it is called “poste restante”, “general delivery”, “lista de correos”, “Postlagernd” or “fermo posta”.",
+      q2: "How do you write the address of a poste restante letter?",
+      a2: "Write the recipient's name (as on their ID), the local wording (“poste restante”, “general delivery”…), the name or address of the post office, the postcode and city, then the country. The exact format varies from country to country: click a country on the map to see an example envelope.",
+      q3: "How long is the letter held?",
+      a3: "It depends on the country, from a few days to several months. According to the official sources we found: 10 days in Japan, 30 days in the United States and Italy, up to 4 months in Canada. After that, the letter is returned to the sender.",
+      q4: "Is poste restante free?",
+      a4: "Often free, but not always: some postal services charge for holding or collecting mail. In France, for example, the recipient signs up for a paid service; in Austria, €1 per item is collected on delivery. Check the country's page.",
+      q5: "Do you need an ID to collect your letter?",
+      a5: "Generally, yes: the name on the envelope must match exactly the ID shown at the counter. Accepted documents vary by country.",
+      q6: "Can you send a parcel to poste restante?",
+      a6: "The service mainly covers letters. Parcels are accepted only in some countries, with different rules and fees: check with the post office before sending."
     }
   };
   let lang = root.lang === "en" ? "en" : "fr";
