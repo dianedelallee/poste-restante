@@ -70,6 +70,10 @@ The map needs an internet connection to load its libraries.
 
 Corrections and new countries are very welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## Support the project
+
+If this site is useful to you, you can support its upkeep through [GitHub Sponsors](https://github.com/sponsors/dianedelallee). Thank you!
+
 ## Disclaimer
 
 The information is indicative and can be outdated. Postal operators change their rules and fees without notice. Always check with the local post office.
