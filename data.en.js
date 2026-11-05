@@ -642,3 +642,43 @@ Object.assign(window.COUNTRIES_EN, {
     ]
   }
 });
+Object.assign(window.COUNTRIES_EN, {
+  "508": { name: "Mozambique",
+    summary: "No official source describes a poste restante service (\"posta restante\") in Mozambique. The state-owned company Correios de Moçambique was dissolved in 2021; in October 2024 the regulator INCM granted the universal postal operator licence to CORRE, whose website mentions neither poste restante, nor an address format, nor a holding period.",
+    tips: [
+      "Official INCM page (14 October 2024): the universal postal operator licence is handed to CORRE to fill \"the legal vacuum resulting from the dissolution, in 2021, of the state-owned company Correios de Moçambique\". This text is about the company; it says nothing about poste restante.",
+      "Press (Diário Económico, 30 May 2025): the liquidation committee announces the permanent closure of Correios de Moçambique's premises from 1 June 2025 and the transfer of all activities to CORRE. Secondary source.",
+      "CORRE's official site (corremz.com): it lists \"caixas de apartado\" (PO boxes) among the universal postal service offerings, but does not explain how to address mail, any holding period, any holding fees, or poste restante.",
+      "Mozambique's UPU addressing sheet (03/2005, so old and in the name of the former national company) only gives home delivery and P.O. Box examples (4-digit postcode before the locality), with no poste restante example.",
+      "Unverified lead: ask CORRE directly whether one of its access points can hold mail at the counter before having anything sent."
+    ] },
+  "894": { name: "Zambia",
+    address: ["Ms Camille DUPONT", "Post Restante", "NAME OF THE POST OFFICE Postcode (5 digits)", "ZAMBIA"],
+    duration: { value: "Unconfirmed" },
+    cost: { label: "Unconfirmed", detail: "No official Zampost page describing poste restante, its duration or its cost was found." },
+    tips: [
+      "The format comes from Zambia's UPU addressing sheet (01/2013), which gives a \"Poste restante\" example: name, Post Restante, post office + postcode, ZAMBIA (example: LIVINGSTONE 23345). Official source, but old. The same sheet states that postcodes had not yet been assigned: ask the chosen office for the code.",
+      "Zampost's official site (pages consulted: home, PO boxes) does not mention poste restante. Is the service still offered, for how long, with which ID? To be confirmed with the chosen office.",
+      "The PO box remains the usual option: official \"PO Box Services\" page (140+ offices), annual rental payable in advance: 600 per year (individual), 1,500 (SME), 2,500 (non-profit), 7,000 (government and large businesses). ID asked to open a box: NRC, passport or driving licence. This is not poste restante.",
+      "The UPU sheet also lists the Private Bag (example \"Private Bag E 345\") and private postal agencies, but these are other delivery modes."
+    ] },
+  "800": { name: "Uganda",
+    summary: "No official Posta Uganda page describes a poste restante service: duration, cost and address format are not documented. The site promotes PO boxes (\"Physical Address\"), electronic addresses and the Private Bag.",
+    tips: [
+      "Uganda's UPU addressing sheet (updated 01/2026) only gives urban, rural, organisation and P.O. Box examples, with no poste restante example.",
+      "Official \"Physical Address\" page: a lockable box in a post office, annual rental of UGX 30,000 to 120,000 depending on the office, plus UGX 10,000 for an authorisation card and UGX 15,000 for the padlock key. Individuals: copy of the identity card and a passport photo.",
+      "Official \"Virtual Box\" page: a digital address at UGX 20,000 for an individual, whatever the office. The address format is not specified.",
+      "Official \"Private Bags\" page: only for existing prepaid or contract customers, from UGX 3,000,000, billed monthly (the page also says \"annual fees\": inconsistency to clarify with Posta Uganda).",
+      "Official \"Enquiry Fees\" page: UGX 10,000 for an enquiry about a postal address. Nothing on uncollected mail.",
+      "Unverified lead: ask a Posta Uganda office directly whether mail can be held at the counter before having anything sent."
+    ] },
+  "646": { name: "Rwanda",
+    summary: "No official source describes a poste restante service in Rwanda. The iPosita website presents PO box rentals and, since 2024, the electronic PO box (ePoBox); the UPU addressing sheet only gives a B.P. example.",
+    tips: [
+      "Official iPosita \"PO Box Rentals\" page (undated): a named box, the iPosita commits to receive, keep and make the mail available to the subscriber. Annual rental: 15,000 RWF (individual) and 30,000 RWF (company).",
+      "ePoBox: official Irembo portal help page (modified 8 December 2025): online application with an Irembo account, phone number, national ID number (individual) or TIN (company), choice of post office; 8,000 RWF (individual) or 15,000 RWF (company); processing time of one working day. The address format is not specified there.",
+      "Rwanda's UPU addressing sheet (03/2005, old) only shows a \"B.P.\" (PO box) example, with no poste restante.",
+      "The operator's name varies by source (National Post Office, iPosita, Rwanda Post): it is the same national office.",
+      "Unverified lead: ask an iPosita office directly whether mail can be held at the counter. An Australia Post guide (secondary source) says its International Express service does not deliver to poste restante for Rwanda."
+    ] }
+});

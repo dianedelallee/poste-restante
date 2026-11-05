@@ -811,3 +811,59 @@ Object.assign(window.COUNTRIES, {
     reliability: "check", source: "https://www.poste.tn/nos_tarifs.php?code=3"
   }
 });
+Object.assign(window.COUNTRIES, {
+  "508": {
+    name: "Mozambique", flag: "🇲🇿", authority: "CORRE – Correio Expresso de Moçambique (opérateur postal universel désigné)",
+    noInfo: true,
+    summary: "Aucune source officielle ne décrit un service de poste restante (« posta restante ») au Mozambique. L'entreprise publique Correios de Moçambique a été éteinte en 2021 ; le régulateur INCM a délivré en octobre 2024 la licence d'opérateur postal universel à CORRE, dont le site ne parle ni de poste restante, ni de format d'adresse, ni de durée de garde.",
+    tips: [
+      "Page officielle de l'INCM (14 octobre 2024) : la licence d'opérateur postal universel est remise à CORRE pour combler « le vide légal résultant de l'extinction, en 2021, de l'entreprise publique Correios de Moçambique ». Ce texte concerne l'entreprise, il ne dit rien de la poste restante.",
+      "Presse (Diário Económico, 30 mai 2025) : la commission de liquidation annonce la fermeture définitive des installations des Correios de Moçambique à partir du 1er juin 2025 et le transfert de toutes les activités à CORRE. Source secondaire.",
+      "Site officiel de CORRE (corremz.com) : il cite les « caixas de apartado » (boîtes postales) parmi les services du service postal universel, mais n'explique ni comment adresser un courrier, ni durée de conservation, ni tarifs de garde, ni poste restante.",
+      "La fiche d'adressage UPU du Mozambique (03/2005, donc ancienne et au nom de l'ancienne entreprise nationale) ne donne que des exemples de livraison à domicile et en P.O. Box (code postal à 4 chiffres devant la localité), sans exemple de poste restante.",
+      "Piste non vérifiée : demander directement à CORRE si un de ses points d'accès peut garder le courrier au guichet, avant de faire envoyer quoi que ce soit."
+    ],
+    source: "https://www.incm.gov.mz/2024/10/14/incm-entrega-licenca-ao-operador-postal-universal/"
+  },
+  "894": {
+    name: "Zambie", flag: "🇿🇲", localName: "Post Restante", authority: "Zambia Postal Services Corporation (Zampost)",
+    address: ["Ms Camille DUPONT", "Post Restante", "NOM DU BUREAU DE POSTE Code postal (5 chiffres)", "ZAMBIE"],
+    duration: { value: "Non confirmé", days: 0 },
+    cost: { label: "Non confirmé", detail: "Aucune page officielle de Zampost décrivant la poste restante, sa durée ou son coût n'a été trouvée." },
+    idRequired: null,
+    tips: [
+      "Le format vient de la fiche d'adressage UPU de la Zambie (01/2013), qui donne un exemple « Poste restante » : nom, Post Restante, bureau de poste + code postal, ZAMBIA (exemple : LIVINGSTONE 23345). Source officielle, mais ancienne. La même fiche précise que les codes postaux n'étaient pas encore attribués : demande le code au bureau choisi.",
+      "Le site officiel de Zampost (pages consultées : accueil, boîtes postales) ne mentionne pas la poste restante. Le service est-il toujours proposé, pour combien de temps, avec quelles pièces d'identité ? À confirmer auprès du bureau choisi.",
+      "L'usage courant reste la boîte postale : page officielle « PO Box Services » (140 bureaux et plus), location annuelle payable d'avance : 600 par an (particulier), 1 500 (PME), 2 500 (association), 7 000 (administration et grandes entreprises). Pièce demandée pour ouvrir une boîte : NRC, passeport ou permis de conduire. Ce n'est pas de la poste restante.",
+      "La fiche UPU cite aussi le Private Bag (exemple « Private Bag E 345 ») et des agences postales privées, mais ce sont d'autres modes de livraison."
+    ],
+    reliability: "check", source: "https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/zmbEn.pdf"
+  },
+  "800": {
+    name: "Ouganda", flag: "🇺🇬", authority: "Uganda Post Limited (Posta Uganda)",
+    noInfo: true,
+    summary: "Aucune page officielle de Posta Uganda ne décrit un service de poste restante : durée, coût et format d'adresse ne sont pas documentés. Le site met en avant les boîtes postales (« Physical Address »), les adresses électroniques et le Private Bag.",
+    tips: [
+      "La fiche d'adressage UPU de l'Ouganda (mise à jour 01/2026) ne donne que des exemples en ville, en zone rurale, en organisation et en P.O. Box, aucun exemple de poste restante.",
+      "Page officielle « Physical Address » : boîte fermée à clé dans un bureau de poste, location annuelle de 30 000 à 120 000 UGX selon le bureau, plus 10 000 UGX de carte d'autorisation et 15 000 UGX pour la clé du cadenas. Particulier : copie de la carte d'identité et photo d'identité.",
+      "Page officielle « Virtual Box » : adresse numérique à 20 000 UGX pour un particulier, quel que soit le bureau. Le format d'adresse n'est pas précisé.",
+      "Page officielle « Private Bags » : réservé aux clients déjà prépayés ou sous contrat, à partir de 3 000 000 UGX, facturation mensuelle (la page parle aussi de « frais annuels » : incohérence à clarifier avec Posta Uganda).",
+      "Page officielle « Enquiry Fees » : 10 000 UGX pour une demande de renseignement sur une adresse postale. Rien sur le courrier non réclamé.",
+      "Piste non vérifiée : demander directement à un bureau Posta Uganda si le courrier peut être gardé au guichet, avant de faire envoyer quoi que ce soit."
+    ],
+    source: "https://ugapost.co.ug/our-services/physical-address/"
+  },
+  "646": {
+    name: "Rwanda", flag: "🇷🇼", authority: "National Post Office of Rwanda (iPosita, ex-Rwanda Post)",
+    noInfo: true,
+    summary: "Aucune source officielle ne décrit un service de poste restante au Rwanda. Le site de l'iPosita présente la location de boîtes postales et, depuis 2024, la boîte postale électronique (ePoBox) ; la fiche d'adressage UPU ne donne qu'un exemple en B.P.",
+    tips: [
+      "Page officielle « PO Box Rentals » de l'iPosita (non datée) : boîte nominative, l'iPosita s'engage à recevoir, conserver et mettre le courrier à la disposition de l'abonné. Location annuelle : 15 000 RWF (particulier) et 30 000 RWF (entreprise).",
+      "ePoBox : page d'aide officielle du portail Irembo (modifiée le 8 décembre 2025) : demande en ligne avec compte Irembo, numéro de téléphone, identifiant national (particulier) ou TIN (entreprise), choix du bureau de poste ; 8 000 RWF (particulier) ou 15 000 RWF (entreprise) ; délai de traitement d'un jour ouvrable. Le format d'adresse n'y est pas précisé.",
+      "La fiche d'adressage UPU du Rwanda (03/2005, ancienne) ne montre qu'un exemple « B.P. » (boîte postale), sans poste restante.",
+      "Les noms de l'opérateur varient selon les sources (National Post Office, iPosita, Rwanda Post) : il s'agit du même office national.",
+      "Piste non vérifiée : demander directement à un bureau de l'iPosita si le courrier peut être gardé au guichet. Un guide de l'Australia Post (source secondaire) indique que son service International Express ne livre pas en poste restante vers le Rwanda."
+    ],
+    source: "https://i-posita.rw/pobox/"
+  }
+});
