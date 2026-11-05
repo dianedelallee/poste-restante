@@ -205,14 +205,17 @@
     }
   }
 
-  function applyStatic() {
+  function applyStatic(initial) {
     root.lang = lang;
     document.title = t("title");
     const md = document.querySelector('meta[name="description"]');
     if (md) md.setAttribute("content", t("desc"));
-    document.querySelectorAll("[data-i18n]").forEach((el) => { el.textContent = t(el.dataset.i18n); });
-    document.querySelectorAll("[data-i18n-html]").forEach((el) => { el.innerHTML = t(el.dataset.i18nHtml); });
-    document.querySelectorAll("[data-i18n-aria]").forEach((el) => el.setAttribute("aria-label", t(el.dataset.i18nAria)));
+    /* au premier chargement en français, le HTML contient déjà ces textes : on évite de les réécrire (ça retardait l'affichage) */
+    if (!(initial && lang === "fr")) {
+      document.querySelectorAll("[data-i18n]").forEach((el) => { el.textContent = t(el.dataset.i18n); });
+      document.querySelectorAll("[data-i18n-html]").forEach((el) => { el.innerHTML = t(el.dataset.i18nHtml); });
+      document.querySelectorAll("[data-i18n-aria]").forEach((el) => el.setAttribute("aria-label", t(el.dataset.i18nAria)));
+    }
     document.querySelectorAll("#lang button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.l === lang)));
     const pm = $("hero-pm");
     if (pm) pm.innerHTML = postmarkSVG();
@@ -220,10 +223,10 @@
     renderAddress();
   }
 
-  function setLang(l, persist) {
+  function setLang(l, persist, initial) {
     lang = l === "en" ? "en" : "fr";
     if (persist) store("pr-lang", lang);
-    applyStatic();
+    applyStatic(initial);
   }
   document.querySelectorAll("#lang button").forEach((b) => b.addEventListener("click", () => setLang(b.dataset.l, true)));
 
@@ -237,5 +240,5 @@
     if (mq.addEventListener) mq.addEventListener("change", (e) => { if (!stored("pr-theme")) setTheme(e.matches ? "dark" : "light", false); });
   }
 
-  setLang(lang, false);
+  setLang(lang, false, true);
 })();

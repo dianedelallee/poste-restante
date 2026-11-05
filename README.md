@@ -45,6 +45,7 @@ app.js         map, search, panels, language and theme switches
 stamps.js      SVG generators for the decorative stamps
 data.js        country data (French, the source of truth)
 data.en.js     English overrides for the country data
+fonts/         self-hosted fonts (woff2) and their licences
 scripts/       build-pages.js generates the country pages (see below)
 pays/          generated country pages, in French
 en/countries/  generated country pages, in English

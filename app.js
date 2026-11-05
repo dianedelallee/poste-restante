@@ -171,7 +171,7 @@
   });
   const sortedEntries = () => entries.slice().sort((a, b) => loc(a.id).name.localeCompare(loc(b.id).name, lang));
 
-  let selectedId = null, filter = null, paths = null, svg = null, zoom = null, feats = {};
+  let selectedId = null, filter = null, paths = null, svg = null, zoom = null, feats = {}, path = null, projection = null, g = null;
   const W = 960, H = 500;
 
   /* ---------- décor postal ---------- */
@@ -382,21 +382,24 @@
   });
 
   /* ---------- langue ---------- */
-  function applyStatic() {
+  function applyStatic(initial) {
     root.lang = lang;
     document.title = t("title");
     const md = document.querySelector('meta[name="description"]');
     if (md) md.setAttribute("content", t("desc"));
-    document.querySelectorAll("[data-i18n]").forEach((el) => { el.textContent = t(el.dataset.i18n); });
-    document.querySelectorAll("[data-i18n-html]").forEach((el) => { el.innerHTML = t(el.dataset.i18nHtml); });
-    document.querySelectorAll("[data-i18n-ph]").forEach((el) => el.setAttribute("placeholder", t(el.dataset.i18nPh)));
-    document.querySelectorAll("[data-i18n-aria]").forEach((el) => el.setAttribute("aria-label", t(el.dataset.i18nAria)));
+    /* au premier chargement en français, le HTML contient déjà ces textes : on évite de les réécrire (ça retardait l'affichage) */
+    if (!(initial && lang === "fr")) {
+      document.querySelectorAll("[data-i18n]").forEach((el) => { el.textContent = t(el.dataset.i18n); });
+      document.querySelectorAll("[data-i18n-html]").forEach((el) => { el.innerHTML = t(el.dataset.i18nHtml); });
+      document.querySelectorAll("[data-i18n-ph]").forEach((el) => el.setAttribute("placeholder", t(el.dataset.i18nPh)));
+      document.querySelectorAll("[data-i18n-aria]").forEach((el) => el.setAttribute("aria-label", t(el.dataset.i18nAria)));
+    }
     document.querySelectorAll("#lang button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.l === lang)));
   }
-  function setLang(l, persist) {
+  function setLang(l, persist, initial) {
     lang = l === "en" ? "en" : "fr";
     if (persist) store("pr-lang", lang);
-    applyStatic();
+    applyStatic(initial);
     renderLegend();
     renderHeroPm();
     renderDeco();
@@ -422,55 +425,67 @@
   /* ---------- démarrage ---------- */
   const m = /^#pays-(\d{3})$/.exec(location.hash);
   if (m && DATA[m[1]]) { selectedId = m[1]; }
-  setLang(lang, false);
+  setLang(lang, false, true);
   if (selectedId) { renderPanel(selectedId); input.value = loc(selectedId).name; }
 
-  /* ---------- carte ---------- */
-  if (!window.d3 || !window.topojson) { $("map-error").hidden = false; return; }
+  /* ---------- carte ----------
+     d3 et topojson pèsent environ 100 Ko : on les charge une fois la page affichée, pour qu'ils ne
+     concurrencent pas les polices (et donc le texte principal) pendant le premier affichage. */
+  const D3_URL = "https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js";
+  const TOPOJSON_URL = "https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js";
+  const loadScript = (src) => new Promise((resolve, reject) => {
+    const el = document.createElement("script");
+    el.src = src; el.onload = resolve; el.onerror = reject;
+    document.head.appendChild(el);
+  });
+  const startMap = () => Promise.all([loadScript(D3_URL), loadScript(TOPOJSON_URL)]).then(initMap).catch(() => { $("map-error").hidden = false; });
+  if (document.readyState === "complete") startMap(); else window.addEventListener("load", startMap, { once: true });
 
-  svg = d3.select("#map");
-  svg.attr("viewBox", `0 0 ${W} ${H}`);
-  const defs = svg.append("defs");
-  defs.append("pattern").attr("id", "hatch").attr("width", 5).attr("height", 5).attr("patternUnits", "userSpaceOnUse").attr("patternTransform", "rotate(45)")
-    .call((p) => {
-      p.append("rect").attr("width", 5).attr("height", 5).attr("fill", "transparent");
-      p.append("line").attr("x1", 0).attr("y1", 0).attr("x2", 0).attr("y2", 5).attr("stroke", "#9a8b72").attr("stroke-width", 1.6);
-    });
-  const g = svg.append("g");
-  const projection = d3.geoNaturalEarth1().fitExtent([[8, 8], [W - 8, H - 8]], { type: "Sphere" });
-  const path = d3.geoPath(projection);
+  function initMap() {
+    svg = d3.select("#map");
+    svg.attr("viewBox", `0 0 ${W} ${H}`);
+    const defs = svg.append("defs");
+    defs.append("pattern").attr("id", "hatch").attr("width", 5).attr("height", 5).attr("patternUnits", "userSpaceOnUse").attr("patternTransform", "rotate(45)")
+      .call((p) => {
+        p.append("rect").attr("width", 5).attr("height", 5).attr("fill", "transparent");
+        p.append("line").attr("x1", 0).attr("y1", 0).attr("x2", 0).attr("y2", 5).attr("stroke", "#9a8b72").attr("stroke-width", 1.6);
+      });
+    g = svg.append("g");
+    projection = d3.geoNaturalEarth1().fitExtent([[8, 8], [W - 8, H - 8]], { type: "Sphere" });
+    path = d3.geoPath(projection);
 
-  zoom = d3.zoom().scaleExtent([1, 14]).translateExtent([[0, 0], [W, H]]).extent([[0, 0], [W, H]]).on("zoom", (e) => g.attr("transform", e.transform));
-  svg.call(zoom);
-  $("zin").onclick = () => svg.transition().duration(250).call(zoom.scaleBy, 1.6);
-  $("zout").onclick = () => svg.transition().duration(250).call(zoom.scaleBy, 1 / 1.6);
-  $("zreset").onclick = () => svg.transition().duration(350).call(zoom.transform, d3.zoomIdentity);
+    zoom = d3.zoom().scaleExtent([1, 14]).translateExtent([[0, 0], [W, H]]).extent([[0, 0], [W, H]]).on("zoom", (e) => g.attr("transform", e.transform));
+    svg.call(zoom);
+    $("zin").onclick = () => svg.transition().duration(250).call(zoom.scaleBy, 1.6);
+    $("zout").onclick = () => svg.transition().duration(250).call(zoom.scaleBy, 1 / 1.6);
+    $("zreset").onclick = () => svg.transition().duration(350).call(zoom.transform, d3.zoomIdentity);
 
-  d3.json(WORLD_URL).then((world) => {
-    /* sans l'Antarctique (010) : aucune fiche dessus, et il mange la moitié de la hauteur de la carte */
-    const features = topojson.feature(world, world.objects.countries).features.filter((f) => idOf(f) !== "010");
-    projection.fitExtent([[8, 8], [W - 8, H - 8]], { type: "FeatureCollection", features });
-    features.forEach((f) => { feats[idOf(f)] = f; });
-    paths = g.selectAll("path").data(features).join("path")
-      .attr("class", (d) => { const c = DATA[idOf(d)]; return "country" + (c ? " on s-" + statusOf(c) : ""); })
-      .attr("d", path)
-      .attr("tabindex", (d) => (DATA[idOf(d)] ? 0 : null))
-      .attr("role", (d) => (DATA[idOf(d)] ? "button" : null))
-      .attr("aria-label", (d) => (DATA[idOf(d)] ? loc(idOf(d)).name : null))
-      .on("click", (e, d) => { if (DATA[idOf(d)]) select(idOf(d), { noZoom: true }); })
-      .on("keydown", (e, d) => { if ((e.key === "Enter" || e.key === " ") && DATA[idOf(d)]) { e.preventDefault(); select(idOf(d), { noZoom: true }); } })
-      .on("mousemove", (e, d) => {
-        const id = idOf(d);
-        const label = DATA[id] ? `${DATA[id].flag} ${loc(id).name}` : (d.properties && d.properties.name) || "";
-        if (!label) return;
-        const r = mapWrap.getBoundingClientRect();
-        tooltip.hidden = false;
-        tooltip.textContent = label + " · " + (DATA[id] ? t("st_" + statusOf(DATA[id])) : t("not_doc"));
-        tooltip.style.left = e.clientX - r.left + "px";
-        tooltip.style.top = e.clientY - r.top + "px";
-      })
-      .on("mouseleave", () => { tooltip.hidden = true; });
-    if (selectedId) { paths.classed("selected", (d) => idOf(d) === selectedId); focusOnMap(selectedId); }
-    applyFilter();
-  }).catch(() => { $("map-error").hidden = false; });
+    d3.json(WORLD_URL).then((world) => {
+      /* sans l'Antarctique (010) : aucune fiche dessus, et il mange la moitié de la hauteur de la carte */
+      const features = topojson.feature(world, world.objects.countries).features.filter((f) => idOf(f) !== "010");
+      projection.fitExtent([[8, 8], [W - 8, H - 8]], { type: "FeatureCollection", features });
+      features.forEach((f) => { feats[idOf(f)] = f; });
+      paths = g.selectAll("path").data(features).join("path")
+        .attr("class", (d) => { const c = DATA[idOf(d)]; return "country" + (c ? " on s-" + statusOf(c) : ""); })
+        .attr("d", path)
+        .attr("tabindex", (d) => (DATA[idOf(d)] ? 0 : null))
+        .attr("role", (d) => (DATA[idOf(d)] ? "button" : null))
+        .attr("aria-label", (d) => (DATA[idOf(d)] ? loc(idOf(d)).name : null))
+        .on("click", (e, d) => { if (DATA[idOf(d)]) select(idOf(d), { noZoom: true }); })
+        .on("keydown", (e, d) => { if ((e.key === "Enter" || e.key === " ") && DATA[idOf(d)]) { e.preventDefault(); select(idOf(d), { noZoom: true }); } })
+        .on("mousemove", (e, d) => {
+          const id = idOf(d);
+          const label = DATA[id] ? `${DATA[id].flag} ${loc(id).name}` : (d.properties && d.properties.name) || "";
+          if (!label) return;
+          const r = mapWrap.getBoundingClientRect();
+          tooltip.hidden = false;
+          tooltip.textContent = label + " · " + (DATA[id] ? t("st_" + statusOf(DATA[id])) : t("not_doc"));
+          tooltip.style.left = e.clientX - r.left + "px";
+          tooltip.style.top = e.clientY - r.top + "px";
+        })
+        .on("mouseleave", () => { tooltip.hidden = true; });
+      if (selectedId) { paths.classed("selected", (d) => idOf(d) === selectedId); focusOnMap(selectedId); }
+      applyFilter();
+    }).catch(() => { $("map-error").hidden = false; });
+  }
 })();

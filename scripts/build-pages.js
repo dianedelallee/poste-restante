@@ -61,6 +61,8 @@ const STR = {
     caveat_none: "Nous n'avons trouvé aucune page officielle sur ce service. Cela ne prouve pas qu'il n'existe pas : beaucoup de sites de postes bloquent l'accès automatique ou n'en parlent pas.",
     desc: (n, d, c, a) => `Poste restante ${n} : exemple d'adresse, conservation : ${d}, coût : ${c}. Source : ${a}.`,
     descNo: (n, a) => `Poste restante ${n} : aucune page officielle trouvée pour ${a}. Pistes à vérifier et alternatives.`,
+    imgAlt: "Enveloppe « par avion » avec le titre Poste restante, des timbres et des tampons postaux",
+    related: (r) => `Autres pays : ${r}`,
     all: "Tous les pays", footer: "Fait avec amour du papier et de l'encre · Les infos sont indicatives, vérifie toujours auprès de la poste locale.",
     jmfta: "Journée mondiale du faux timbre d'artiste", jmftaHref: "/faux-timbre.html", support: "♥ Soutenir le projet", sameAs: "English"
   },
@@ -86,6 +88,8 @@ const STR = {
     caveat_none: "We found no official page about this service. That doesn't prove it doesn't exist: many postal websites block automated access or simply don't mention it.",
     desc: (n, d, c, a) => `Poste restante in ${n}: example address, held for ${d}, cost: ${c}. Source: ${a}.`,
     descNo: (n, a) => `Poste restante in ${n}: no official page found for ${a}. Leads to check and alternatives.`,
+    imgAlt: "Airmail envelope with the title Poste restante, stamps and postmarks",
+    related: (r) => `More countries: ${r}`,
     all: "All countries", footer: "Made with a love of paper and ink · Information is indicative: always check with the local post office.",
     jmfta: "World Artists' Fake Stamp Day", jmftaHref: "/faux-timbre.html", support: "♥ Support the project", sameAs: "Français"
   }
@@ -214,6 +218,19 @@ function countryPage(id, lang) {
       <p class="src">${esc(T.source)}${T.colon}<a href="${esc(c.source)}" target="_blank" rel="noopener">${esc(c.authority)} ↗</a></p>`;
   }
 
+  /* autres pays de la même région : maillage interne (uniquement des pages indexables) */
+  const region = REGIONS.find((r) => r.id === PAGES[id].region);
+  const siblings = IDS.filter((x) => x !== id && PAGES[x].region === region.id && isIndexable(x))
+    .sort((a, b) => PAGES[a][lang].localeCompare(PAGES[b][lang], "en")).slice(0, 14);
+  const related = siblings.length ? `
+  <section class="related" aria-labelledby="related-h">
+    <h2 class="k-title" id="related-h">${esc(T.related(region[lang]))}</h2>
+    <ul class="country-links">
+${siblings.map((x) => { const sc = loc(x, lang), ss = statusOf(sc); return `      <li><a href="${urlOf(x, lang)}"><span class="dot ${ss}" title="${esc(T.st[ss])}"></span><span aria-hidden="true">${sc.flag}</span> ${esc(sc.name)}</a></li>`; }).join("\n")}
+    </ul>
+  </section>
+` : "";
+
   const brief = c.noInfo ? "" : `<p class="brief"><strong>${esc(T.brief_h)}.</strong> ${esc(T.brief(c.name, c.localName, c.authority, c.duration.value, c.cost.label, idTxt.toLowerCase()))}</p>`;
 
   const ld = {
@@ -252,12 +269,14 @@ function countryPage(id, lang) {
   <meta property="og:image" content="${SITE}/social-preview.png">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="${esc(T.imgAlt)}">
   <meta property="og:locale" content="${T.ogLocale}">
   <meta property="og:locale:alternate" content="${STR[other].ogLocale}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${esc(title)}">
   <meta name="twitter:description" content="${esc(description)}">
   <meta name="twitter:image" content="${SITE}/social-preview.png">
+  <meta name="twitter:image:alt" content="${esc(T.imgAlt)}">
   <script type="application/ld+json">${JSON.stringify(ld)}</script>
   <script>
     (function () {
@@ -267,9 +286,8 @@ function countryPage(id, lang) {
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Caveat:wght@500;700&family=Inter:wght@400;500;600&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -316,7 +334,7 @@ function countryPage(id, lang) {
     <article class="panel">${right}
     </article>
   </div>
-
+${related}
   <nav class="pager" aria-label="${esc(T.all)}">
     ${pagerLink(prev, "prev")}
     <a class="all" href="/${T.homeQuery}#pays">${esc(T.all)}</a>
