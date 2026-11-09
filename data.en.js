@@ -213,7 +213,9 @@ window.COUNTRIES_EN = Object.assign(window.COUNTRIES_EN || {}, {
     summary: "No official Thailand Post page on duration, cost or ID could be consulted (the site blocks automated access: a page may exist).",
     tips: [
       "The UPU addressing sheet gives an example format \"Poste Restante / General Post Office / district, city, postal code\": it is an example, not a service rule.",
-      "An unofficial travel guide says most offices hold mail for people without a fixed address: not confirmed."
+      "An unofficial travel guide says most offices hold mail for people without a fixed address: not confirmed.",
+      "Wikipedia (not an official source) gives the local term \"รอจ่าย ไปรษณีย์\" (or \"รอจ่าย ปณ.\"), a name matching the ID or passport, and a small fee of 1 to 2 baht on collection: not verified.",
+      "The Thailand Post website (thailandpost.co.th) returns a 403 error to automated access: to be checked from a browser or at a counter."
     ]
   },
   "704": {
@@ -854,6 +856,133 @@ Object.assign(window.COUNTRIES_EN, {
       "The service is not automatic: the addressee must first sign an addressee's order (Naslovnikovo naročilo) at a post office, with an ID document.",
       "With that agreement, arrived mail is kept 30 days as \"poštno ležeče\". Without it, the general holding period is shorter.",
       "The words \"Poštno ležeče\" and \"Poste restante\" do not count as a sender address."
+    ]
+  },
+  "144": {
+    name: "Sri Lanka",
+    address: [
+      "[Camille DUPONT]",
+      "POSTE RESTANTE",
+      "[Name of the chosen post office]",
+      "SRI LANKA"
+    ],
+    duration: { value: "1 month (2 months in seaport towns)" },
+    cost: { label: "Unconfirmed", detail: "No poste restante fee on the official pages read. The Rs 50 per day warehousing charge applies to undelivered parcels." },
+    tips: [
+      "Mail is kept 2 months from receipt in a seaport town, 1 month elsewhere.",
+      "The service is offered to tourists and travellers at \"selected\" offices, with no published list: ask the post office which one to use.",
+      "You must identify yourself to collect mail, with no document specified. Sufficient address particulars are required to prevent mistakes."
+    ]
+  },
+  "158": {
+    name: "Taiwan",
+    address: [
+      "[Camille DUPONT]",
+      "Poste Restante",
+      "[Name of the post office]",
+      "[Phone number]",
+      "TAIWAN"
+    ],
+    duration: { value: "15 days (2 months for international)" },
+    cost: { label: "Free for 15 days", detail: "Free for the first 15 days, then a daily storage fee from day 16 (amount varies, to be confirmed)." },
+    tips: [
+      "Domestic mail: 15 days from the day after arrival, extendable to 1 month by written request. International mail: 2 months, with 15 days free.",
+      "The address must include the recipient's name (full, no abbreviation), phone number, the post office name and the words \"存局候領\" or \"Poste Restante\". With a mobile number, an SMS announces the arrival.",
+      "Collection with an ID document. Express mail is held only 5 days."
+    ]
+  },
+  "586": {
+    name: "Pakistan",
+    address: [
+      "[Camille DUPONT]",
+      "POSTE RESTANTE",
+      "[Name of the chosen post office]",
+      "PAKISTAN"
+    ],
+    duration: { value: "1 month (2 months in Karachi)" },
+    cost: { label: "Unconfirmed", detail: "No fee stated on the official page." },
+    tips: [
+      "Mail is kept 2 months in Karachi and 1 month in all other cases, from its arrival at the designated office.",
+      "ID requirement and exact address format: not stated on the official page.",
+      "A search summary mentioned a 3-month limit on use: not confirmed."
+    ]
+  },
+  "807": {
+    name: "North Macedonia",
+    address: [
+      "[First name SURNAME]",
+      "Пост рестант",
+      "[Name of the post office]",
+      "NORTH MACEDONIA"
+    ],
+    duration: { value: "30 days" },
+    cost: { label: "Unconfirmed", detail: "No fee stated on the official page." },
+    tips: [
+      "Mail is kept 30 days from arrival at the destination postal unit.",
+      "The recipient's address carries the words \"Пост рестант\". The service is presented as outside the universal service.",
+      "Excluded: urgent items, EMS, court or administrative letters. ID requirement: not stated."
+    ]
+  },
+  "499": {
+    name: "Montenegro",
+    address: [
+      "[First name SURNAME]",
+      "POSTE RESTANTE",
+      "[Postcode and name of the post office]",
+      "MONTENEGRO"
+    ],
+    duration: { value: "30 days" },
+    cost: { label: "Unconfirmed", detail: "The domestic tariff shows 0.00 for sending poste restante. A supplement of 1.00 € excl. VAT exists for delivering such an item to a home address." },
+    tips: [
+      "The official rulebook (2017 catalogue, check whether it is current) sets 30 days for items addressed POSTE RESTANTE.",
+      "Format: first and last name, the words \"POSTE RESTANTE\", postcode and name of the destination office.",
+      "ID requirement: not found."
+    ]
+  },
+  "428": {
+    name: "Latvia",
+    address: [
+      "[First name SURNAME]",
+      "Poste restante",
+      "[Name of the post office]",
+      "LATVIA"
+    ],
+    duration: { value: "2 months (10 days free)" },
+    cost: { label: "Paid after 10 days", detail: "The official tariff charges 1.00 € per day beyond 10 days. No fee for letters of 500 g or less. Extension to 2 months: 2.20 €." },
+    tips: [
+      "The official rules (2005 regulation, check whether still in force) accept \"Poste restante\" for international mail.",
+      "An ID document with photo and signature is required on collection. Mail is not handed over if the address only shows initials or a document number.",
+      "No duration specific to this service found: the general rule is 2 months at most, with 10 days free."
+    ]
+  },
+  "642": {
+    name: "Romania",
+    summary: "No official Poșta Română page clearly describing a poste restante service (duration, cost and address format) was found.",
+    tips: [
+      "The general terms (2026 revision) mention the \"Post Restant\" address with the contact point where to collect the item, the postcode, locality and county.",
+      "No duration, fee or ID rule specific to this service in that document: only the general holding rule is given.",
+      "Alternative documented by the UPU: the PO box.",
+      "To be confirmed with Poșta Română or at a counter before sending."
+    ]
+  },
+  "804": {
+    name: "Ukraine",
+    summary: "No official Ukrposhta page clearly describing a poste restante service (duration, cost and address format) was found.",
+    tips: [
+      "The service is called \"До запитання\". A search summary says Ukrposhta suspended acceptance of these items (early 2025, fraud risk): not verified, the official page returns a 403 error.",
+      "Duration, fees and address format: not found.",
+      "Alternative documented by the UPU: the PO box.",
+      "To be confirmed with Ukrposhta or at a counter before sending."
+    ]
+  },
+  "608": {
+    name: "Philippines",
+    summary: "No official PHLPost page clearly describing a poste restante service (duration, cost and address format) was found.",
+    tips: [
+      "A 2016 PHLPost annual report says the General Delivery Service is for transients without a fixed address, addressed \"c/o General Delivery Service\" followed by the name of the local post office.",
+      "This is not a current service page: duration, fees and ID are not stated.",
+      "Alternative documented by the UPU: the PO box.",
+      "To be confirmed with PHLPost or at a counter before sending."
     ]
   }
 });

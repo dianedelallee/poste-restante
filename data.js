@@ -285,7 +285,9 @@ window.COUNTRIES = {
     summary: "Aucune page officielle de Thailand Post sur la durée, le coût ou la pièce d'identité n'a pu être consultée (le site bloque les accès automatiques : une page existe peut-être).",
     tips: [
       "La fiche d'adressage de l'UPU donne un exemple de format « Poste Restante / General Post Office / district, ville, code postal » : c'est un exemple, pas une règle de service.",
-      "Un guide de voyage non officiel dit que la plupart des bureaux gardent le courrier des personnes sans adresse fixe : non confirmé."
+      "Un guide de voyage non officiel dit que la plupart des bureaux gardent le courrier des personnes sans adresse fixe : non confirmé.",
+      "Wikipédia (source non officielle) indique le terme local « รอจ่าย ไปรษณีย์ » (ou « รอจ่าย ปณ. »), un nom identique à la pièce d'identité ou au passeport, et de petits frais de 1 à 2 bahts au retrait : non vérifié.",
+      "Le site de Thailand Post (thailandpost.co.th) renvoie une erreur 403 aux accès automatiques : à vérifier depuis un navigateur ou au guichet."
     ],
     source: "https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/thaEn.pdf"
   },
@@ -1059,5 +1061,147 @@ Object.assign(window.COUNTRIES, {
       "Les mentions « Poštno ležeče » et « Poste restante » ne comptent pas comme adresse d'expéditeur."
     ],
     reliability: "check", source: "https://www.posta.si/zasebno/postne-storitve/prejemanje/naslovnikovo-narocilo"
+  },
+  "144": {
+    name: "Sri Lanka", flag: "🇱🇰", localName: "Poste Restante · To be called for", authority: "Sri Lanka Post",
+    address: [
+      "[Camille DUPONT]",
+      "POSTE RESTANTE",
+      "[Nom du bureau de poste choisi]",
+      "SRI LANKA"
+    ],
+    duration: { value: "1 mois (2 mois dans les villes portuaires)", days: 30 },
+    cost: { label: "Non confirmé", detail: "Aucun tarif de poste restante sur les pages officielles lues. Les frais d'entreposage de 50 Rs par jour concernent les colis non livrés." },
+    idRequired: true,
+    tips: [
+      "Courrier gardé 2 mois à partir de la réception dans une ville portuaire, 1 mois ailleurs.",
+      "Le service est offert aux touristes et voyageurs dans des bureaux « sélectionnés », sans liste publiée : demande à la poste lequel choisir.",
+      "Il faut s'identifier pour retirer le courrier, sans document précisé. Les « particularités suffisantes » sur l'adresse sont exigées pour éviter les erreurs."
+    ],
+    reliability: "check", source: "https://slpost.gov.lk/services/poste-restante/"
+  },
+  "158": {
+    name: "Taïwan", flag: "🇹🇼", localName: "存局候領 · Poste Restante", authority: "Chunghwa Post (中華郵政)",
+    address: [
+      "[Camille DUPONT]",
+      "Poste Restante",
+      "[Nom du bureau de poste]",
+      "[Téléphone]",
+      "TAÏWAN"
+    ],
+    duration: { value: "15 jours (2 mois pour l'international)", days: 15 },
+    cost: { label: "Gratuit 15 jours", detail: "Gratuit les 15 premiers jours, puis des frais de garde par jour à partir du 16e jour (montant variable, à confirmer)." },
+    idRequired: true,
+    tips: [
+      "Courrier du pays : 15 jours à partir du lendemain de l'arrivée, prolongeables à 1 mois par demande écrite. Courrier international : 2 mois, dont 15 jours sans frais.",
+      "L'adresse doit comporter le nom du destinataire (complet, sans abréviation), son téléphone, le nom du bureau et la mention « 存局候領 » ou « Poste Restante ». Avec un numéro de portable, un SMS prévient à l'arrivée.",
+      "Retrait sur présentation d'une pièce d'identité. Le courrier express est gardé 5 jours seulement."
+    ],
+    reliability: "ok", source: "https://www.post.gov.tw/post/internet/Law/index.jsp?ID=170301&ch_class_id=34"
+  },
+  "586": {
+    name: "Pakistan", flag: "🇵🇰", localName: "Poste Restante", authority: "Pakistan Post",
+    address: [
+      "[Camille DUPONT]",
+      "POSTE RESTANTE",
+      "[Nom du bureau de poste choisi]",
+      "PAKISTAN"
+    ],
+    duration: { value: "1 mois (2 mois à Karachi)", days: 30 },
+    cost: { label: "Non confirmé", detail: "Aucun tarif indiqué sur la page officielle." },
+    idRequired: null,
+    tips: [
+      "Le courrier est gardé 2 mois à Karachi et 1 mois dans tous les autres cas, à partir de son arrivée au bureau désigné.",
+      "Pièce d'identité et format exact de l'adresse : non précisés sur la page officielle.",
+      "Un résumé de recherche évoquait un maximum de 3 mois d'usage : non confirmé."
+    ],
+    reliability: "check", source: "https://pakpost.gov.pk/postretanate.php"
+  },
+  "807": {
+    name: "Macédoine du Nord", flag: "🇲🇰", localName: "Пост рестант", authority: "Pošta na Severna Makedonija",
+    address: [
+      "[Prénom NOM]",
+      "Пост рестант",
+      "[Nom du bureau de poste]",
+      "MACÉDOINE DU NORD"
+    ],
+    duration: { value: "30 jours", days: 30 },
+    cost: { label: "Non confirmé", detail: "Aucun tarif indiqué sur la page officielle." },
+    idRequired: null,
+    tips: [
+      "Le courrier est gardé 30 jours à partir de son arrivée à l'unité postale de destination.",
+      "L'adresse du destinataire porte la mention « Пост рестант ». Le service est présenté comme hors du service universel.",
+      "Exclus : envois urgents, EMS, courriers judiciaires ou administratifs. Pièce d'identité : non précisée."
+    ],
+    reliability: "check", source: "https://www.posta.com.mk/%D0%BF%D0%BE%D1%88%D1%82%D0%B5%D0%BD%D1%81%D0%BA%D0%B8-%D0%BF%D1%80%D0%B0%D1%82%D0%BA%D0%B8-%D0%BD%D0%B0%D0%B4%D0%B2%D0%BE%D1%80-%D0%BE%D0%B4-%D0%BE%D0%BF%D1%81%D0%B5%D0%B3%D0%BE%D1%82-%D0%BD%D0%B0/"
+  },
+  "499": {
+    name: "Monténégro", flag: "🇲🇪", localName: "Poste restante", authority: "Pošta Crne Gore",
+    address: [
+      "[Prénom NOM]",
+      "POSTE RESTANTE",
+      "[Code postal et nom du bureau de poste]",
+      "MONTÉNÉGRO"
+    ],
+    duration: { value: "30 jours", days: 30 },
+    cost: { label: "Non confirmé", detail: "Le tarif intérieur indique 0,00 pour l'envoi en poste restante. Un supplément de 1,00 € HT existe pour la livraison à domicile d'un tel envoi." },
+    idRequired: null,
+    tips: [
+      "Le règlement officiel (catalogue 2017, à vérifier s'il est à jour) fixe 30 jours pour les envois adressés POSTE RESTANTE.",
+      "Format : nom et prénom, mention « POSTE RESTANTE », code postal et nom du bureau de destination.",
+      "Pièce d'identité : non trouvée."
+    ],
+    reliability: "check", source: "https://www.postacg.me/wp-content/uploads/Pravilnik-o-obavljanju-postanskih-usluga.pdf"
+  },
+  "428": {
+    name: "Lettonie", flag: "🇱🇻", localName: "Uz pieprasījumu · Poste restante", authority: "Latvijas Pasts",
+    address: [
+      "[Prénom NOM]",
+      "Poste restante",
+      "[Nom du bureau de poste]",
+      "LETTONIE"
+    ],
+    duration: { value: "2 mois (10 jours gratuits)", days: 60 },
+    cost: { label: "Payant après 10 jours", detail: "La tarification officielle compte 1,00 € par jour au-delà de 10 jours. Pas de frais pour les lettres de 500 g ou moins. Prolongation à 2 mois : 2,20 €." },
+    idRequired: true,
+    tips: [
+      "Les règles officielles (arrêté de 2005, à vérifier s'il est toujours en vigueur) acceptent « Poste restante » pour l'international.",
+      "Pièce d'identité avec photo et signature exigée au retrait. Le courrier n'est pas remis si l'adresse n'indique que des initiales ou un numéro de document.",
+      "Aucune durée propre à ce service trouvée : la règle générale est de 2 mois maximum, dont 10 jours gratuits."
+    ],
+    reliability: "check", source: "https://www.vestnesis.lv/ta/id/112023-pasta-noteikumi"
+  },
+  "642": {
+    name: "Roumanie", flag: "🇷🇴", authority: "Poșta Română", noInfo: true,
+    summary: "Aucune page officielle de Poșta Română décrivant clairement un service de poste restante (durée, coût et format d'adresse) n'a été trouvée.",
+    tips: [
+      "Les conditions générales (révision 2026) citent l'adresse « Post Restant » avec le point de contact où retirer l'envoi, le code postal, la localité et le département.",
+      "Aucune durée, frais ni règle d'identité propres à ce service dans ce document : seule la règle générale de conservation y figure.",
+      "Alternative documentée par l'UPU : la boîte postale.",
+      "À confirmer auprès de Poșta Română ou au guichet avant d'envoyer."
+    ],
+    source: "https://www.posta-romana.ro/cnpr-data/_editor/files/Condi%C8%9Bii%20generale%20privind%20furnizarea%20serviciilor%20postale_CNPR_trimise_rev_07.04.2026_transmis%20ANCOM%20%281%29.pdf"
+  },
+  "804": {
+    name: "Ukraine", flag: "🇺🇦", authority: "Ukrposhta", noInfo: true,
+    summary: "Aucune page officielle de Ukrposhta décrivant clairement un service de poste restante (durée, coût et format d'adresse) n'a été trouvée.",
+    tips: [
+      "Le service s'appelle « До запитання ». Un résumé de recherche indique que Ukrposhta a suspendu l'acceptation de ces envois (début 2025, risque de fraude) : non vérifié, la page officielle renvoie une erreur 403.",
+      "Durée, frais et format d'adresse : non trouvés.",
+      "Alternative documentée par l'UPU : la boîte postale.",
+      "À confirmer auprès de Ukrposhta ou au guichet avant d'envoyer."
+    ],
+    source: "https://www.ukrposhta.ua"
+  },
+  "608": {
+    name: "Philippines", flag: "🇵🇭", authority: "PHLPost", noInfo: true,
+    summary: "Aucune page officielle de PHLPost décrivant clairement un service de poste restante (durée, coût et format d'adresse) n'a été trouvée.",
+    tips: [
+      "Un rapport annuel 2016 de PHLPost indique que le « General Delivery Service » est destiné aux personnes de passage sans adresse fixe, avec l'adresse « c/o General Delivery Service » suivie du nom du bureau.",
+      "Ce n'est pas une page de service actuelle : durée, frais et pièce d'identité ne sont pas indiqués.",
+      "Alternative documentée par l'UPU : la boîte postale.",
+      "À confirmer auprès de PHLPost ou au guichet avant d'envoyer."
+    ],
+    source: "https://phlpost.gov.ph/wp-content/uploads/2022/07/Annual-Report-2016-Highlights-only.pdf"
   }
 });
