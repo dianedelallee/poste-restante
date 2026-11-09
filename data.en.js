@@ -680,5 +680,180 @@ Object.assign(window.COUNTRIES_EN, {
       "Rwanda's UPU addressing sheet (03/2005, old) only shows a \"B.P.\" (PO box) example, with no poste restante.",
       "The operator's name varies by source (National Post Office, iPosita, Rwanda Post): it is the same national office.",
       "Unverified lead: ask an iPosita office directly whether mail can be held at the counter. An Australia Post guide (secondary source) says its International Express service does not deliver to poste restante for Rwanda."
-    ] }
+    ] },
+  "070": {
+    name: "Bosnia and Herzegovina",
+    address: [
+      "[First name SURNAME]",
+      "POSTE RESTANTE",
+      "[Postcode and name of the post office]",
+      "BOSNIA AND HERZEGOVINA"
+    ],
+    duration: { value: "30 days" },
+    cost: { label: "Paid (amount unspecified)", detail: "The post office mentions the prescribed postage payable on delivery, with no amount on these pages." },
+    tips: [
+      "Mail is kept 30 days from arrival at the destination office.",
+      "Official format: first and last name, the words \"POSTE RESTANTE\", postcode and name of the office.",
+      "Express items cannot be addressed poste restante. ID requirement: not stated."
+    ]
+  },
+  "100": {
+    name: "Bulgaria",
+    address: [
+      "[First name SURNAME]",
+      "До поискване",
+      "[Name of the post office]",
+      "BULGARIA"
+    ],
+    duration: { value: "20 days" },
+    cost: { label: "Unconfirmed", detail: "The general terms mention no fee specific to this service." },
+    tips: [
+      "The general terms (2023) set 20 calendar days from arrival before the item is returned to the sender. The clauses read concern domestic mail.",
+      "The addressee proves identity with an ID document.",
+      "No clause found for incoming international mail: to be confirmed."
+    ]
+  },
+  "116": {
+    name: "Cambodia",
+    summary: "No official Cambodia Post page clearly describing a poste restante service (duration, cost and address format) was found.",
+    tips: [
+      "\"POSTE RESTANTE\" with the name and a phone number: recommendation from a secondary source, not verified.",
+      "The official website could not be opened (expired certificate): the only related page found is about PO boxes.",
+      "Alternative documented by the UPU: the PO box.",
+      "To be confirmed with Cambodia Post or at a counter before sending."
+    ]
+  },
+  "292": {
+    name: "Gibraltar",
+    summary: "No official Royal Gibraltar Post Office page clearly describing a poste restante service (duration, cost and address format) was found.",
+    tips: [
+      "The government website mentions \"post restante facilities\" and PO boxes for hire, with no duration, cost or address format.",
+      "ID reportedly required on collection according to a secondary source: not verified.",
+      "Post office contact: cco@post.gi, 104 Main Street.",
+      "Alternative documented by the UPU: the PO box.",
+      "To be confirmed with Royal Gibraltar Post Office or at a counter before sending."
+    ]
+  },
+  "344": {
+    name: "Hong Kong",
+    summary: "No official Hongkong Post page clearly describing a poste restante service (duration, cost and address format) was found.",
+    tips: [
+      "The official post office guide has a Poste Restante section but could not be opened: nothing is verified.",
+      "\"Poste Restante\" or \"存局待領\", real full name required: secondary source, not verified.",
+      "According to unverified snippets, the service is limited to a few offices including the General Post Office.",
+      "Alternative documented by the UPU: the PO box.",
+      "To be confirmed with Hongkong Post or at a counter before sending."
+    ]
+  },
+  "440": {
+    name: "Lithuania",
+    summary: "No official Lietuvos paštas page clearly describing a poste restante service (duration, cost and address format) was found.",
+    tips: [
+      "The official website gives the format for international mail: first and last name, post office, and the words \"Poste restante\" (Iki pareikalavimo) in bold.",
+      "No duration specific to this service: only the general one-month rule for items is stated.",
+      "Fees and ID requirement: nothing found.",
+      "Alternative documented by the UPU: the PO box.",
+      "To be confirmed with Lietuvos paštas or at a counter before sending."
+    ]
+  },
+  "442": {
+    name: "Luxembourg",
+    summary: "No official POST Luxembourg page clearly describing a poste restante service (duration, cost and address format) was found.",
+    tips: [
+      "No current official page on poste restante. A secondary source says the service has been discontinued: not confirmed.",
+      "The 2018 POST Courrier general terms define an \"Envoi Poste Restante\" collected at a sales point for a handling fee: snippet not re-read.",
+      "To be confirmed with POST Luxembourg.",
+      "Alternative documented by the UPU: the PO box.",
+      "To be confirmed with POST Luxembourg or at a counter before sending."
+    ]
+  },
+  "446": {
+    name: "Macau",
+    summary: "No official Correios de Macau (CTT) page clearly describing a poste restante service (duration, cost and address format) was found.",
+    tips: [
+      "The official page says \"Posta Restante\" mail is collected at the post office for an additional fee (MOP 6.5 as we read it, to be checked) and that unclaimed items are returned after 90 days.",
+      "ID and address format: not stated on that page. A secondary source cites \"存局候領\" and a name matching the ID.",
+      "The service is reportedly offered only at some branches: not verified.",
+      "Alternative documented by the UPU: the PO box.",
+      "To be confirmed with Correios de Macau (CTT) or at a counter before sending."
+    ]
+  },
+  "470": {
+    name: "Malta",
+    address: [
+      "[Camille DUPONT]",
+      "Poste Restante",
+      "Valletta Boxes",
+      "75, Old Bakery Str",
+      "IL-BELT VALLETTA",
+      "VLT 1000",
+      "MALTA"
+    ],
+    duration: { value: "3 months" },
+    cost: { label: "Free", detail: "No charge on collection according to MaltaPost." },
+    tips: [
+      "Mail is kept up to 3 months after it arrives in Malta. The service is for items sent from abroad.",
+      "You must show identification when collecting.",
+      "A search summary mentioned emailing info@maltapost.com beforehand: not confirmed by the official page."
+    ]
+  },
+  "688": {
+    name: "Serbia",
+    address: [
+      "[First name SURNAME]",
+      "POSTE RESTANTE",
+      "[Postcode and name of the post office]",
+      "SERBIA"
+    ],
+    duration: { value: "30 days" },
+    cost: { label: "Unconfirmed", detail: "No fee specific to poste restante is given on the official page." },
+    tips: [
+      "Mail is kept 30 days from arrival in the poste restante section of the destination post office.",
+      "The official FAQ accepts \"POST RESTANT\" or \"POSTE RESTANTE\". A valid ID is required at the office.",
+      "No precise fee found: to be confirmed with Pošta Srbije."
+    ]
+  },
+  "702": {
+    name: "Singapore",
+    summary: "No official SingPost page clearly describing a poste restante service (duration, cost and address format) was found.",
+    tips: [
+      "The official page only lists \"Poste Restante\" as a section heading, with no duration, cost or rule.",
+      "\"Poste restante\" or \"To Be Called For\", reportedly for travellers only: old secondary source, not verified.",
+      "SingPost also offers a mail retention service, which is separate and probably paid.",
+      "Alternative documented by the UPU: the PO box.",
+      "To be confirmed with SingPost or at a counter before sending."
+    ]
+  },
+  "703": {
+    name: "Slovakia",
+    address: [
+      "[Camille DUPONT]",
+      "POSTE RESTANTE",
+      "[Postcode and name of the post office]",
+      "SLOVAKIA"
+    ],
+    duration: { value: "18 days (letters), 10 days (parcels)" },
+    cost: { label: "Unconfirmed", detail: "The general terms and the 2026 domestic tariff mention no fee specific to this service." },
+    tips: [
+      "Letters and registered items: 18 calendar days. Parcels and express items: 10 days.",
+      "No notice is left for poste restante items: you have to check regularly.",
+      "ID required; the tracking number may be asked for if the addressee knows it."
+    ]
+  },
+  "705": {
+    name: "Slovenia",
+    address: [
+      "[Camille DUPONT]",
+      "Poste restante",
+      "[Postcode and name of the post office]",
+      "SLOVENIA"
+    ],
+    duration: { value: "30 days" },
+    cost: { label: "Unconfirmed", detail: "No fee is stated on the service page or the form." },
+    tips: [
+      "The service is not automatic: the addressee must first sign an addressee's order (Naslovnikovo naročilo) at a post office, with an ID document.",
+      "With that agreement, arrived mail is kept 30 days as \"poštno ležeče\". Without it, the general holding period is shorter.",
+      "The words \"Poštno ležeče\" and \"Poste restante\" do not count as a sender address."
+    ]
+  }
 });

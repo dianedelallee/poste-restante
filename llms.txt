@@ -1,8 +1,8 @@
 # Poste restante
 
-> An independent, bilingual (French and English) guide to poste restante, also called general delivery: how to address a letter to a post office instead of a home, how long the mail is held, what it costs and whether an ID is required, country by country. 65 countries are covered; each entry says how reliable its information is.
+> An independent, bilingual (French and English) guide to poste restante, also called general delivery: how to address a letter to a post office instead of a home, how long the mail is held, what it costs and whether an ID is required, country by country. 78 countries are covered; each entry says how reliable its information is.
 
-The information comes from postal operators' official pages where they could be read. Each entry is marked "Fairly reliable" (holding period, cost and address wording confirmed by an official page; 8 entries), "To be confirmed" (a key piece of information is missing or comes from a secondary source) or "No information found" (this does not prove the service does not exist). Always check with the local post office before sending anything important. The site is not an official postal service.
+The information comes from postal operators' official pages where they could be read. Each entry is marked "Fairly reliable" (holding period, cost and address wording confirmed by an official page; 9 entries), "To be confirmed" (a key piece of information is missing or comes from a secondary source) or "No information found" (this does not prove the service does not exist). Always check with the local post office before sending anything important. The site is not an official postal service.
 
 ## Main pages
 
@@ -18,6 +18,8 @@ Pages with confirmed or partly confirmed information, by region. Each page has a
 
 - [Austria](https://www.poste-restante.club/en/countries/austria/): held at least 14 days; cost: paid; ID unconfirmed. French: [Autriche](https://www.poste-restante.club/pays/autriche/)
 - [Belgium](https://www.poste-restante.club/en/countries/belgium/): held 1 month (15 days for registered mail); cost: paid; ID required. French: [Belgique](https://www.poste-restante.club/pays/belgique/)
+- [Bosnia and Herzegovina](https://www.poste-restante.club/en/countries/bosnia-and-herzegovina/): held 30 days; cost: paid (amount unspecified); ID unconfirmed. French: [Bosnie-Herzégovine](https://www.poste-restante.club/pays/bosnie-herzegovine/)
+- [Bulgaria](https://www.poste-restante.club/en/countries/bulgaria/): held 20 days; cost: unconfirmed; ID required. French: [Bulgarie](https://www.poste-restante.club/pays/bulgarie/)
 - [Croatia](https://www.poste-restante.club/en/countries/croatia/): held 30 calendar days; cost: paid (amount unconfirmed); ID required. French: [Croatie](https://www.poste-restante.club/pays/croatie/)
 - [Czech Republic](https://www.poste-restante.club/en/countries/czech-republic/): holding period unconfirmed; cost: unconfirmed; ID unconfirmed. French: [République tchèque](https://www.poste-restante.club/pays/republique-tcheque/)
 - [Finland](https://www.poste-restante.club/en/countries/finland/): held 14 days; cost: free; ID unconfirmed. French: [Finlande](https://www.poste-restante.club/pays/finlande/)
@@ -27,11 +29,15 @@ Pages with confirmed or partly confirmed information, by region. Each page has a
 - [Iceland](https://www.poste-restante.club/en/countries/iceland/): held 60 days (letters) · 30 days (registered mail); cost: unconfirmed; ID unconfirmed. French: [Islande](https://www.poste-restante.club/pays/islande/)
 - [Ireland](https://www.poste-restante.club/en/countries/ireland/): held 20 days maximum; cost: free; ID required. French: [Irlande](https://www.poste-restante.club/pays/irlande/)
 - [Italy](https://www.poste-restante.club/en/countries/italy/): held 30 days; cost: paid (sender); ID required. French: [Italie](https://www.poste-restante.club/pays/italie/)
+- [Malta](https://www.poste-restante.club/en/countries/malta/): held 3 months; cost: free; ID required. French: [Malte](https://www.poste-restante.club/pays/malte/)
 - [Netherlands](https://www.poste-restante.club/en/countries/netherlands/): held 1 month (14 to 90 days from abroad); cost: unconfirmed; ID unconfirmed. French: [Pays-Bas](https://www.poste-restante.club/pays/pays-bas/)
 - [Norway](https://www.poste-restante.club/en/countries/norway/): held 3 weeks; cost: unconfirmed; ID unconfirmed. French: [Norvège](https://www.poste-restante.club/pays/norvege/)
 - [Poland](https://www.poste-restante.club/en/countries/poland/): held 14 days; cost: free; ID required. French: [Pologne](https://www.poste-restante.club/pays/pologne/)
 - [Portugal](https://www.poste-restante.club/en/countries/portugal/): held end of the following month (letters) · 15 days (parcels); cost: paid (recipient); ID required. French: [Portugal](https://www.poste-restante.club/pays/portugal/)
 - [Russia](https://www.poste-restante.club/en/countries/russia/): held 30 days (letters) · 15 days (express parcels); cost: free; ID required. French: [Russie](https://www.poste-restante.club/pays/russie/)
+- [Serbia](https://www.poste-restante.club/en/countries/serbia/): held 30 days; cost: unconfirmed; ID required. French: [Serbie](https://www.poste-restante.club/pays/serbie/)
+- [Slovakia](https://www.poste-restante.club/en/countries/slovakia/): held 18 days (letters), 10 days (parcels); cost: unconfirmed; ID required. French: [Slovaquie](https://www.poste-restante.club/pays/slovaquie/)
+- [Slovenia](https://www.poste-restante.club/en/countries/slovenia/): held 30 days; cost: unconfirmed; ID unconfirmed. French: [Slovénie](https://www.poste-restante.club/pays/slovenie/)
 - [Spain](https://www.poste-restante.club/en/countries/spain/): holding period unconfirmed; cost: unconfirmed; ID required. French: [Espagne](https://www.poste-restante.club/pays/espagne/)
 - [Sweden](https://www.poste-restante.club/en/countries/sweden/): held 30 days (old page); cost: unconfirmed; ID required. French: [Suède](https://www.poste-restante.club/pays/suede/)
 - [Switzerland](https://www.poste-restante.club/en/countries/switzerland/): held 1 month; cost: free; ID required. French: [Suisse](https://www.poste-restante.club/pays/suisse/)

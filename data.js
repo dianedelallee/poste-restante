@@ -865,5 +865,199 @@ Object.assign(window.COUNTRIES, {
       "Piste non vérifiée : demander directement à un bureau de l'iPosita si le courrier peut être gardé au guichet. Un guide de l'Australia Post (source secondaire) indique que son service International Express ne livre pas en poste restante vers le Rwanda."
     ],
     source: "https://i-posita.rw/pobox/"
+  },
+  "070": {
+    name: "Bosnie-Herzégovine", flag: "🇧🇦", localName: "POSTE RESTANTE", authority: "BH Pošta",
+    address: [
+      "[Prénom NOM]",
+      "POSTE RESTANTE",
+      "[Code postal et nom du bureau de poste]",
+      "BOSNIE-HERZÉGOVINE"
+    ],
+    duration: { value: "30 jours", days: 30 },
+    cost: { label: "Payant (non précisé)", detail: "La poste indique « la poste prescrite » à payer à la remise, sans montant sur ces pages." },
+    idRequired: null,
+    tips: [
+      "Le courrier est gardé 30 jours à partir de son arrivée au bureau de destination.",
+      "Format officiel : nom et prénom, mention « POSTE RESTANTE », code postal et nom du bureau.",
+      "Les envois express ne peuvent pas être adressés en poste restante. Pièce d'identité : non précisée."
+    ],
+    reliability: "check", source: "https://www.posta.ba/pravilno-adresiranje/"
+  },
+  "100": {
+    name: "Bulgarie", flag: "🇧🇬", localName: "До поискване · Poste restante", authority: "Bulgarian Posts (Български пощи)",
+    address: [
+      "[Prénom NOM]",
+      "До поискване",
+      "[Nom du bureau de poste]",
+      "BULGARIE"
+    ],
+    duration: { value: "20 jours", days: 20 },
+    cost: { label: "Non confirmé", detail: "Les conditions générales ne mentionnent aucun tarif propre à ce service." },
+    idRequired: true,
+    tips: [
+      "Les conditions générales (2023) fixent 20 jours calendaires à partir de l'arrivée, avant retour à l'expéditeur. Les clauses lues concernent le courrier intérieur.",
+      "Le destinataire justifie son identité avec une pièce d'identité.",
+      "Aucune clause trouvée pour le courrier international entrant : à confirmer."
+    ],
+    reliability: "check", source: "https://www.bgpost.bg/cms/static/ОУ_2023.pdf"
+  },
+  "116": {
+    name: "Cambodge", flag: "🇰🇭", authority: "Cambodia Post", noInfo: true,
+    summary: "Aucune page officielle de Cambodia Post décrivant clairement un service de poste restante (durée, coût et format d'adresse) n'a été trouvée.",
+    tips: [
+      "Mention « POSTE RESTANTE », avec le nom et un numéro de téléphone : recommandation d'une source secondaire, non vérifiée.",
+      "Le site officiel n'a pu être ouvert (certificat expiré) : la seule page liée trouvée concerne les boîtes postales.",
+      "Alternative documentée par l'UPU : la boîte postale.",
+      "À confirmer auprès de Cambodia Post ou au guichet avant d'envoyer."
+    ],
+    source: "https://cambodiapost.post"
+  },
+  "292": {
+    name: "Gibraltar", flag: "🇬🇮", authority: "Royal Gibraltar Post Office", noInfo: true,
+    summary: "Aucune page officielle de Royal Gibraltar Post Office décrivant clairement un service de poste restante (durée, coût et format d'adresse) n'a été trouvée.",
+    tips: [
+      "Le site du gouvernement cite des « post restante facilities » et des boîtes postales à louer, sans durée, coût ni format d'adresse.",
+      "Pièce d'identité exigée au retrait selon une source secondaire : non vérifié.",
+      "Contact de la poste : cco@post.gi, 104 Main Street.",
+      "Alternative documentée par l'UPU : la boîte postale.",
+      "À confirmer auprès de Royal Gibraltar Post Office ou au guichet avant d'envoyer."
+    ],
+    source: "https://www.gibraltar.gov.gi/public-services/post-office"
+  },
+  "344": {
+    name: "Hong Kong", flag: "🇭🇰", authority: "Hongkong Post", noInfo: true,
+    summary: "Aucune page officielle de Hongkong Post décrivant clairement un service de poste restante (durée, coût et format d'adresse) n'a été trouvée.",
+    tips: [
+      "Le guide officiel des bureaux de poste contient une section Poste Restante, mais n'a pas pu être ouvert : rien n'est vérifié.",
+      "Mentions « Poste Restante » ou « 存局待領 », nom réel complet exigé : source secondaire, non vérifié.",
+      "Selon des extraits non vérifiés, le service serait limité à quelques bureaux dont le General Post Office.",
+      "Alternative documentée par l'UPU : la boîte postale.",
+      "À confirmer auprès de Hongkong Post ou au guichet avant d'envoyer."
+    ],
+    source: "https://www.hongkongpost.hk/filemanager/common/poguide/en/po_guide.pdf"
+  },
+  "440": {
+    name: "Lituanie", flag: "🇱🇹", authority: "Lietuvos paštas", noInfo: true,
+    summary: "Aucune page officielle de Lietuvos paštas décrivant clairement un service de poste restante (durée, coût et format d'adresse) n'a été trouvée.",
+    tips: [
+      "Le site officiel donne le format pour l'étranger : nom et prénom, bureau de poste, et la mention « Poste restante » (Iki pareikalavimo) en gras.",
+      "Aucune durée propre à ce service : seule la règle générale d'un mois pour les envois est indiquée.",
+      "Frais et pièce d'identité : rien trouvé.",
+      "Alternative documentée par l'UPU : la boîte postale.",
+      "À confirmer auprès de Lietuvos paštas ou au guichet avant d'envoyer."
+    ],
+    source: "https://www.post.lt/lt/duk"
+  },
+  "442": {
+    name: "Luxembourg", flag: "🇱🇺", authority: "POST Luxembourg", noInfo: true,
+    summary: "Aucune page officielle de POST Luxembourg décrivant clairement un service de poste restante (durée, coût et format d'adresse) n'a été trouvée.",
+    tips: [
+      "Aucune page officielle actuelle sur la poste restante. Une source secondaire indique que le service a été abandonné : non confirmé.",
+      "Les conditions générales 2018 de POST Courrier définissent un « Envoi Poste Restante » retiré en point de vente moyennant des frais : extrait non relu.",
+      "À confirmer auprès de POST Luxembourg.",
+      "Alternative documentée par l'UPU : la boîte postale.",
+      "À confirmer auprès de POST Luxembourg ou au guichet avant d'envoyer."
+    ],
+    source: "https://www.post.lu"
+  },
+  "446": {
+    name: "Macao", flag: "🇲🇴", authority: "Correios de Macau (CTT)", noInfo: true,
+    summary: "Aucune page officielle de Correios de Macau (CTT) décrivant clairement un service de poste restante (durée, coût et format d'adresse) n'a été trouvée.",
+    tips: [
+      "La page officielle indique que le courrier « Posta Restante » se retire au bureau avec des frais supplémentaires (MOP 6,5 selon notre lecture, à vérifier) et que les envois non réclamés sont renvoyés après 90 jours.",
+      "Pièce d'identité et format d'adresse : non précisés sur cette page. Une source secondaire cite « 存局候領 » et un nom identique à la pièce d'identité.",
+      "Le service ne serait offert que dans certains bureaux : non vérifié.",
+      "Alternative documentée par l'UPU : la boîte postale.",
+      "À confirmer auprès de Correios de Macau (CTT) ou au guichet avant d'envoyer."
+    ],
+    source: "https://www.ctt.gov.mo/MacauPost/Contents/Recipient.aspx?lang=en-us"
+  },
+  "470": {
+    name: "Malte", flag: "🇲🇹", localName: "Poste Restante", authority: "MaltaPost",
+    address: [
+      "[Camille DUPONT]",
+      "Poste Restante",
+      "Valletta Boxes",
+      "75, Old Bakery Str",
+      "IL-BELT VALLETTA",
+      "VLT 1000",
+      "MALTE"
+    ],
+    duration: { value: "3 mois", days: 90 },
+    cost: { label: "Gratuit", detail: "Aucun frais au retrait selon MaltaPost." },
+    idRequired: true,
+    tips: [
+      "Le courrier est gardé jusqu'à 3 mois après son arrivée à Malte. Service pour les envois venant de l'étranger.",
+      "Il faut présenter une pièce d'identité au retrait.",
+      "Un résumé de recherche évoquait un e-mail préalable à info@maltapost.com : non confirmé par la page officielle."
+    ],
+    reliability: "ok", source: "https://maltapost.com/posterestante"
+  },
+  "688": {
+    name: "Serbie", flag: "🇷🇸", localName: "Poste restante · Post restant", authority: "Pošta Srbije",
+    address: [
+      "[Prénom NOM]",
+      "POSTE RESTANTE",
+      "[Code postal et nom du bureau de poste]",
+      "SERBIE"
+    ],
+    duration: { value: "30 jours", days: 30 },
+    cost: { label: "Non confirmé", detail: "Aucun tarif propre à la poste restante n'est indiqué sur la page officielle." },
+    idRequired: true,
+    tips: [
+      "Le courrier est gardé 30 jours à partir de son arrivée dans la section poste restante du bureau de destination.",
+      "La FAQ officielle accepte « POST RESTANT » ou « POSTE RESTANTE ». Pièce d'identité valide exigée au bureau.",
+      "Pas de tarif précis trouvé : à confirmer avec Pošta Srbije."
+    ],
+    reliability: "check", source: "https://www.posta.rs/eng/korisnicki-servis/najcesca-pitanja.aspx"
+  },
+  "702": {
+    name: "Singapour", flag: "🇸🇬", authority: "SingPost", noInfo: true,
+    summary: "Aucune page officielle de SingPost décrivant clairement un service de poste restante (durée, coût et format d'adresse) n'a été trouvée.",
+    tips: [
+      "La page officielle ne cite « Poste Restante » que comme titre de section, sans durée, coût ni règle.",
+      "Mentions « Poste restante » ou « To Be Called For », réservé aux voyageurs : source secondaire ancienne, non vérifié.",
+      "SingPost propose aussi un service de rétention du courrier, distinct et probablement payant.",
+      "Alternative documentée par l'UPU : la boîte postale.",
+      "À confirmer auprès de SingPost ou au guichet avant d'envoyer."
+    ],
+    source: "https://www.singpost.com/publications/section-1-counter-services"
+  },
+  "703": {
+    name: "Slovaquie", flag: "🇸🇰", localName: "Poste restante", authority: "Slovenská pošta",
+    address: [
+      "[Camille DUPONT]",
+      "POSTE RESTANTE",
+      "[Code postal et nom du bureau de poste]",
+      "SLOVAQUIE"
+    ],
+    duration: { value: "18 jours (lettres), 10 jours (colis)", days: 18 },
+    cost: { label: "Non confirmé", detail: "Les conditions générales et le tarif intérieur 2026 ne mentionnent aucun tarif propre à ce service." },
+    idRequired: true,
+    tips: [
+      "Lettres, recommandés : 18 jours calendaires. Colis et envois express : 10 jours.",
+      "Aucun avis n'est laissé pour les envois en poste restante : il faut passer régulièrement.",
+      "Pièce d'identité exigée ; le numéro de suivi peut être demandé s'il est connu du destinataire."
+    ],
+    reliability: "check", source: "https://www.posta.sk/files/68384ff484936d59ffefcb96/postove-podmienky-vseobecne-na-slovensko.pdf"
+  },
+  "705": {
+    name: "Slovénie", flag: "🇸🇮", localName: "Poštno ležeče · Poste restante", authority: "Pošta Slovenije",
+    address: [
+      "[Camille DUPONT]",
+      "Poste restante",
+      "[Code postal et nom du bureau de poste]",
+      "SLOVÉNIE"
+    ],
+    duration: { value: "30 jours", days: 30 },
+    cost: { label: "Non confirmé", detail: "Aucun tarif indiqué sur la page du service ni sur le formulaire." },
+    idRequired: null,
+    tips: [
+      "Le service n'est pas automatique : le destinataire doit d'abord signer une « commande du destinataire » (Naslovnikovo naročilo) dans un bureau, avec une pièce d'identité.",
+      "Avec cet accord, le courrier arrivé est gardé 30 jours comme « poštno ležeče ». Sans lui, le délai général est plus court.",
+      "Les mentions « Poštno ležeče » et « Poste restante » ne comptent pas comme adresse d'expéditeur."
+    ],
+    reliability: "check", source: "https://www.posta.si/zasebno/postne-storitve/prejemanje/naslovnikovo-narocilo"
   }
 });

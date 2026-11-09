@@ -32,9 +32,9 @@ const REGIONS = [
 ];
 const REGION_OF = {};
 const put = (region, ids) => ids.split(" ").forEach((i) => { REGION_OF[i] = region; });
-put("europe", "250 756 276 040 380 724 620 826 056 616 643 191 203 348 372 300 352 528 752 208 578 246");
+put("europe", "070 100 292 440 442 470 688 703 705 250 756 276 040 380 724 620 826 056 616 643 191 203 348 372 300 352 528 752 208 578 246");
 put("africa", "504 788 012 818 686 384 204 288 566 120 450 480 854 466 710 404 834 231 516 508 894 800 646");
-put("asia", "392 356 764 704 360 524 410 156 376 792");
+put("asia", "116 344 446 702 392 356 764 704 360 524 410 156 376 792");
 put("americas", "840 124 484 076 032 152 604 170");
 put("oceania", "036 554");
 
@@ -387,8 +387,12 @@ const urls = [
   `  <url>\n    <loc>${SITE}/</loc>\n    <lastmod>2026-11-05</lastmod>\n  </url>`,
   `  <url>\n    <loc>${SITE}/faux-timbre.html</loc>\n    <lastmod>2026-11-05</lastmod>\n  </url>`
 ];
+/* lastmod des fiches : date du dernier commit sur les données (git), sinon rien */
+let dataLastmod = "";
+try { dataLastmod = require("child_process").execSync("git log -1 --format=%cs -- data.js data.en.js", { cwd: ROOT }).toString().trim(); } catch (e) {}
+const lastmod = dataLastmod ? `\n    <lastmod>${dataLastmod}</lastmod>` : "";
 for (const id of IDS.filter(isIndexable)) {
-  for (const lang of ["fr", "en"]) urls.push(`  <url>\n    <loc>${SITE}${urlOf(id, lang)}</loc>\n${alt(id)}\n  </url>`);
+  for (const lang of ["fr", "en"]) urls.push(`  <url>\n    <loc>${SITE}${urlOf(id, lang)}</loc>${lastmod}\n${alt(id)}\n  </url>`);
 }
 write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls.join("\n")}\n</urlset>\n`);
 
