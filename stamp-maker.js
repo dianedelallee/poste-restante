@@ -14,7 +14,7 @@
     { id: "menthe", bg: "#35c9b8", a: "#ff6b35", b: "#fdf0d5", c: "#fffdf5", ink: "#14221f" },
     { id: "encre", bg: "#efe3c8", a: "#c0392b", b: "#1f4e8c", c: "#fbf4e2", ink: "#2a2118" }
   ];
-  const MOTIFS = ["dots", "bolt", "bubble", "sun", "envelope", "etoile", "coeur", "avion"];
+  const MOTIFS = ["dots", "bubble", "sun", "envelope", "etoile", "coeur", "avion"];
   const VALUES = ["0 €", "0,00", "GRATIS", "∞", "1 BISOU", "0 F"];
   const PAPER = "#fbf4e2";
   const NATURE = [
@@ -50,7 +50,7 @@
   };
   const I18N = {
     fr: {
-      motif: { dots: "Pois", bolt: "Éclair", bubble: "Bulle", sun: "Soleil", envelope: "Enveloppe", fleur: "Fleur", feuillage: "Feuillage", cactus: "Cactus", tulipes: "Tulipes", chat: "Chat", hibou: "Hibou", poisson: "Poisson", papillon: "Papillon", maison: "Maison", arcenciel: "Arc-en-ciel", bonhomme: "Bonhomme", fusee: "Fusée", etoile: "Étoile", coeur: "Cœur", avion: "Avion en papier", champignon: "Champignon", montagne: "Montagne", arbre: "Arbre", renard: "Renard", escargot: "Escargot", baleine: "Baleine", fleurs: "Fleurs", bateau: "Bateau", minou: "Minou", fugu: "Fugu", balai: "Balayette", maneki: "Maneki-neko", daruma: "Daruma", fuji: "Mont Fuji", lanterne: "Lanterne", sakura: "Cerisier" },
+      motif: { dots: "Pois", bubble: "Bulle", sun: "Soleil", envelope: "Enveloppe", fleur: "Fleur", feuillage: "Feuillage", cactus: "Cactus", tulipes: "Tulipes", chat: "Chat", hibou: "Hibou", poisson: "Poisson", papillon: "Papillon", maison: "Maison", arcenciel: "Arc-en-ciel", bonhomme: "Bonhomme", fusee: "Fusée", etoile: "Étoile", coeur: "Cœur", avion: "Avion en papier", champignon: "Champignon", montagne: "Montagne", arbre: "Arbre", renard: "Renard", escargot: "Escargot", baleine: "Baleine", fleurs: "Fleurs", bateau: "Bateau", minou: "Minou", fugu: "Fugu", balai: "Balayette", maneki: "Maneki-neko", daruma: "Daruma", fuji: "Mont Fuji", lanterne: "Lanterne", sakura: "Cerisier" },
       pal: { pop: "Pop", bonbon: "Bonbon", menthe: "Menthe", encre: "Encre", foret: "Forêt", printemps: "Printemps", automne: "Automne", lagon: "Lagon", jungle: "Jungle", nuit: "Nuit", prairie: "Prairie", bonbon2: "Bonbon", crayons: "Crayons", pastel: "Pastel", feutres: "Feutres", cire: "Cire", hinomaru: "Soleil levant", indigo: "Indigo", sakura: "Sakura", matcha: "Matcha" },
       style: { pop: "Pop Art", nature: "Nature", animaux: "Animaux", japon: "Japon", enfant: "Dessin d'enfant" }, l_style: "Style",
       alt: "Aperçu de ton faux timbre",
@@ -62,7 +62,7 @@
       value_default: "0 €", file: "faux-timbre", sheet_file: "faux-timbres-a4", sheet_all_file: "faux-timbres-a4-tous-les-motifs"
     },
     en: {
-      motif: { dots: "Dots", bolt: "Bolt", bubble: "Bubble", sun: "Sun", envelope: "Envelope", fleur: "Flower", feuillage: "Foliage", cactus: "Cactus", tulipes: "Tulips", chat: "Cat", hibou: "Owl", poisson: "Fish", papillon: "Butterfly", maison: "House", arcenciel: "Rainbow", bonhomme: "Little man", fusee: "Rocket", etoile: "Star", coeur: "Heart", avion: "Paper plane", champignon: "Mushroom", montagne: "Mountains", arbre: "Tree", renard: "Fox", escargot: "Snail", baleine: "Whale", fleurs: "Flowers", bateau: "Boat", minou: "Kitty", fugu: "Fugu", balai: "Straw broom", maneki: "Maneki-neko", daruma: "Daruma", fuji: "Mount Fuji", lanterne: "Lantern", sakura: "Cherry tree" },
+      motif: { dots: "Dots", bubble: "Bubble", sun: "Sun", envelope: "Envelope", fleur: "Flower", feuillage: "Foliage", cactus: "Cactus", tulipes: "Tulips", chat: "Cat", hibou: "Owl", poisson: "Fish", papillon: "Butterfly", maison: "House", arcenciel: "Rainbow", bonhomme: "Little man", fusee: "Rocket", etoile: "Star", coeur: "Heart", avion: "Paper plane", champignon: "Mushroom", montagne: "Mountains", arbre: "Tree", renard: "Fox", escargot: "Snail", baleine: "Whale", fleurs: "Flowers", bateau: "Boat", minou: "Kitty", fugu: "Fugu", balai: "Straw broom", maneki: "Maneki-neko", daruma: "Daruma", fuji: "Mount Fuji", lanterne: "Lantern", sakura: "Cherry tree" },
       pal: { pop: "Pop", bonbon: "Candy", menthe: "Mint", encre: "Ink", foret: "Forest", printemps: "Spring", automne: "Autumn", lagon: "Lagoon", jungle: "Jungle", nuit: "Night", prairie: "Meadow", bonbon2: "Candy", crayons: "Crayons", pastel: "Pastel", feutres: "Felt tips", cire: "Wax", hinomaru: "Rising sun", indigo: "Indigo", sakura: "Cherry blossom", matcha: "Matcha" },
       style: { pop: "Pop Art", nature: "Nature", animaux: "Animals", japon: "Japan", enfant: "Child's drawing" }, l_style: "Style",
       alt: "Preview of your fake stamp",
@@ -142,13 +142,6 @@
       ctx.beginPath(); ctx.arc(300, 270, 106, Math.PI * 1.15, Math.PI * 1.5);
       ctx.lineWidth = 12; ctx.lineCap = "round"; ctx.strokeStyle = p.c; ctx.stroke(); ctx.lineCap = "butt";
       word(ctx, w, 300, 500, 440, 104, p.c, p.ink, p.a);
-    },
-    bolt(ctx, p, w) {
-      burst(ctx, 300, 255, 170, 262, 14, p.a, p.ink, 8);
-      polygon(ctx, [[360, 70], [210, 300], [290, 300], [240, 450], [415, 230], [330, 230], [390, 70]]);
-      ctx.fillStyle = p.b; ctx.fill();
-      ctx.lineWidth = 10; ctx.strokeStyle = p.ink; ctx.lineJoin = "round"; ctx.stroke();
-      word(ctx, w, 300, 505, 440, 104, p.c, p.ink, p.a);
     },
     bubble(ctx, p, w) {
       halftone(ctx, ZONE.x, ZONE.y, ZONE.w, ZONE.h, 26, () => 7, p.a);
@@ -799,10 +792,10 @@
     drawStamp(c.getContext("2d"), 2);
     c.toBlob((b) => save(b, t("file") + ".png"), "image/png");
   }
-  /* planche A4 à 300 dpi : 12 timbres de 5,2 × 6,5 cm, avec un trait de coupe léger.
-     all = false : le même timbre douze fois ; all = true : un timbre par motif du style (les motifs reviennent pour remplir la page) */
+  /* planche A4 à 300 dpi : 42 timbres de 2,7 × 3,4 cm (6 colonnes × 7 rangées), avec un trait de coupe léger.
+     all = false : le même timbre douze fois ; all = true : une rangée par motif du style (7 motifs par style, 6 timbres chacun) */
   function exportSheet(all) {
-    const sw = 614, sh = 768, gap = 50, cols = 3, rows = 4, SW = 2480, SH = 3508;
+    const sw = 320, sh = 400, gap = 50, cols = 6, rows = 7, SW = 2480, SH = 3508;
     const motifs = all ? STYLES[state.style].motifs : [state.motif];
     const keep = state.motif;
     const tiles = motifs.map((m) => {
@@ -818,11 +811,11 @@
     const g = sheet.getContext("2d");
     g.fillStyle = "#fff"; g.fillRect(0, 0, SW, SH);
     const x0 = (SW - (cols * sw + (cols - 1) * gap)) / 2, y0 = (SH - (rows * sh + (rows - 1) * gap)) / 2;
-    g.strokeStyle = "#bbb"; g.lineWidth = 2; g.setLineDash([10, 10]);
+    g.strokeStyle = "#bbb"; g.lineWidth = 2; g.setLineDash([8, 8]);
     for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
       const x = x0 + c * (sw + gap), y = y0 + r * (sh + gap);
-      g.strokeRect(x - 8, y - 8, sw + 16, sh + 16);
-      g.drawImage(tiles[(r * cols + c) % tiles.length], x, y);
+      g.strokeRect(x - 6, y - 6, sw + 12, sh + 12);
+      g.drawImage(tiles[r % tiles.length], x, y);
     }
     sheet.toBlob((bl) => save(bl, t(all ? "sheet_all_file" : "sheet_file") + ".png"), "image/png");
   }
