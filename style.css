@@ -534,3 +534,29 @@ footer a:not(.support) { color: var(--blue); }
   .par-avion { font-size: .7rem; }
   section, header, footer { padding-top: 2.2rem; padding-bottom: 2.2rem; }
 }
+
+/* ---------- atelier : fabrique ton faux timbre ---------- */
+.atelier-intro { max-width: 46rem; color: var(--ink-soft); }
+.atelier-grid { display: grid; gap: 2rem; grid-template-columns: minmax(220px, 340px) 1fr; align-items: start; margin-top: 1.6rem; }
+.atelier-preview { display: flex; justify-content: center; padding: 1.4rem; background: var(--card); border: 1px dashed var(--line); border-radius: 6px; }
+#stamp-canvas { width: 100%; max-width: 300px; height: auto; aspect-ratio: 4 / 5; transform: rotate(-2deg); filter: drop-shadow(3px 5px 6px rgba(0, 0, 0, .28)); }
+.atelier-controls { display: grid; gap: 1.1rem; }
+.atelier-controls fieldset { border: 0; padding: 0; margin: 0; }
+.atelier-controls legend, .atelier-fields label span { display: block; font-family: "Special Elite", monospace; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: .4rem; padding: 0; }
+.chips, .swatches { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chip { font: inherit; font-size: .9rem; padding: .4rem .9rem; cursor: pointer; background: var(--card); color: var(--ink); border: 2px solid var(--line); border-radius: 999px; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.swatch { width: 44px; height: 44px; cursor: pointer; border-radius: 50%; border: 3px solid var(--line); background: conic-gradient(var(--s1) 0 33%, var(--s2) 0 66%, var(--s3) 0); }
+.swatch[aria-pressed="true"] { border-color: var(--ink); box-shadow: 0 0 0 2px var(--paper), 0 0 0 4px var(--ink); }
+.atelier-fields { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.atelier-fields input { width: 100%; font: inherit; font-size: 1rem; padding: .55rem .7rem; color: var(--ink); background: var(--card); border: 2px solid var(--line); border-radius: 4px; }
+.atelier-fields input:focus-visible, .chip:focus-visible, .swatch:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.atelier-actions { display: flex; flex-wrap: wrap; gap: .7rem; }
+.btn-ghost.solid { background: var(--red); border-color: var(--red); color: #fff; }
+.btn-ghost.solid:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.hero-ghost { margin-left: .5rem; text-decoration: none; color: #2a2118; border-color: #2a2118; }
+.hero-ghost:hover { background: #2a2118; color: #efe3c8; }
+@media (max-width: 720px) {
+  .atelier-grid { grid-template-columns: 1fr; }
+  .hero-ghost { margin: .6rem 0 0; display: inline-block; }
+}

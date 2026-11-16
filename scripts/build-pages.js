@@ -385,7 +385,8 @@ const alt = (id) => ["fr", "en"].map((l) => `    <xhtml:link rel="alternate" hre
   `\n    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE}${urlOf(id, "fr")}"/>`;
 const urls = [
   `  <url>\n    <loc>${SITE}/</loc>\n    <lastmod>2026-11-05</lastmod>\n  </url>`,
-  `  <url>\n    <loc>${SITE}/faux-timbre.html</loc>\n    <lastmod>2026-11-05</lastmod>\n  </url>`
+  `  <url>\n    <loc>${SITE}/faux-timbre.html</loc>\n    <lastmod>2026-11-05</lastmod>\n  </url>`,
+  `  <url>\n    <loc>${SITE}/atelier-timbre.html</loc>\n    <lastmod>2026-11-16</lastmod>\n  </url>`
 ];
 /* lastmod des fiches : date du dernier commit sur les données (git), sinon rien */
 let dataLastmod = "";
@@ -415,6 +416,7 @@ The information comes from postal operators' official pages where they could be 
 
 - [Home, interactive map and country index](${SITE}/): search a country or click the map to see an example envelope, holding period, cost and tips. Available in French and English.
 - [World Artists' Fake Stamp Day (JMFTA) 2026](${SITE}/faux-timbre.html): what the mail art day is, the rules to take part and the 2026 edition (Thursday 19 November 2026, with Angers, France as the destination). Available in French and English.
+- [Fake stamp workshop](${SITE}/atelier-timbre.html): an online tool to compose a fake stamp (Pop Art, nature, animals or child's drawing style), then download and print it. Available all year, in French and English.
 - [Source code and data](https://github.com/dianedelallee/poste-restante): the country data, in French and English, and how to contribute.
 
 ## Country pages
