@@ -8,7 +8,7 @@ The information comes from postal operators' official pages where they could be 
 
 - [Home, interactive map and country index](https://www.poste-restante.club/): search a country or click the map to see an example envelope, holding period, cost and tips. Available in French and English.
 - [World Artists' Fake Stamp Day (JMFTA) 2026](https://www.poste-restante.club/faux-timbre.html): what the mail art day is, the rules to take part and the 2026 edition (Thursday 19 November 2026, with Angers, France as the destination). Available in French and English.
-- [Fake stamp workshop](https://www.poste-restante.club/atelier-timbre.html): an online tool to compose a fake stamp (Pop Art, nature, animals or child's drawing style), then download and print it. Available all year, in French and English.
+- [Fake stamp workshop](https://www.poste-restante.club/atelier-timbre.html): an online tool to compose a fake stamp (Pop Art, nature, animals, Japan or child's drawing style), then download and print it. Available all year, in French and English.
 - [Source code and data](https://github.com/dianedelallee/poste-restante): the country data, in French and English, and how to contribute.
 
 ## Country pages

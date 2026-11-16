@@ -4,7 +4,7 @@
   const I18N = {
     fr: {
       title: "Fabrique ton faux timbre : atelier en ligne",
-      desc: "Compose un faux timbre Pop Art, nature, animaux ou dessin d'enfant, puis télécharge-le et imprime-le.",
+      desc: "Compose un faux timbre Pop Art, nature, animaux, Japon ou dessin d'enfant, puis télécharge-le et imprime-le.",
       nav_back: "← Journée du faux timbre",
       aria_lang: "Langue", aria_theme: "Mode jour / nuit", aria_github: "Voir le code sur GitHub",
       footer: "Fait avec amour du papier et de l'encre · Les infos sont indicatives, vérifie toujours auprès de la poste locale.",
@@ -14,7 +14,7 @@
     },
     en: {
       title: "Make your fake stamp: online workshop",
-      desc: "Put together a Pop Art, nature, animals or child's drawing fake stamp, then download and print it.",
+      desc: "Put together a Pop Art, nature, animals, Japan or child's drawing fake stamp, then download and print it.",
       nav_back: "← Fake stamp day",
       aria_lang: "Language", aria_theme: "Light / dark mode", aria_github: "View the code on GitHub",
       footer: "Made with a love of paper and ink · Information is indicative: always check with the local post office.",

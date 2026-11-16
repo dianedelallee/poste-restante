@@ -14,7 +14,7 @@
     { id: "menthe", bg: "#35c9b8", a: "#ff6b35", b: "#fdf0d5", c: "#fffdf5", ink: "#14221f" },
     { id: "encre", bg: "#efe3c8", a: "#c0392b", b: "#1f4e8c", c: "#fbf4e2", ink: "#2a2118" }
   ];
-  const MOTIFS = ["dots", "bolt", "bubble", "sun", "envelope"];
+  const MOTIFS = ["dots", "bolt", "bubble", "sun", "envelope", "etoile", "coeur", "avion"];
   const PAPER = "#fbf4e2";
   const NATURE = [
     { id: "foret", bg: "#cfe8c8", a: "#2f7d4f", b: "#e9805f", c: "#fffdf5", ink: "#1d3b2b" },
@@ -34,32 +34,39 @@
     { id: "feutres", bg: "#fffef5", a: "#d6246e", b: "#1e5bd6", c: "#ffb400", g: "#12a150", ink: "#1b1b1b" },
     { id: "cire", bg: "#f6ecd9", a: "#c0392b", b: "#3b6ea8", c: "#e3a82b", g: "#5a8f3c", ink: "#4a3a30" }
   ];
+  const JAPON = [
+    { id: "hinomaru", bg: "#f3ead8", a: "#c8102e", b: "#1f2f5c", c: "#fffdf5", ink: "#1a1a2e" },
+    { id: "indigo", bg: "#27407a", a: "#f0ead6", b: "#d6403a", c: "#fffdf5", ink: "#101a3a", val: "#f0ead6" },
+    { id: "sakura", bg: "#f9d9dd", a: "#c2455c", b: "#5b7f95", c: "#fffdf5", ink: "#3a1f2b" },
+    { id: "matcha", bg: "#d4dfb4", a: "#4f7a3a", b: "#c8553d", c: "#fffdf5", ink: "#243020" }
+  ];
   const STYLES = {
     pop: { motifs: MOTIFS, pals: PALETTES, words: ["POP!", "ZAP!", "WOW", "BOUM!", "YEAH", "MIAM"], word: "POP!" },
-    nature: { motifs: ["fleur", "feuillage", "cactus", "tulipes"], pals: NATURE, words: ["JARDIN", "FLEUR", "BONJOUR", "MERCI"], word: "JARDIN" },
-    animaux: { motifs: ["chat", "hibou", "poisson", "papillon"], pals: ANIMAUX, words: ["MIAOU", "COUCOU", "BLUB", "HOU HOU"], word: "MIAOU" },
-    enfant: { motifs: ["maison", "arcenciel", "bonhomme", "fusee"], pals: ENFANT, words: ["BISOUS", "COUCOU", "SALUT", "MERCI"], word: "BISOUS" }
+    nature: { motifs: ["fleur", "feuillage", "cactus", "tulipes", "champignon", "montagne", "arbre"], pals: NATURE, words: ["JARDIN", "FLEUR", "BONJOUR", "MERCI"], word: "JARDIN" },
+    animaux: { motifs: ["chat", "hibou", "poisson", "papillon", "renard", "escargot", "baleine"], pals: ANIMAUX, words: ["MIAOU", "COUCOU", "BLUB", "HOU HOU"], word: "MIAOU" },
+    japon: { motifs: ["fugu", "balai", "maneki", "daruma", "fuji", "lanterne", "sakura"], pals: JAPON, words: ["ARIGATO", "KAWAII", "SAKURA", "BONJOUR"], word: "ARIGATO" },
+    enfant: { motifs: ["maison", "arcenciel", "bonhomme", "fusee", "fleurs", "bateau", "minou"], pals: ENFANT, words: ["BISOUS", "COUCOU", "SALUT", "MERCI"], word: "BISOUS" }
   };
   const I18N = {
     fr: {
-      motif: { dots: "Pois", bolt: "Éclair", bubble: "Bulle", sun: "Soleil", envelope: "Enveloppe", fleur: "Fleur", feuillage: "Feuillage", cactus: "Cactus", tulipes: "Tulipes", chat: "Chat", hibou: "Hibou", poisson: "Poisson", papillon: "Papillon", maison: "Maison", arcenciel: "Arc-en-ciel", bonhomme: "Bonhomme", fusee: "Fusée" },
-      pal: { pop: "Pop", bonbon: "Bonbon", menthe: "Menthe", encre: "Encre", foret: "Forêt", printemps: "Printemps", automne: "Automne", lagon: "Lagon", jungle: "Jungle", nuit: "Nuit", prairie: "Prairie", bonbon2: "Bonbon", crayons: "Crayons", pastel: "Pastel", feutres: "Feutres", cire: "Cire" },
-      style: { pop: "Pop Art", nature: "Nature", animaux: "Animaux", enfant: "Dessin d'enfant" }, l_style: "Style",
+      motif: { dots: "Pois", bolt: "Éclair", bubble: "Bulle", sun: "Soleil", envelope: "Enveloppe", fleur: "Fleur", feuillage: "Feuillage", cactus: "Cactus", tulipes: "Tulipes", chat: "Chat", hibou: "Hibou", poisson: "Poisson", papillon: "Papillon", maison: "Maison", arcenciel: "Arc-en-ciel", bonhomme: "Bonhomme", fusee: "Fusée", etoile: "Étoile", coeur: "Cœur", avion: "Avion en papier", champignon: "Champignon", montagne: "Montagne", arbre: "Arbre", renard: "Renard", escargot: "Escargot", baleine: "Baleine", fleurs: "Fleurs", bateau: "Bateau", minou: "Minou", fugu: "Fugu", balai: "Balayette", maneki: "Maneki-neko", daruma: "Daruma", fuji: "Mont Fuji", lanterne: "Lanterne", sakura: "Cerisier" },
+      pal: { pop: "Pop", bonbon: "Bonbon", menthe: "Menthe", encre: "Encre", foret: "Forêt", printemps: "Printemps", automne: "Automne", lagon: "Lagon", jungle: "Jungle", nuit: "Nuit", prairie: "Prairie", bonbon2: "Bonbon", crayons: "Crayons", pastel: "Pastel", feutres: "Feutres", cire: "Cire", hinomaru: "Soleil levant", indigo: "Indigo", sakura: "Sakura", matcha: "Matcha" },
+      style: { pop: "Pop Art", nature: "Nature", animaux: "Animaux", japon: "Japon", enfant: "Dessin d'enfant" }, l_style: "Style",
       alt: "Aperçu de ton faux timbre",
       kicker: "L'atelier", title: "Fabrique ton faux timbre",
-      intro: "Pas le temps de dessiner ? Compose un timbre (Pop Art, nature, animaux ou dessin d'enfant) en quelques clics, télécharge-le, imprime-le, découpe-le et colle-le sur ton enveloppe. Il remplace l'affranchissement : n'ajoute pas de vrai timbre.",
+      intro: "Pas le temps de dessiner ? Compose un timbre (Pop Art, nature, animaux, Japon ou dessin d'enfant) en quelques clics, télécharge-le, imprime-le, découpe-le et colle-le sur ton enveloppe. Il remplace l'affranchissement : n'ajoute pas de vrai timbre.",
       l_motif: "Motif", l_pal: "Couleurs", l_word: "Mot", l_value: "Valeur faciale",
       random: "Surprends-moi", png: "Télécharger le timbre (PNG)", sheet: "Planche A4 à imprimer",
       tip: "N'oublie pas d'écrire « 17ème JMFTA » sur l'enveloppe, et de la poster le jeudi 19 novembre.",
       value_default: "0 €", file: "faux-timbre", sheet_file: "faux-timbres-a4"
     },
     en: {
-      motif: { dots: "Dots", bolt: "Bolt", bubble: "Bubble", sun: "Sun", envelope: "Envelope", fleur: "Flower", feuillage: "Foliage", cactus: "Cactus", tulipes: "Tulips", chat: "Cat", hibou: "Owl", poisson: "Fish", papillon: "Butterfly", maison: "House", arcenciel: "Rainbow", bonhomme: "Little man", fusee: "Rocket" },
-      pal: { pop: "Pop", bonbon: "Candy", menthe: "Mint", encre: "Ink", foret: "Forest", printemps: "Spring", automne: "Autumn", lagon: "Lagoon", jungle: "Jungle", nuit: "Night", prairie: "Meadow", bonbon2: "Candy", crayons: "Crayons", pastel: "Pastel", feutres: "Felt tips", cire: "Wax" },
-      style: { pop: "Pop Art", nature: "Nature", animaux: "Animals", enfant: "Child's drawing" }, l_style: "Style",
+      motif: { dots: "Dots", bolt: "Bolt", bubble: "Bubble", sun: "Sun", envelope: "Envelope", fleur: "Flower", feuillage: "Foliage", cactus: "Cactus", tulipes: "Tulips", chat: "Cat", hibou: "Owl", poisson: "Fish", papillon: "Butterfly", maison: "House", arcenciel: "Rainbow", bonhomme: "Little man", fusee: "Rocket", etoile: "Star", coeur: "Heart", avion: "Paper plane", champignon: "Mushroom", montagne: "Mountains", arbre: "Tree", renard: "Fox", escargot: "Snail", baleine: "Whale", fleurs: "Flowers", bateau: "Boat", minou: "Kitty", fugu: "Fugu", balai: "Straw broom", maneki: "Maneki-neko", daruma: "Daruma", fuji: "Mount Fuji", lanterne: "Lantern", sakura: "Cherry tree" },
+      pal: { pop: "Pop", bonbon: "Candy", menthe: "Mint", encre: "Ink", foret: "Forest", printemps: "Spring", automne: "Autumn", lagon: "Lagoon", jungle: "Jungle", nuit: "Night", prairie: "Meadow", bonbon2: "Candy", crayons: "Crayons", pastel: "Pastel", feutres: "Felt tips", cire: "Wax", hinomaru: "Rising sun", indigo: "Indigo", sakura: "Cherry blossom", matcha: "Matcha" },
+      style: { pop: "Pop Art", nature: "Nature", animaux: "Animals", japon: "Japan", enfant: "Child's drawing" }, l_style: "Style",
       alt: "Preview of your fake stamp",
       kicker: "The workshop", title: "Make your fake stamp",
-      intro: "No time to draw? Put together a stamp (Pop Art, nature, animals or child's drawing) in a few clicks, download it, print it, cut it out and stick it on your envelope. It replaces the postage: don't add a real stamp.",
+      intro: "No time to draw? Put together a stamp (Pop Art, nature, animals, Japan or child's drawing) in a few clicks, download it, print it, cut it out and stick it on your envelope. It replaces the postage: don't add a real stamp.",
       l_motif: "Motif", l_pal: "Colours", l_word: "Word", l_value: "Face value",
       random: "Surprise me", png: "Download the stamp (PNG)", sheet: "A4 sheet to print",
       tip: "Remember to write “17ème JMFTA” on the envelope, and to post it on Thursday 19 November.",
@@ -439,6 +446,276 @@
       kshape(ctx, p, [[300, 85], [346, 140], [362, 230], [356, 335], [244, 335], [238, 230], [254, 140]], "paper");
       kshape(ctx, p, [[300, 85], [346, 140], [254, 140]], p.a);
       kshape(ctx, p, circ(300, 225, 32), p.b);
+    }
+  });
+  /* ---------- motifs supplémentaires ---------- */
+  const ell = (cx, cy, rx, ry) => Array.from({ length: 34 }, (_, i) => [cx + Math.cos((Math.PI * 2 * i) / 34) * rx, cy + Math.sin((Math.PI * 2 * i) / 34) * ry]);
+  const arcPath = (ctx, x, y, r) => () => ctx.arc(x, y, r, 0, Math.PI * 2);
+  Object.assign(MOTIF_DRAW, {
+    /* --- pop art --- */
+    etoile(ctx, p, w) {
+      halftone(ctx, ZONE.x, ZONE.y, ZONE.w, ZONE.h, 22, (x, y) => 12 * (1 - Math.hypot(x - 300, y - 270) / 380), p.a);
+      burst(ctx, 300, 250, 92, 225, 5, p.b, p.ink, 10);
+      burst(ctx, 300, 255, 50, 122, 5, p.a, p.ink, 6);
+      burst(ctx, 100, 100, 12, 34, 5, p.c, p.ink, 5); burst(ctx, 505, 130, 10, 28, 5, p.c, p.ink, 5); burst(ctx, 95, 430, 10, 28, 5, p.c, p.ink, 5);
+      word(ctx, w, 300, 505, 440, 104, p.c, p.ink, p.a);
+    },
+    coeur(ctx, p, w) {
+      halftone(ctx, ZONE.x, ZONE.y, ZONE.w, ZONE.h, 26, () => 7, p.b);
+      burst(ctx, 300, 250, 190, 255, 12, p.c, p.ink, 7);
+      heart(ctx, 300, 235, 165); fillStroke(ctx, p.a, p.ink, 10);
+      word(ctx, w, 300, 505, 440, 104, p.c, p.ink, p.b);
+    },
+    avion(ctx, p, w) {
+      halftone(ctx, ZONE.x, ZONE.y, ZONE.w, ZONE.h, 24, (x, y) => 10 * (1 - Math.hypot(x - 470, y - 150) / 520), p.b);
+      [[110, 140], [440, 390]].forEach(([x, y]) => union(ctx, [arcPath(ctx, x, y, 34), arcPath(ctx, x + 40, y - 14, 44), arcPath(ctx, x + 88, y, 32)], p.c, p.ink, 6));
+      ctx.setLineDash([20, 16]); ctx.strokeStyle = p.ink; ctx.lineWidth = 7; ctx.lineCap = "round";
+      ctx.beginPath(); ctx.moveTo(70, 430); ctx.bezierCurveTo(150, 470, 230, 380, 190, 330); ctx.bezierCurveTo(170, 300, 140, 330, 175, 350); ctx.stroke();
+      ctx.setLineDash([]); ctx.lineCap = "butt";
+      polygon(ctx, [[130, 255], [470, 150], [265, 300]]); fillStroke(ctx, p.c, p.ink, 8);
+      polygon(ctx, [[265, 300], [470, 150], [300, 410]]); fillStroke(ctx, p.a, p.ink, 8);
+      polygon(ctx, [[265, 300], [320, 330], [300, 410]]); fillStroke(ctx, p.b, p.ink, 8);
+      word(ctx, w, 300, 505, 440, 104, p.c, p.ink, p.a);
+    },
+    /* --- nature --- */
+    champignon(ctx, p, w) {
+      leaf(ctx, 190, 445, 70, 18, -0.5, p.a, p.ink); leaf(ctx, 410, 445, 70, 18, 0.5, p.a, p.ink); leaf(ctx, 160, 445, 55, 14, -1.0, p.a, p.ink); leaf(ctx, 440, 445, 55, 14, 1.0, p.a, p.ink);
+      ctx.beginPath(); ctx.roundRect(235, 282, 130, 152, [0, 0, 40, 40]); fillStroke(ctx, p.c, p.ink, 8);
+      oval(ctx, 300, 282, 170, 26); fillStroke(ctx, p.c, p.ink, 8);
+      ctx.beginPath(); ctx.ellipse(300, 282, 170, 150, 0, Math.PI, 0); ctx.closePath(); fillStroke(ctx, p.b, p.ink, 9);
+      [[225, 205, 26], [335, 170, 31], [405, 245, 22], [285, 245, 18], [175, 262, 14]].forEach(([x, y, r]) => { ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); fillStroke(ctx, p.c, p.ink, 5); });
+      flower5(ctx, 105, 405, 12, p.c, p.b, p.ink); flower5(ctx, 500, 400, 11, p.c, p.b, p.ink);
+      word(ctx, w, 300, 505, 440, 100, p.c, p.ink, p.a);
+    },
+    montagne(ctx, p, w) {
+      ctx.beginPath(); ctx.arc(445, 125, 50, 0, Math.PI * 2); fillStroke(ctx, p.b, p.ink, 7);
+      polygon(ctx, [[30, 440], [220, 140], [330, 300], [400, 210], [570, 440]]); fillStroke(ctx, p.a, p.ink, 9);
+      polygon(ctx, [[220, 140], [185, 205], [205, 195], [225, 217], [245, 195], [263, 208]]); fillStroke(ctx, p.c, p.ink, 6);
+      polygon(ctx, [[400, 210], [372, 255], [392, 247], [408, 264], [428, 250]]); fillStroke(ctx, p.c, p.ink, 6);
+      [[95, 410, 1], [140, 420, 0.8], [490, 415, 1], [450, 425, 0.75]].forEach(([x, y, s]) => {
+        polygon(ctx, [[x, y - 90 * s], [x - 32 * s, y - 35 * s], [x + 32 * s, y - 35 * s]]); fillStroke(ctx, p.ink, p.ink, 4);
+        polygon(ctx, [[x, y - 60 * s], [x - 42 * s, y], [x + 42 * s, y]]); fillStroke(ctx, p.ink, p.ink, 4);
+      });
+      ctx.beginPath(); ctx.rect(30, 436, 540, 70); fillStroke(ctx, p.c, p.ink, 8);
+      word(ctx, w, 300, 505, 440, 100, p.a, p.ink, p.b);
+    },
+    arbre(ctx, p, w) {
+      oval(ctx, 300, 445, 160, 24); fillStroke(ctx, p.c, p.ink, 7);
+      polygon(ctx, [[272, 320], [328, 320], [342, 440], [258, 440]]); fillStroke(ctx, p.b, p.ink, 8);
+      ctx.strokeStyle = p.ink; ctx.lineWidth = 6; ctx.lineCap = "round";
+      ctx.beginPath(); ctx.moveTo(300, 400); ctx.lineTo(300, 330); ctx.moveTo(300, 360); ctx.lineTo(255, 300); ctx.moveTo(300, 345); ctx.lineTo(345, 295); ctx.stroke(); ctx.lineCap = "butt";
+      union(ctx, [arcPath(ctx, 300, 185, 100), arcPath(ctx, 205, 245, 80), arcPath(ctx, 395, 245, 80), arcPath(ctx, 300, 265, 88)], p.a, p.ink, 8);
+      [[260, 160], [340, 200], [215, 245], [385, 270], [300, 285], [320, 130], [255, 225]].forEach(([x, y]) => { ctx.beginPath(); ctx.arc(x, y, 13, 0, Math.PI * 2); fillStroke(ctx, p.b, p.ink, 4); });
+      word(ctx, w, 300, 505, 440, 100, p.c, p.ink, p.a);
+    },
+    /* --- animaux --- */
+    renard(ctx, p, w) {
+      polygon(ctx, [[150, 175], [160, 50], [262, 125]]); fillStroke(ctx, p.a, p.ink, 8);
+      polygon(ctx, [[450, 175], [440, 50], [338, 125]]); fillStroke(ctx, p.a, p.ink, 8);
+      polygon(ctx, [[172, 150], [175, 95], [225, 132]]); fillStroke(ctx, p.ink, p.ink, 3);
+      polygon(ctx, [[428, 150], [425, 95], [375, 132]]); fillStroke(ctx, p.ink, p.ink, 3);
+      polygon(ctx, [[130, 175], [300, 150], [470, 175], [440, 300], [300, 415], [160, 300]]); fillStroke(ctx, p.a, p.ink, 9);
+      polygon(ctx, [[135, 215], [235, 290], [168, 305]]); fillStroke(ctx, p.c, p.ink, 6);
+      polygon(ctx, [[465, 215], [365, 290], [432, 305]]); fillStroke(ctx, p.c, p.ink, 6);
+      polygon(ctx, [[215, 305], [300, 255], [385, 305], [300, 415]]); fillStroke(ctx, p.c, p.ink, 6);
+      [[240, 235], [360, 235]].forEach(([x, y]) => { oval(ctx, x, y, 14, 20, x < 300 ? 0.4 : -0.4); ctx.fillStyle = p.ink; ctx.fill(); ctx.beginPath(); ctx.arc(x - 4, y - 7, 4, 0, Math.PI * 2); ctx.fillStyle = p.c; ctx.fill(); });
+      ctx.beginPath(); ctx.arc(300, 395, 17, 0, Math.PI * 2); ctx.fillStyle = p.ink; ctx.fill();
+      ctx.strokeStyle = p.ink; ctx.lineWidth = 5; ctx.lineCap = "round"; ctx.beginPath(); ctx.moveTo(300, 410); ctx.lineTo(300, 420); ctx.stroke(); ctx.lineCap = "butt";
+      word(ctx, w, 300, 510, 440, 96, p.c, p.ink, p.b);
+    },
+    escargot(ctx, p, w) {
+      ctx.strokeStyle = p.ink; ctx.lineWidth = 6; ctx.lineCap = "round";
+      [[118, 300, 92, 228], [150, 300, 168, 222]].forEach(([x1, y1, x2, y2]) => { ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.beginPath(); ctx.arc(x2, y2, 11, 0, Math.PI * 2); ctx.fillStyle = p.ink; ctx.fill(); });
+      ctx.lineCap = "butt";
+      union(ctx, [() => ctx.roundRect(90, 300, 74, 132, 37), () => ctx.roundRect(100, 372, 380, 62, 31)], p.a, p.ink, 8);
+      ctx.beginPath(); ctx.arc(128, 340, 7, 0, Math.PI * 2); ctx.fillStyle = p.ink; ctx.fill();
+      ctx.beginPath(); ctx.arc(133, 372, 20, 0.1, Math.PI * 0.9); ctx.lineWidth = 5; ctx.strokeStyle = p.ink; ctx.stroke();
+      ctx.beginPath(); ctx.arc(330, 285, 118, 0, Math.PI * 2); fillStroke(ctx, p.b, p.ink, 9);
+      ctx.beginPath(); ctx.strokeStyle = p.c; ctx.lineWidth = 9; ctx.lineCap = "round";
+      for (let t = 0; t <= 12.5; t += 0.2) { const r = 8 + t * 8, x = 330 + Math.cos(t) * r, y = 285 + Math.sin(t) * r; t ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
+      ctx.stroke(); ctx.lineCap = "butt";
+      word(ctx, w, 300, 510, 440, 100, p.c, p.ink, p.b);
+    },
+    baleine(ctx, p, w) {
+      ctx.lineWidth = 7; ctx.strokeStyle = p.c; ctx.lineCap = "round";
+      [[190, 205, 150, 120], [190, 205, 230, 120]].forEach(([x1, y1, x2, y2]) => { ctx.beginPath(); ctx.moveTo(x1, y1); ctx.quadraticCurveTo(x1, y1 - 50, x2, y2); ctx.stroke(); });
+      ctx.lineCap = "butt";
+      [[150, 105, 12], [235, 100, 14], [192, 85, 10]].forEach(([x, y, r]) => { ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); fillStroke(ctx, p.c, p.ink, 4); });
+      leaf(ctx, 435, 305, 125, 42, 0.35, p.b, p.ink); leaf(ctx, 435, 305, 115, 42, 1.15, p.b, p.ink);
+      oval(ctx, 260, 320, 175, 108); fillStroke(ctx, p.a, p.ink, 9);
+      ctx.save(); oval(ctx, 260, 320, 168, 101); ctx.clip(); oval(ctx, 260, 450, 210, 90); ctx.fillStyle = p.c; ctx.fill(); ctx.restore();
+      ctx.beginPath(); ctx.arc(145, 295, 11, 0, Math.PI * 2); ctx.fillStyle = p.ink; ctx.fill();
+      ctx.beginPath(); ctx.arc(155, 335, 42, 0.2, 1.1); ctx.lineWidth = 6; ctx.strokeStyle = p.ink; ctx.stroke();
+      ctx.strokeStyle = p.b; ctx.lineWidth = 9; ctx.lineCap = "round";
+      for (let k = 0; k < 2; k++) { ctx.beginPath(); for (let x = 50; x <= 550; x += 10) { const y = 452 + k * 24 + Math.sin(x / 22 + k) * 7; x === 50 ? ctx.moveTo(x, y) : ctx.lineTo(x, y); } ctx.stroke(); }
+      ctx.lineCap = "butt";
+      word(ctx, w, 300, 515, 440, 90, p.c, p.ink, p.b);
+    },
+    /* --- dessin d'enfant --- */
+    fleurs(ctx, p) {
+      const z = []; for (let x = 60; x <= 540; x += 22) z.push([x, (x / 22) % 2 ? 440 : 424]);
+      kline(ctx, p, z, 9, p.g);
+      [[160, 240, p.a, 22], [300, 170, p.b, 26], [440, 255, p.a, 22]].forEach(([x, y, col, r]) => {
+        kline(ctx, p, [[x, 430], [x + jit(8), (y + 430) / 2], [x, y + 40]], 8, p.g);
+        kshape(ctx, p, [[x, 380], [x - 52, 360], [x - 18, 338]], p.g);
+        for (let i = 0; i < 6; i++) { const a = (Math.PI * 2 * i) / 6; kshape(ctx, p, circ(x + Math.cos(a) * r * 1.5, y + Math.sin(a) * r * 1.5, r), col); }
+        kshape(ctx, p, circ(x, y, r * 0.9), p.c);
+      });
+    },
+    bateau(ctx, p) {
+      ksun(ctx, p, 100, 105, 30);
+      kline(ctx, p, [[300, 340], [300, 100]], 7);
+      kshape(ctx, p, [[310, 110], [310, 320], [430, 320]], p.c);
+      kshape(ctx, p, [[290, 150], [290, 320], [190, 320]], "paper");
+      kshape(ctx, p, [[300, 100], [300, 130], [345, 115]], p.a);
+      kshape(ctx, p, [[130, 340], [470, 340], [420, 410], [180, 410]], p.a);
+      [[235, 372], [300, 372], [365, 372]].forEach(([x, y]) => kshape(ctx, p, circ(x, y, 10), p.c));
+      [0, 1].forEach((k) => { const pts = []; for (let x = 50; x <= 550; x += 20) pts.push([x, 428 + k * 26 + Math.sin(x / 16 + k * 2) * 9]); kline(ctx, p, pts, 10, p.b); });
+    },
+    minou(ctx, p) {
+      kline(ctx, p, [[385, 400], [440, 385], [470, 335], [452, 290]], 22, p.ink);
+      kline(ctx, p, [[385, 400], [440, 385], [470, 335], [452, 290]], 14, p.c);
+      kshape(ctx, p, ell(300, 395, 92, 58), p.c);
+      [[262, 440], [338, 440]].forEach(([x, y]) => kshape(ctx, p, circ(x, y, 18), p.c));
+      kshape(ctx, p, [[196, 170], [192, 80], [272, 130]], p.c); kshape(ctx, p, [[404, 170], [408, 80], [328, 130]], p.c);
+      kshape(ctx, p, [[210, 158], [208, 112], [250, 138]], p.a); kshape(ctx, p, [[390, 158], [392, 112], [350, 138]], p.a);
+      kshape(ctx, p, circ(300, 235, 108), p.c);
+      for (let i = -1; i <= 1; i++) kline(ctx, p, [[300 + i * 22, 140], [300 + i * 16, 170]], 6, p.a);
+      ctx.fillStyle = p.ink; [[262, 222], [338, 222]].forEach(([x, y]) => { ctx.beginPath(); ctx.arc(x, y, 9, 0, Math.PI * 2); ctx.fill(); });
+      kshape(ctx, p, [[290, 252], [310, 252], [300, 266]], p.a);
+      kline(ctx, p, [[300, 266], [300, 280], [280, 292]], 5); kline(ctx, p, [[300, 280], [320, 292]], 5);
+      [[-1, 0], [-1, 1], [-1, 2]].forEach(([d, i]) => { kline(ctx, p, [[255, 268 + i * 12], [185, 252 + i * 22]], 4); kline(ctx, p, [[345, 268 + i * 12], [415, 252 + i * 22]], 4); });
+    }
+  });
+  /* ---------- style Japon ---------- */
+  const STRAW = "#e0b25a", WOOD = "#8a5a2b", PETAL = "#ffe0e6";
+  function seigaiha(ctx, x0, y0, w, h, r, col, bg, alpha) {
+    ctx.save(); ctx.beginPath(); ctx.rect(x0, y0, w, h); ctx.clip();
+    ctx.lineWidth = 3;
+    for (let row = 0; y0 + row * r * 0.5 < y0 + h + r; row++) {
+      const y = y0 + r + row * r * 0.5;
+      for (let x = x0 - (row % 2 ? r : 0); x < x0 + w + r; x += r * 2) {
+        ctx.globalAlpha = 1; ctx.beginPath(); ctx.arc(x, y, r, Math.PI, 0); ctx.closePath(); ctx.fillStyle = bg; ctx.fill();
+        ctx.globalAlpha = alpha; ctx.strokeStyle = col;
+        for (let k = 1; k <= 3; k++) { ctx.beginPath(); ctx.arc(x, y, (r * k) / 3.2, Math.PI, 0); ctx.stroke(); }
+      }
+    }
+    ctx.restore();
+  }
+  function lantern(ctx, p, cx, cy, s) {
+    ctx.save(); ctx.translate(cx, cy); ctx.scale(s, s);
+    ctx.beginPath(); ctx.roundRect(-55, -150, 110, 28, 6); fillStroke(ctx, p.ink, p.ink, 6);
+    ctx.beginPath(); ctx.roundRect(-55, 122, 110, 28, 6); fillStroke(ctx, p.ink, p.ink, 6);
+    oval(ctx, 0, 0, 108, 134); fillStroke(ctx, p.a, p.ink, 9);
+    ctx.save(); oval(ctx, 0, 0, 104, 130); ctx.clip();
+    ctx.strokeStyle = p.ink; ctx.globalAlpha = 0.45; ctx.lineWidth = 4;
+    for (let i = -5; i <= 5; i++) { ctx.beginPath(); ctx.ellipse(0, i * 24, 140, 12, 0, 0, Math.PI * 2); ctx.stroke(); }
+    ctx.restore(); ctx.globalAlpha = 1;
+    ctx.beginPath(); ctx.arc(0, 0, 46, 0, Math.PI * 2); fillStroke(ctx, p.c, p.ink, 6);
+    ctx.beginPath(); ctx.arc(0, 0, 30, 0, Math.PI * 2); ctx.lineWidth = 4; ctx.stroke();
+    ctx.beginPath(); ctx.arc(0, 0, 10, 0, Math.PI * 2); ctx.fillStyle = p.a; ctx.fill();
+    ctx.strokeStyle = p.b; ctx.lineWidth = 5; ctx.lineCap = "round";
+    for (let i = -2; i <= 2; i++) { ctx.beginPath(); ctx.moveTo(i * 18, 150); ctx.lineTo(i * 18, 190); ctx.stroke(); }
+    ctx.lineCap = "butt"; ctx.restore();
+  }
+  Object.assign(MOTIF_DRAW, {
+    fugu(ctx, p, w) {
+      seigaiha(ctx, ZONE.x, ZONE.y, ZONE.w, ZONE.h, 34, p.b, p.bg, 0.3);
+      polygon(ctx, [[420, 255], [495, 205], [495, 305]]); fillStroke(ctx, p.b, p.ink, 8);
+      for (let i = 0; i < 26; i++) { const a = (Math.PI * 2 * i) / 26; polygon(ctx, [[300 + Math.cos(a - 0.07) * 136, 255 + Math.sin(a - 0.07) * 136], [300 + Math.cos(a) * 166, 255 + Math.sin(a) * 166], [300 + Math.cos(a + 0.07) * 136, 255 + Math.sin(a + 0.07) * 136]]); ctx.fillStyle = p.ink; ctx.fill(); }
+      ctx.beginPath(); ctx.arc(300, 255, 140, 0, Math.PI * 2); fillStroke(ctx, p.c, p.ink, 9);
+      ctx.save(); ctx.beginPath(); ctx.arc(300, 255, 136, 0, Math.PI * 2); ctx.clip();
+      ctx.fillStyle = p.b; ctx.fillRect(150, 100, 300, 105);
+      ctx.fillStyle = p.c; [[240, 150, 9], [300, 135, 11], [360, 150, 9], [330, 185, 8], [270, 188, 8], [400, 190, 7]].forEach(([x, y, r]) => { ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill(); });
+      ctx.restore();
+      oval(ctx, 305, 300, 48, 28, -0.3); fillStroke(ctx, p.b, p.ink, 6);
+      ctx.beginPath(); ctx.arc(230, 232, 30, 0, Math.PI * 2); fillStroke(ctx, p.c, p.ink, 7);
+      ctx.beginPath(); ctx.arc(222, 234, 14, 0, Math.PI * 2); ctx.fillStyle = p.ink; ctx.fill();
+      ctx.beginPath(); ctx.arc(217, 228, 4, 0, Math.PI * 2); ctx.fillStyle = p.c; ctx.fill();
+      ctx.beginPath(); ctx.arc(184, 285, 12, 0, Math.PI * 2); fillStroke(ctx, p.a, p.ink, 5);
+      ctx.globalAlpha = 0.55; ctx.beginPath(); ctx.arc(215, 290, 17, 0, Math.PI * 2); ctx.fillStyle = p.a; ctx.fill(); ctx.globalAlpha = 1;
+      word(ctx, w, 300, 505, 440, 100, p.c, p.ink, p.a);
+    },
+    balai(ctx, p, w) {
+      [[110, 140], [490, 190], [440, 95], [150, 300]].forEach(([x, y], i) => { oval(ctx, x, y, 14, 9, i * 0.9); fillStroke(ctx, PETAL, p.ink, 3); });
+      ctx.beginPath(); ctx.roundRect(284, 55, 32, 215, 14); fillStroke(ctx, WOOD, p.ink, 7);
+      ctx.beginPath(); ctx.moveTo(262, 262); ctx.lineTo(338, 262); ctx.lineTo(478, 428); ctx.quadraticCurveTo(300, 462, 122, 428); ctx.closePath(); fillStroke(ctx, STRAW, p.ink, 9);
+      ctx.save(); ctx.clip();
+      ctx.strokeStyle = p.ink; ctx.globalAlpha = 0.4; ctx.lineWidth = 3;
+      for (let i = -9; i <= 9; i++) { ctx.beginPath(); ctx.moveTo(300 + i * 4, 265); ctx.lineTo(300 + i * 26, 440); ctx.stroke(); }
+      ctx.restore(); ctx.globalAlpha = 1;
+      [[226, 36], [266, 30]].forEach(([y, h]) => { ctx.beginPath(); ctx.roundRect(262, y, 76, h, 8); fillStroke(ctx, p.a, p.ink, 6); });
+      ctx.beginPath(); ctx.roundRect(268, 270, 64, 18, 6); fillStroke(ctx, p.a, p.ink, 6);
+      word(ctx, w, 300, 510, 440, 100, p.c, p.ink, p.a);
+    },
+    maneki(ctx, p, w) {
+      ctx.beginPath(); ctx.roundRect(200, 428, 200, 26, 10); fillStroke(ctx, p.b, p.ink, 7);
+      union(ctx, [() => ctx.ellipse(300, 345, 108, 90, 0, 0, Math.PI * 2), () => ctx.roundRect(392, 168, 48, 160, 24)], p.c, p.ink, 8);
+      ctx.beginPath(); ctx.ellipse(416, 168, 30, 36, 0, 0, Math.PI * 2); fillStroke(ctx, p.c, p.ink, 7);
+      ctx.strokeStyle = p.ink; ctx.lineWidth = 4; ctx.lineCap = "round";
+      [[404, 156, 404, 172], [418, 152, 418, 172], [432, 156, 432, 172]].forEach(([a, b, c, d]) => { ctx.beginPath(); ctx.moveTo(a, b); ctx.lineTo(c, d); ctx.stroke(); }); ctx.lineCap = "butt";
+      oval(ctx, 236, 365, 32, 24, 0.3); fillStroke(ctx, p.c, p.ink, 6);
+      polygon(ctx, [[208, 150], [200, 70], [268, 112]]); fillStroke(ctx, p.c, p.ink, 8);
+      polygon(ctx, [[392, 150], [400, 70], [332, 112]]); fillStroke(ctx, p.c, p.ink, 8);
+      polygon(ctx, [[218, 135], [214, 96], [250, 118]]); ctx.fillStyle = p.a; ctx.fill(); polygon(ctx, [[382, 135], [386, 96], [350, 118]]); ctx.fill();
+      oval(ctx, 300, 205, 112, 90); fillStroke(ctx, p.c, p.ink, 8);
+      ctx.beginPath(); ctx.roundRect(215, 282, 170, 30, 14); fillStroke(ctx, p.a, p.ink, 7);
+      ctx.beginPath(); ctx.arc(300, 326, 17, 0, Math.PI * 2); fillStroke(ctx, "#f2c14e", p.ink, 5);
+      ctx.strokeStyle = p.ink; ctx.lineWidth = 6; ctx.lineCap = "round";
+      [262, 338].forEach((x) => { ctx.beginPath(); ctx.arc(x, 205, 17, Math.PI, 0); ctx.stroke(); });
+      ctx.lineWidth = 4; ctx.beginPath(); ctx.arc(288, 238, 12, 0.1, Math.PI - 0.1); ctx.arc(312, 238, 12, 0.1, Math.PI - 0.1); ctx.stroke();
+      [[-1], [1]].forEach(([d]) => { [[0, 0], [0, 14]].forEach(([_, dy]) => { ctx.beginPath(); ctx.moveTo(300 + d * 55, 235 + dy); ctx.lineTo(300 + d * 120, 225 + dy * 1.8); ctx.stroke(); }); });
+      ctx.lineCap = "butt";
+      polygon(ctx, [[291, 222], [309, 222], [300, 233]]); ctx.fillStyle = p.a; ctx.fill();
+      ctx.globalAlpha = 0.5; [[238, 232], [362, 232]].forEach(([x, y]) => { ctx.beginPath(); ctx.arc(x, y, 14, 0, Math.PI * 2); ctx.fillStyle = p.a; ctx.fill(); }); ctx.globalAlpha = 1;
+      word(ctx, w, 300, 510, 440, 96, p.c, p.ink, p.a);
+    },
+    daruma(ctx, p, w) {
+      oval(ctx, 300, 442, 112, 14); ctx.globalAlpha = 0.25; ctx.fillStyle = p.ink; ctx.fill(); ctx.globalAlpha = 1;
+      oval(ctx, 300, 285, 150, 158); fillStroke(ctx, p.a, p.ink, 9);
+      ctx.strokeStyle = p.c; ctx.lineWidth = 5; ctx.lineCap = "round";
+      [[190, 360, 250, 420], [410, 360, 350, 420]].forEach(([x1, y1, x2, y2]) => { ctx.beginPath(); ctx.moveTo(x1, y1); ctx.quadraticCurveTo((x1 + x2) / 2 + (x1 < 300 ? 14 : -14), (y1 + y2) / 2 - 10, x2, y2); ctx.stroke(); });
+      ctx.lineCap = "butt";
+      ctx.beginPath(); ctx.arc(300, 372, 28, 0, Math.PI * 2); ctx.lineWidth = 6; ctx.strokeStyle = p.c; ctx.stroke(); ctx.beginPath(); ctx.arc(300, 372, 8, 0, Math.PI * 2); ctx.fillStyle = p.c; ctx.fill();
+      oval(ctx, 300, 232, 112, 82); fillStroke(ctx, p.c, p.ink, 8);
+      ctx.strokeStyle = p.ink; ctx.lineWidth = 11; ctx.lineCap = "round";
+      ctx.beginPath(); ctx.moveTo(206, 205); ctx.quadraticCurveTo(250, 160, 292, 205); ctx.moveTo(308, 205); ctx.quadraticCurveTo(350, 160, 394, 205); ctx.stroke();
+      ctx.lineWidth = 5;
+      ctx.beginPath(); ctx.moveTo(196, 262); ctx.quadraticCurveTo(210, 312, 258, 292); ctx.quadraticCurveTo(222, 288, 232, 262); ctx.moveTo(404, 262); ctx.quadraticCurveTo(390, 312, 342, 292); ctx.quadraticCurveTo(378, 288, 368, 262); ctx.stroke(); ctx.lineCap = "butt";
+      [[258, 233, false], [342, 233, true]].forEach(([x, y, pupil]) => { ctx.beginPath(); ctx.arc(x, y, 24, 0, Math.PI * 2); fillStroke(ctx, p.c, p.ink, 5); if (pupil) { ctx.beginPath(); ctx.arc(x, y + 2, 11, 0, Math.PI * 2); ctx.fillStyle = p.ink; ctx.fill(); } });
+      polygon(ctx, [[292, 258], [308, 258], [300, 272]]); ctx.fillStyle = p.a; ctx.fill();
+      word(ctx, w, 300, 510, 440, 100, p.c, p.ink, p.a);
+    },
+    fuji(ctx, p, w) {
+      ctx.beginPath(); ctx.arc(425, 120, 56, 0, Math.PI * 2); fillStroke(ctx, p.a, p.ink, 7);
+      const mount = () => { ctx.beginPath(); ctx.moveTo(40, 440); ctx.quadraticCurveTo(210, 270, 262, 160); ctx.lineTo(338, 160); ctx.quadraticCurveTo(390, 270, 560, 440); ctx.closePath(); };
+      mount(); ctx.fillStyle = p.b; ctx.fill();
+      ctx.save(); mount(); ctx.clip();
+      polygon(ctx, [[200, 140], [400, 140], [430, 215], [380, 238], [345, 200], [300, 252], [262, 202], [225, 238], [175, 215]]); ctx.fillStyle = p.c; ctx.fill();
+      ctx.restore();
+      mount(); ctx.lineWidth = 9; ctx.strokeStyle = p.ink; ctx.lineJoin = "round"; ctx.stroke();
+      [[60, 322, 210], [345, 385, 190]].forEach(([x, y, ww]) => { ctx.beginPath(); ctx.roundRect(x, y, ww, 30, 15); fillStroke(ctx, p.c, p.ink, 6); });
+      ctx.strokeStyle = p.b; ctx.lineWidth = 9; ctx.lineCap = "round";
+      for (let k = 0; k < 2; k++) { ctx.beginPath(); for (let x = 50; x <= 550; x += 10) { const y = 458 + k * 24 + Math.sin(x / 20 + k) * 7; x === 50 ? ctx.moveTo(x, y) : ctx.lineTo(x, y); } ctx.stroke(); }
+      ctx.lineCap = "butt";
+      word(ctx, w, 300, 515, 440, 90, p.c, p.ink, p.a);
+    },
+    lanterne(ctx, p, w) {
+      ctx.strokeStyle = p.ink; ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(44, 85); ctx.quadraticCurveTo(300, 135, 556, 85); ctx.stroke();
+      [[135, 108, 128, 0.5], [465, 108, 128, 0.5], [300, 110, 120, 0.9]].forEach(([x, y]) => { ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x, y + 14); ctx.stroke(); });
+      lantern(ctx, p, 135, 205, 0.5); lantern(ctx, p, 465, 205, 0.5);
+      lantern(ctx, p, 300, 255, 0.95);
+      word(ctx, w, 300, 515, 440, 90, p.c, p.ink, p.a);
+    },
+    sakura(ctx, p, w) {
+      ctx.beginPath(); ctx.arc(150, 140, 70, 0, Math.PI * 2); fillStroke(ctx, p.a, p.ink, 7);
+      ctx.lineCap = "round";
+      [[p.ink, 24], [WOOD, 14]].forEach(([col, lw]) => { ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.beginPath(); ctx.moveTo(40, 430); ctx.bezierCurveTo(190, 400, 260, 250, 520, 200); ctx.stroke(); });
+      [[330, 300, 345, 380], [440, 225, 470, 300]].forEach(([x1, y1, x2, y2]) => { ctx.strokeStyle = p.ink; ctx.lineWidth = 16; ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.strokeStyle = WOOD; ctx.lineWidth = 8; ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); });
+      ctx.lineCap = "butt";
+      [[150, 405, 24], [230, 380, 20], [300, 330, 26], [380, 285, 22], [450, 230, 26], [510, 200, 18], [345, 385, 22], [470, 300, 20], [265, 255, 16], [405, 190, 16]].forEach(([x, y, r]) => flower5(ctx, x, y, r, PETAL, p.a, p.ink));
+      [[90, 330, 0.5], [200, 220, 1.2], [520, 330, 2.1], [90, 220, 0.2], [380, 440, 1.0]].forEach(([x, y, a]) => { oval(ctx, x, y, 14, 9, a); fillStroke(ctx, PETAL, p.ink, 3); });
+      word(ctx, w, 300, 510, 440, 100, p.c, p.ink, p.a);
     }
   });
   function drawChild(ctx, p) {
