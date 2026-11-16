@@ -15,6 +15,7 @@
     { id: "encre", bg: "#efe3c8", a: "#c0392b", b: "#1f4e8c", c: "#fbf4e2", ink: "#2a2118" }
   ];
   const MOTIFS = ["dots", "bolt", "bubble", "sun", "envelope", "etoile", "coeur", "avion"];
+  const VALUES = ["0 €", "0,00", "GRATIS", "∞", "1 BISOU", "0 F"];
   const PAPER = "#fbf4e2";
   const NATURE = [
     { id: "foret", bg: "#cfe8c8", a: "#2f7d4f", b: "#e9805f", c: "#fffdf5", ink: "#1d3b2b" },
@@ -56,9 +57,9 @@
       kicker: "L'atelier", title: "Fabrique ton faux timbre",
       intro: "Pas le temps de dessiner ? Compose un timbre (Pop Art, nature, animaux, Japon ou dessin d'enfant) en quelques clics, télécharge-le, imprime-le, découpe-le et colle-le sur ton enveloppe. Il remplace l'affranchissement : n'ajoute pas de vrai timbre.",
       l_motif: "Motif", l_pal: "Couleurs", l_word: "Mot", l_value: "Valeur faciale",
-      random: "Surprends-moi", png: "Télécharger le timbre (PNG)", sheet: "Planche A4 à imprimer",
+      random: "Surprends-moi", png: "Télécharger le timbre (PNG)", sheet: "Planche A4 : ce timbre", sheet_all: "Planche A4 : tous les motifs du style",
       tip: "N'oublie pas d'écrire « 17ème JMFTA » sur l'enveloppe, et de la poster le jeudi 19 novembre.",
-      value_default: "0 €", file: "faux-timbre", sheet_file: "faux-timbres-a4"
+      value_default: "0 €", file: "faux-timbre", sheet_file: "faux-timbres-a4", sheet_all_file: "faux-timbres-a4-tous-les-motifs"
     },
     en: {
       motif: { dots: "Dots", bolt: "Bolt", bubble: "Bubble", sun: "Sun", envelope: "Envelope", fleur: "Flower", feuillage: "Foliage", cactus: "Cactus", tulipes: "Tulips", chat: "Cat", hibou: "Owl", poisson: "Fish", papillon: "Butterfly", maison: "House", arcenciel: "Rainbow", bonhomme: "Little man", fusee: "Rocket", etoile: "Star", coeur: "Heart", avion: "Paper plane", champignon: "Mushroom", montagne: "Mountains", arbre: "Tree", renard: "Fox", escargot: "Snail", baleine: "Whale", fleurs: "Flowers", bateau: "Boat", minou: "Kitty", fugu: "Fugu", balai: "Straw broom", maneki: "Maneki-neko", daruma: "Daruma", fuji: "Mount Fuji", lanterne: "Lantern", sakura: "Cherry tree" },
@@ -68,9 +69,9 @@
       kicker: "The workshop", title: "Make your fake stamp",
       intro: "No time to draw? Put together a stamp (Pop Art, nature, animals, Japan or child's drawing) in a few clicks, download it, print it, cut it out and stick it on your envelope. It replaces the postage: don't add a real stamp.",
       l_motif: "Motif", l_pal: "Colours", l_word: "Word", l_value: "Face value",
-      random: "Surprise me", png: "Download the stamp (PNG)", sheet: "A4 sheet to print",
+      random: "Surprise me", png: "Download the stamp (PNG)", sheet: "A4 sheet: this stamp", sheet_all: "A4 sheet: all motifs of this style",
       tip: "Remember to write “17ème JMFTA” on the envelope, and to post it on Thursday 19 November.",
-      value_default: "0 €", file: "fake-stamp", sheet_file: "fake-stamps-a4"
+      value_default: "0 €", file: "fake-stamp", sheet_file: "fake-stamps-a4", sheet_all_file: "fake-stamps-a4-all-motifs"
     }
   };
   const lang = () => (root.lang === "en" ? "en" : "fr");
@@ -798,12 +799,20 @@
     drawStamp(c.getContext("2d"), 2);
     c.toBlob((b) => save(b, t("file") + ".png"), "image/png");
   }
-  /* planche A4 à 300 dpi : 12 timbres de 5,2 × 6,5 cm, avec un trait de coupe léger */
-  function exportSheet() {
+  /* planche A4 à 300 dpi : 12 timbres de 5,2 × 6,5 cm, avec un trait de coupe léger.
+     all = false : le même timbre douze fois ; all = true : un timbre par motif du style (les motifs reviennent pour remplir la page) */
+  function exportSheet(all) {
     const sw = 614, sh = 768, gap = 50, cols = 3, rows = 4, SW = 2480, SH = 3508;
-    const one = document.createElement("canvas");
-    one.width = sw; one.height = sh;
-    drawStamp(one.getContext("2d"), sw / W);
+    const motifs = all ? STYLES[state.style].motifs : [state.motif];
+    const keep = state.motif;
+    const tiles = motifs.map((m) => {
+      state.motif = m;
+      const c = document.createElement("canvas");
+      c.width = sw; c.height = sh;
+      drawStamp(c.getContext("2d"), sw / W);
+      return c;
+    });
+    state.motif = keep;
     const sheet = document.createElement("canvas");
     sheet.width = SW; sheet.height = SH;
     const g = sheet.getContext("2d");
@@ -813,9 +822,9 @@
     for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
       const x = x0 + c * (sw + gap), y = y0 + r * (sh + gap);
       g.strokeRect(x - 8, y - 8, sw + 16, sh + 16);
-      g.drawImage(one, x, y);
+      g.drawImage(tiles[(r * cols + c) % tiles.length], x, y);
     }
-    sheet.toBlob((b) => save(b, t("sheet_file") + ".png"), "image/png");
+    sheet.toBlob((bl) => save(bl, t(all ? "sheet_all_file" : "sheet_file") + ".png"), "image/png");
   }
 
   /* ---------- interface ---------- */
@@ -863,7 +872,8 @@
     buildControls(); syncPressed(); redraw();
   });
   $("sm-png").addEventListener("click", exportPng);
-  $("sm-sheet").addEventListener("click", exportSheet);
+  $("sm-sheet").addEventListener("click", () => exportSheet(false));
+  $("sm-sheet-all").addEventListener("click", () => exportSheet(true));
 
   function onLang() {
     const l = lang();
